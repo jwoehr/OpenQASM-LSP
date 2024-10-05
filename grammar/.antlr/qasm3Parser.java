@@ -1,4 +1,4 @@
-// Generated from d:/LSP/OpenQASM-LSP/grammar/qasm3Parser.g4 by ANTLR 4.13.1
+// Generated from qasm3Parser.g4 by ANTLR 4.9.2
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -8,9 +8,9 @@ import java.util.List;
 import java.util.Iterator;
 import java.util.ArrayList;
 
-@SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast", "CheckReturnValue"})
+@SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class qasm3Parser extends Parser {
-	static { RuntimeMetaData.checkVersion("4.13.1", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.9.2", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
@@ -18,65 +18,67 @@ public class qasm3Parser extends Parser {
 	public static final int
 		OPENQASM=1, INCLUDE=2, DEFCALGRAMMAR=3, DEF=4, CAL=5, DEFCAL=6, GATE=7, 
 		EXTERN=8, BOX=9, LET=10, BREAK=11, CONTINUE=12, IF=13, ELSE=14, END=15, 
-		RETURN=16, FOR=17, WHILE=18, IN=19, PRAGMA=20, AnnotationKeyword=21, INPUT=22, 
-		OUTPUT=23, CONST=24, READONLY=25, MUTABLE=26, QREG=27, QUBIT=28, CREG=29, 
-		BOOL=30, BIT=31, INT=32, UINT=33, FLOAT=34, ANGLE=35, COMPLEX=36, ARRAY=37, 
-		VOID=38, DURATION=39, STRETCH=40, GPHASE=41, INV=42, POW=43, CTRL=44, 
-		NEGCTRL=45, DIM=46, DURATIONOF=47, DELAY=48, RESET=49, MEASURE=50, BARRIER=51, 
-		BooleanLiteral=52, LBRACKET=53, RBRACKET=54, LBRACE=55, RBRACE=56, LPAREN=57, 
-		RPAREN=58, COLON=59, SEMICOLON=60, DOT=61, COMMA=62, EQUALS=63, ARROW=64, 
-		PLUS=65, DOUBLE_PLUS=66, MINUS=67, ASTERISK=68, DOUBLE_ASTERISK=69, SLASH=70, 
-		PERCENT=71, PIPE=72, DOUBLE_PIPE=73, AMPERSAND=74, DOUBLE_AMPERSAND=75, 
-		CARET=76, AT=77, TILDE=78, EXCLAMATION_POINT=79, EqualityOperator=80, 
-		CompoundAssignmentOperator=81, ComparisonOperator=82, BitshiftOperator=83, 
-		IMAG=84, ImaginaryLiteral=85, BinaryIntegerLiteral=86, OctalIntegerLiteral=87, 
-		DecimalIntegerLiteral=88, HexIntegerLiteral=89, Identifier=90, HardwareQubit=91, 
-		FloatLiteral=92, TimingLiteral=93, BitstringLiteral=94, Whitespace=95, 
-		Newline=96, LineComment=97, BlockComment=98, VERSION_IDENTIFER_WHITESPACE=99, 
-		VersionSpecifier=100, ARBITRARY_STRING_WHITESPACE=101, StringLiteral=102, 
-		EAT_INITIAL_SPACE=103, EAT_LINE_END=104, RemainingLineContent=105, CAL_PRELUDE_WHITESPACE=106, 
-		CAL_PRELUDE_COMMENT=107, DEFCAL_PRELUDE_WHITESPACE=108, DEFCAL_PRELUDE_COMMENT=109, 
-		CalibrationBlock=110;
+		RETURN=16, FOR=17, WHILE=18, IN=19, SWITCH=20, CASE=21, DEFAULT=22, PRAGMA=23, 
+		AnnotationKeyword=24, INPUT=25, OUTPUT=26, CONST=27, READONLY=28, MUTABLE=29, 
+		QREG=30, QUBIT=31, CREG=32, BOOL=33, BIT=34, INT=35, UINT=36, FLOAT=37, 
+		ANGLE=38, COMPLEX=39, ARRAY=40, VOID=41, DURATION=42, STRETCH=43, GPHASE=44, 
+		INV=45, POW=46, CTRL=47, NEGCTRL=48, DIM=49, DURATIONOF=50, DELAY=51, 
+		RESET=52, MEASURE=53, BARRIER=54, BooleanLiteral=55, LBRACKET=56, RBRACKET=57, 
+		LBRACE=58, RBRACE=59, LPAREN=60, RPAREN=61, COLON=62, SEMICOLON=63, DOT=64, 
+		COMMA=65, EQUALS=66, ARROW=67, PLUS=68, DOUBLE_PLUS=69, MINUS=70, ASTERISK=71, 
+		DOUBLE_ASTERISK=72, SLASH=73, PERCENT=74, PIPE=75, DOUBLE_PIPE=76, AMPERSAND=77, 
+		DOUBLE_AMPERSAND=78, CARET=79, AT=80, TILDE=81, EXCLAMATION_POINT=82, 
+		EqualityOperator=83, CompoundAssignmentOperator=84, ComparisonOperator=85, 
+		BitshiftOperator=86, IMAG=87, ImaginaryLiteral=88, BinaryIntegerLiteral=89, 
+		OctalIntegerLiteral=90, DecimalIntegerLiteral=91, HexIntegerLiteral=92, 
+		Identifier=93, HardwareQubit=94, FloatLiteral=95, TimingLiteral=96, BitstringLiteral=97, 
+		Whitespace=98, Newline=99, LineComment=100, BlockComment=101, VERSION_IDENTIFER_WHITESPACE=102, 
+		VersionSpecifier=103, ARBITRARY_STRING_WHITESPACE=104, StringLiteral=105, 
+		EAT_INITIAL_SPACE=106, EAT_LINE_END=107, RemainingLineContent=108, CAL_PRELUDE_WHITESPACE=109, 
+		CAL_PRELUDE_COMMENT=110, DEFCAL_PRELUDE_WHITESPACE=111, DEFCAL_PRELUDE_COMMENT=112, 
+		CalibrationBlock=113;
 	public static final int
 		RULE_program = 0, RULE_version = 1, RULE_statement = 2, RULE_annotation = 3, 
 		RULE_scope = 4, RULE_pragma = 5, RULE_statementOrScope = 6, RULE_calibrationGrammarStatement = 7, 
 		RULE_includeStatement = 8, RULE_breakStatement = 9, RULE_continueStatement = 10, 
 		RULE_endStatement = 11, RULE_forStatement = 12, RULE_ifStatement = 13, 
-		RULE_returnStatement = 14, RULE_whileStatement = 15, RULE_barrierStatement = 16, 
-		RULE_boxStatement = 17, RULE_delayStatement = 18, RULE_gateCallStatement = 19, 
-		RULE_measureArrowAssignmentStatement = 20, RULE_resetStatement = 21, RULE_aliasDeclarationStatement = 22, 
-		RULE_classicalDeclarationStatement = 23, RULE_constDeclarationStatement = 24, 
-		RULE_ioDeclarationStatement = 25, RULE_oldStyleDeclarationStatement = 26, 
-		RULE_quantumDeclarationStatement = 27, RULE_defStatement = 28, RULE_externStatement = 29, 
-		RULE_gateStatement = 30, RULE_assignmentStatement = 31, RULE_expressionStatement = 32, 
-		RULE_calStatement = 33, RULE_defcalStatement = 34, RULE_expression = 35, 
-		RULE_aliasExpression = 36, RULE_declarationExpression = 37, RULE_measureExpression = 38, 
-		RULE_rangeExpression = 39, RULE_setExpression = 40, RULE_arrayLiteral = 41, 
-		RULE_indexOperator = 42, RULE_indexedIdentifier = 43, RULE_returnSignature = 44, 
-		RULE_gateModifier = 45, RULE_scalarType = 46, RULE_qubitType = 47, RULE_arrayType = 48, 
-		RULE_arrayReferenceType = 49, RULE_designator = 50, RULE_defcalTarget = 51, 
-		RULE_defcalArgumentDefinition = 52, RULE_defcalOperand = 53, RULE_gateOperand = 54, 
-		RULE_externArgument = 55, RULE_argumentDefinition = 56, RULE_argumentDefinitionList = 57, 
-		RULE_defcalArgumentDefinitionList = 58, RULE_defcalOperandList = 59, RULE_expressionList = 60, 
-		RULE_identifierList = 61, RULE_gateOperandList = 62, RULE_externArgumentList = 63;
+		RULE_returnStatement = 14, RULE_whileStatement = 15, RULE_switchStatement = 16, 
+		RULE_switchCaseItem = 17, RULE_barrierStatement = 18, RULE_boxStatement = 19, 
+		RULE_delayStatement = 20, RULE_gateCallStatement = 21, RULE_measureArrowAssignmentStatement = 22, 
+		RULE_resetStatement = 23, RULE_aliasDeclarationStatement = 24, RULE_classicalDeclarationStatement = 25, 
+		RULE_constDeclarationStatement = 26, RULE_ioDeclarationStatement = 27, 
+		RULE_oldStyleDeclarationStatement = 28, RULE_quantumDeclarationStatement = 29, 
+		RULE_defStatement = 30, RULE_externStatement = 31, RULE_gateStatement = 32, 
+		RULE_assignmentStatement = 33, RULE_expressionStatement = 34, RULE_calStatement = 35, 
+		RULE_defcalStatement = 36, RULE_expression = 37, RULE_aliasExpression = 38, 
+		RULE_declarationExpression = 39, RULE_measureExpression = 40, RULE_rangeExpression = 41, 
+		RULE_setExpression = 42, RULE_arrayLiteral = 43, RULE_indexOperator = 44, 
+		RULE_indexedIdentifier = 45, RULE_returnSignature = 46, RULE_gateModifier = 47, 
+		RULE_scalarType = 48, RULE_qubitType = 49, RULE_arrayType = 50, RULE_arrayReferenceType = 51, 
+		RULE_designator = 52, RULE_defcalTarget = 53, RULE_defcalArgumentDefinition = 54, 
+		RULE_defcalOperand = 55, RULE_gateOperand = 56, RULE_externArgument = 57, 
+		RULE_argumentDefinition = 58, RULE_argumentDefinitionList = 59, RULE_defcalArgumentDefinitionList = 60, 
+		RULE_defcalOperandList = 61, RULE_expressionList = 62, RULE_identifierList = 63, 
+		RULE_gateOperandList = 64, RULE_externArgumentList = 65;
 	private static String[] makeRuleNames() {
 		return new String[] {
 			"program", "version", "statement", "annotation", "scope", "pragma", "statementOrScope", 
 			"calibrationGrammarStatement", "includeStatement", "breakStatement", 
 			"continueStatement", "endStatement", "forStatement", "ifStatement", "returnStatement", 
-			"whileStatement", "barrierStatement", "boxStatement", "delayStatement", 
-			"gateCallStatement", "measureArrowAssignmentStatement", "resetStatement", 
-			"aliasDeclarationStatement", "classicalDeclarationStatement", "constDeclarationStatement", 
-			"ioDeclarationStatement", "oldStyleDeclarationStatement", "quantumDeclarationStatement", 
-			"defStatement", "externStatement", "gateStatement", "assignmentStatement", 
-			"expressionStatement", "calStatement", "defcalStatement", "expression", 
-			"aliasExpression", "declarationExpression", "measureExpression", "rangeExpression", 
-			"setExpression", "arrayLiteral", "indexOperator", "indexedIdentifier", 
-			"returnSignature", "gateModifier", "scalarType", "qubitType", "arrayType", 
-			"arrayReferenceType", "designator", "defcalTarget", "defcalArgumentDefinition", 
-			"defcalOperand", "gateOperand", "externArgument", "argumentDefinition", 
-			"argumentDefinitionList", "defcalArgumentDefinitionList", "defcalOperandList", 
-			"expressionList", "identifierList", "gateOperandList", "externArgumentList"
+			"whileStatement", "switchStatement", "switchCaseItem", "barrierStatement", 
+			"boxStatement", "delayStatement", "gateCallStatement", "measureArrowAssignmentStatement", 
+			"resetStatement", "aliasDeclarationStatement", "classicalDeclarationStatement", 
+			"constDeclarationStatement", "ioDeclarationStatement", "oldStyleDeclarationStatement", 
+			"quantumDeclarationStatement", "defStatement", "externStatement", "gateStatement", 
+			"assignmentStatement", "expressionStatement", "calStatement", "defcalStatement", 
+			"expression", "aliasExpression", "declarationExpression", "measureExpression", 
+			"rangeExpression", "setExpression", "arrayLiteral", "indexOperator", 
+			"indexedIdentifier", "returnSignature", "gateModifier", "scalarType", 
+			"qubitType", "arrayType", "arrayReferenceType", "designator", "defcalTarget", 
+			"defcalArgumentDefinition", "defcalOperand", "gateOperand", "externArgument", 
+			"argumentDefinition", "argumentDefinitionList", "defcalArgumentDefinitionList", 
+			"defcalOperandList", "expressionList", "identifierList", "gateOperandList", 
+			"externArgumentList"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
@@ -85,15 +87,16 @@ public class qasm3Parser extends Parser {
 		return new String[] {
 			null, "'OPENQASM'", "'include'", "'defcalgrammar'", "'def'", "'cal'", 
 			"'defcal'", "'gate'", "'extern'", "'box'", "'let'", "'break'", "'continue'", 
-			"'if'", "'else'", "'end'", "'return'", "'for'", "'while'", "'in'", null, 
-			null, "'input'", "'output'", "'const'", "'readonly'", "'mutable'", "'qreg'", 
-			"'qubit'", "'creg'", "'bool'", "'bit'", "'int'", "'uint'", "'float'", 
-			"'angle'", "'complex'", "'array'", "'void'", "'duration'", "'stretch'", 
-			"'gphase'", "'inv'", "'pow'", "'ctrl'", "'negctrl'", "'#dim'", "'durationof'", 
-			"'delay'", "'reset'", "'measure'", "'barrier'", null, "'['", "']'", "'{'", 
-			"'}'", "'('", "')'", "':'", "';'", "'.'", "','", "'='", "'->'", "'+'", 
-			"'++'", "'-'", "'*'", "'**'", "'/'", "'%'", "'|'", "'||'", "'&'", "'&&'", 
-			"'^'", "'@'", "'~'", "'!'", null, null, null, null, "'im'"
+			"'if'", "'else'", "'end'", "'return'", "'for'", "'while'", "'in'", "'switch'", 
+			"'case'", "'default'", null, null, "'input'", "'output'", "'const'", 
+			"'readonly'", "'mutable'", "'qreg'", "'qubit'", "'creg'", "'bool'", "'bit'", 
+			"'int'", "'uint'", "'float'", "'angle'", "'complex'", "'array'", "'void'", 
+			"'duration'", "'stretch'", "'gphase'", "'inv'", "'pow'", "'ctrl'", "'negctrl'", 
+			"'#dim'", "'durationof'", "'delay'", "'reset'", "'measure'", "'barrier'", 
+			null, "'['", "']'", "'{'", "'}'", "'('", "')'", "':'", "';'", "'.'", 
+			"','", "'='", "'->'", "'+'", "'++'", "'-'", "'*'", "'**'", "'/'", "'%'", 
+			"'|'", "'||'", "'&'", "'&&'", "'^'", "'@'", "'~'", "'!'", null, null, 
+			null, null, "'im'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
@@ -101,23 +104,24 @@ public class qasm3Parser extends Parser {
 		return new String[] {
 			null, "OPENQASM", "INCLUDE", "DEFCALGRAMMAR", "DEF", "CAL", "DEFCAL", 
 			"GATE", "EXTERN", "BOX", "LET", "BREAK", "CONTINUE", "IF", "ELSE", "END", 
-			"RETURN", "FOR", "WHILE", "IN", "PRAGMA", "AnnotationKeyword", "INPUT", 
-			"OUTPUT", "CONST", "READONLY", "MUTABLE", "QREG", "QUBIT", "CREG", "BOOL", 
-			"BIT", "INT", "UINT", "FLOAT", "ANGLE", "COMPLEX", "ARRAY", "VOID", "DURATION", 
-			"STRETCH", "GPHASE", "INV", "POW", "CTRL", "NEGCTRL", "DIM", "DURATIONOF", 
-			"DELAY", "RESET", "MEASURE", "BARRIER", "BooleanLiteral", "LBRACKET", 
-			"RBRACKET", "LBRACE", "RBRACE", "LPAREN", "RPAREN", "COLON", "SEMICOLON", 
-			"DOT", "COMMA", "EQUALS", "ARROW", "PLUS", "DOUBLE_PLUS", "MINUS", "ASTERISK", 
-			"DOUBLE_ASTERISK", "SLASH", "PERCENT", "PIPE", "DOUBLE_PIPE", "AMPERSAND", 
-			"DOUBLE_AMPERSAND", "CARET", "AT", "TILDE", "EXCLAMATION_POINT", "EqualityOperator", 
-			"CompoundAssignmentOperator", "ComparisonOperator", "BitshiftOperator", 
-			"IMAG", "ImaginaryLiteral", "BinaryIntegerLiteral", "OctalIntegerLiteral", 
-			"DecimalIntegerLiteral", "HexIntegerLiteral", "Identifier", "HardwareQubit", 
-			"FloatLiteral", "TimingLiteral", "BitstringLiteral", "Whitespace", "Newline", 
-			"LineComment", "BlockComment", "VERSION_IDENTIFER_WHITESPACE", "VersionSpecifier", 
-			"ARBITRARY_STRING_WHITESPACE", "StringLiteral", "EAT_INITIAL_SPACE", 
-			"EAT_LINE_END", "RemainingLineContent", "CAL_PRELUDE_WHITESPACE", "CAL_PRELUDE_COMMENT", 
-			"DEFCAL_PRELUDE_WHITESPACE", "DEFCAL_PRELUDE_COMMENT", "CalibrationBlock"
+			"RETURN", "FOR", "WHILE", "IN", "SWITCH", "CASE", "DEFAULT", "PRAGMA", 
+			"AnnotationKeyword", "INPUT", "OUTPUT", "CONST", "READONLY", "MUTABLE", 
+			"QREG", "QUBIT", "CREG", "BOOL", "BIT", "INT", "UINT", "FLOAT", "ANGLE", 
+			"COMPLEX", "ARRAY", "VOID", "DURATION", "STRETCH", "GPHASE", "INV", "POW", 
+			"CTRL", "NEGCTRL", "DIM", "DURATIONOF", "DELAY", "RESET", "MEASURE", 
+			"BARRIER", "BooleanLiteral", "LBRACKET", "RBRACKET", "LBRACE", "RBRACE", 
+			"LPAREN", "RPAREN", "COLON", "SEMICOLON", "DOT", "COMMA", "EQUALS", "ARROW", 
+			"PLUS", "DOUBLE_PLUS", "MINUS", "ASTERISK", "DOUBLE_ASTERISK", "SLASH", 
+			"PERCENT", "PIPE", "DOUBLE_PIPE", "AMPERSAND", "DOUBLE_AMPERSAND", "CARET", 
+			"AT", "TILDE", "EXCLAMATION_POINT", "EqualityOperator", "CompoundAssignmentOperator", 
+			"ComparisonOperator", "BitshiftOperator", "IMAG", "ImaginaryLiteral", 
+			"BinaryIntegerLiteral", "OctalIntegerLiteral", "DecimalIntegerLiteral", 
+			"HexIntegerLiteral", "Identifier", "HardwareQubit", "FloatLiteral", "TimingLiteral", 
+			"BitstringLiteral", "Whitespace", "Newline", "LineComment", "BlockComment", 
+			"VERSION_IDENTIFER_WHITESPACE", "VersionSpecifier", "ARBITRARY_STRING_WHITESPACE", 
+			"StringLiteral", "EAT_INITIAL_SPACE", "EAT_LINE_END", "RemainingLineContent", 
+			"CAL_PRELUDE_WHITESPACE", "CAL_PRELUDE_COMMENT", "DEFCAL_PRELUDE_WHITESPACE", 
+			"DEFCAL_PRELUDE_COMMENT", "CalibrationBlock"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -171,22 +175,34 @@ public class qasm3Parser extends Parser {
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class ProgramContext extends ParserRuleContext {
 		public TerminalNode EOF() { return getToken(qasm3Parser.EOF, 0); }
 		public VersionContext version() {
 			return getRuleContext(VersionContext.class,0);
 		}
-		public List<StatementContext> statement() {
-			return getRuleContexts(StatementContext.class);
+		public List<StatementOrScopeContext> statementOrScope() {
+			return getRuleContexts(StatementOrScopeContext.class);
 		}
-		public StatementContext statement(int i) {
-			return getRuleContext(StatementContext.class,i);
+		public StatementOrScopeContext statementOrScope(int i) {
+			return getRuleContext(StatementOrScopeContext.class,i);
 		}
 		public ProgramContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_program; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterProgram(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitProgram(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitProgram(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ProgramContext program() throws RecognitionException {
@@ -196,31 +212,31 @@ public class qasm3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(129);
+			setState(133);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==OPENQASM) {
 				{
-				setState(128);
+				setState(132);
 				version();
 				}
 			}
 
-			setState(134);
+			setState(138);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & 153051743607308284L) != 0) || ((((_la - 67)) & ~0x3f) == 0 && ((1L << (_la - 67)) & 268179457L) != 0)) {
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << INCLUDE) | (1L << DEFCALGRAMMAR) | (1L << DEF) | (1L << CAL) | (1L << DEFCAL) | (1L << GATE) | (1L << EXTERN) | (1L << BOX) | (1L << LET) | (1L << BREAK) | (1L << CONTINUE) | (1L << IF) | (1L << END) | (1L << RETURN) | (1L << FOR) | (1L << WHILE) | (1L << SWITCH) | (1L << PRAGMA) | (1L << AnnotationKeyword) | (1L << INPUT) | (1L << OUTPUT) | (1L << CONST) | (1L << QREG) | (1L << QUBIT) | (1L << CREG) | (1L << BOOL) | (1L << BIT) | (1L << INT) | (1L << UINT) | (1L << FLOAT) | (1L << ANGLE) | (1L << COMPLEX) | (1L << ARRAY) | (1L << DURATION) | (1L << STRETCH) | (1L << GPHASE) | (1L << INV) | (1L << POW) | (1L << CTRL) | (1L << NEGCTRL) | (1L << DURATIONOF) | (1L << DELAY) | (1L << RESET) | (1L << MEASURE) | (1L << BARRIER) | (1L << BooleanLiteral) | (1L << LBRACE) | (1L << LPAREN))) != 0) || ((((_la - 70)) & ~0x3f) == 0 && ((1L << (_la - 70)) & ((1L << (MINUS - 70)) | (1L << (TILDE - 70)) | (1L << (EXCLAMATION_POINT - 70)) | (1L << (ImaginaryLiteral - 70)) | (1L << (BinaryIntegerLiteral - 70)) | (1L << (OctalIntegerLiteral - 70)) | (1L << (DecimalIntegerLiteral - 70)) | (1L << (HexIntegerLiteral - 70)) | (1L << (Identifier - 70)) | (1L << (HardwareQubit - 70)) | (1L << (FloatLiteral - 70)) | (1L << (TimingLiteral - 70)) | (1L << (BitstringLiteral - 70)))) != 0)) {
 				{
 				{
-				setState(131);
-				statement();
+				setState(135);
+				statementOrScope();
 				}
 				}
-				setState(136);
+				setState(140);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(137);
+			setState(141);
 			match(EOF);
 			}
 		}
@@ -235,7 +251,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class VersionContext extends ParserRuleContext {
 		public TerminalNode OPENQASM() { return getToken(qasm3Parser.OPENQASM, 0); }
 		public TerminalNode VersionSpecifier() { return getToken(qasm3Parser.VersionSpecifier, 0); }
@@ -244,6 +259,19 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_version; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterVersion(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitVersion(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitVersion(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final VersionContext version() throws RecognitionException {
@@ -252,11 +280,11 @@ public class qasm3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(139);
+			setState(143);
 			match(OPENQASM);
-			setState(140);
+			setState(144);
 			match(VersionSpecifier);
-			setState(141);
+			setState(145);
 			match(SEMICOLON);
 			}
 		}
@@ -271,7 +299,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class StatementContext extends ParserRuleContext {
 		public PragmaContext pragma() {
 			return getRuleContext(PragmaContext.class,0);
@@ -357,6 +384,9 @@ public class qasm3Parser extends Parser {
 		public ReturnStatementContext returnStatement() {
 			return getRuleContext(ReturnStatementContext.class,0);
 		}
+		public SwitchStatementContext switchStatement() {
+			return getRuleContext(SwitchStatementContext.class,0);
+		}
 		public WhileStatementContext whileStatement() {
 			return getRuleContext(WhileStatementContext.class,0);
 		}
@@ -370,6 +400,19 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_statement; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterStatement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitStatement(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitStatement(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final StatementContext statement() throws RecognitionException {
@@ -377,13 +420,13 @@ public class qasm3Parser extends Parser {
 		enterRule(_localctx, 4, RULE_statement);
 		int _la;
 		try {
-			setState(180);
+			setState(185);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case PRAGMA:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(143);
+				setState(147);
 				pragma();
 				}
 				break;
@@ -403,6 +446,7 @@ public class qasm3Parser extends Parser {
 			case RETURN:
 			case FOR:
 			case WHILE:
+			case SWITCH:
 			case AnnotationKeyword:
 			case INPUT:
 			case OUTPUT:
@@ -447,188 +491,194 @@ public class qasm3Parser extends Parser {
 			case BitstringLiteral:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(147);
+				setState(151);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				while (_la==AnnotationKeyword) {
 					{
 					{
-					setState(144);
+					setState(148);
 					annotation();
 					}
 					}
-					setState(149);
+					setState(153);
 					_errHandler.sync(this);
 					_la = _input.LA(1);
 				}
-				setState(178);
+				setState(183);
 				_errHandler.sync(this);
 				switch ( getInterpreter().adaptivePredict(_input,3,_ctx) ) {
 				case 1:
 					{
-					setState(150);
+					setState(154);
 					aliasDeclarationStatement();
 					}
 					break;
 				case 2:
 					{
-					setState(151);
+					setState(155);
 					assignmentStatement();
 					}
 					break;
 				case 3:
 					{
-					setState(152);
+					setState(156);
 					barrierStatement();
 					}
 					break;
 				case 4:
 					{
-					setState(153);
+					setState(157);
 					boxStatement();
 					}
 					break;
 				case 5:
 					{
-					setState(154);
+					setState(158);
 					breakStatement();
 					}
 					break;
 				case 6:
 					{
-					setState(155);
+					setState(159);
 					calStatement();
 					}
 					break;
 				case 7:
 					{
-					setState(156);
+					setState(160);
 					calibrationGrammarStatement();
 					}
 					break;
 				case 8:
 					{
-					setState(157);
+					setState(161);
 					classicalDeclarationStatement();
 					}
 					break;
 				case 9:
 					{
-					setState(158);
+					setState(162);
 					constDeclarationStatement();
 					}
 					break;
 				case 10:
 					{
-					setState(159);
+					setState(163);
 					continueStatement();
 					}
 					break;
 				case 11:
 					{
-					setState(160);
+					setState(164);
 					defStatement();
 					}
 					break;
 				case 12:
 					{
-					setState(161);
+					setState(165);
 					defcalStatement();
 					}
 					break;
 				case 13:
 					{
-					setState(162);
+					setState(166);
 					delayStatement();
 					}
 					break;
 				case 14:
 					{
-					setState(163);
+					setState(167);
 					endStatement();
 					}
 					break;
 				case 15:
 					{
-					setState(164);
+					setState(168);
 					expressionStatement();
 					}
 					break;
 				case 16:
 					{
-					setState(165);
+					setState(169);
 					externStatement();
 					}
 					break;
 				case 17:
 					{
-					setState(166);
+					setState(170);
 					forStatement();
 					}
 					break;
 				case 18:
 					{
-					setState(167);
+					setState(171);
 					gateCallStatement();
 					}
 					break;
 				case 19:
 					{
-					setState(168);
+					setState(172);
 					gateStatement();
 					}
 					break;
 				case 20:
 					{
-					setState(169);
+					setState(173);
 					ifStatement();
 					}
 					break;
 				case 21:
 					{
-					setState(170);
+					setState(174);
 					includeStatement();
 					}
 					break;
 				case 22:
 					{
-					setState(171);
+					setState(175);
 					ioDeclarationStatement();
 					}
 					break;
 				case 23:
 					{
-					setState(172);
+					setState(176);
 					measureArrowAssignmentStatement();
 					}
 					break;
 				case 24:
 					{
-					setState(173);
+					setState(177);
 					oldStyleDeclarationStatement();
 					}
 					break;
 				case 25:
 					{
-					setState(174);
+					setState(178);
 					quantumDeclarationStatement();
 					}
 					break;
 				case 26:
 					{
-					setState(175);
+					setState(179);
 					resetStatement();
 					}
 					break;
 				case 27:
 					{
-					setState(176);
+					setState(180);
 					returnStatement();
 					}
 					break;
 				case 28:
 					{
-					setState(177);
+					setState(181);
+					switchStatement();
+					}
+					break;
+				case 29:
+					{
+					setState(182);
 					whileStatement();
 					}
 					break;
@@ -650,7 +700,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class AnnotationContext extends ParserRuleContext {
 		public TerminalNode AnnotationKeyword() { return getToken(qasm3Parser.AnnotationKeyword, 0); }
 		public TerminalNode RemainingLineContent() { return getToken(qasm3Parser.RemainingLineContent, 0); }
@@ -658,6 +707,19 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_annotation; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterAnnotation(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitAnnotation(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitAnnotation(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final AnnotationContext annotation() throws RecognitionException {
@@ -667,14 +729,14 @@ public class qasm3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(182);
+			setState(187);
 			match(AnnotationKeyword);
-			setState(184);
+			setState(189);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==RemainingLineContent) {
 				{
-				setState(183);
+				setState(188);
 				match(RemainingLineContent);
 				}
 			}
@@ -692,20 +754,32 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class ScopeContext extends ParserRuleContext {
 		public TerminalNode LBRACE() { return getToken(qasm3Parser.LBRACE, 0); }
 		public TerminalNode RBRACE() { return getToken(qasm3Parser.RBRACE, 0); }
-		public List<StatementContext> statement() {
-			return getRuleContexts(StatementContext.class);
+		public List<StatementOrScopeContext> statementOrScope() {
+			return getRuleContexts(StatementOrScopeContext.class);
 		}
-		public StatementContext statement(int i) {
-			return getRuleContext(StatementContext.class,i);
+		public StatementOrScopeContext statementOrScope(int i) {
+			return getRuleContext(StatementOrScopeContext.class,i);
 		}
 		public ScopeContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_scope; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterScope(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitScope(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitScope(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ScopeContext scope() throws RecognitionException {
@@ -715,23 +789,23 @@ public class qasm3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(186);
+			setState(191);
 			match(LBRACE);
-			setState(190);
+			setState(195);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & 153051743607308284L) != 0) || ((((_la - 67)) & ~0x3f) == 0 && ((1L << (_la - 67)) & 268179457L) != 0)) {
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << INCLUDE) | (1L << DEFCALGRAMMAR) | (1L << DEF) | (1L << CAL) | (1L << DEFCAL) | (1L << GATE) | (1L << EXTERN) | (1L << BOX) | (1L << LET) | (1L << BREAK) | (1L << CONTINUE) | (1L << IF) | (1L << END) | (1L << RETURN) | (1L << FOR) | (1L << WHILE) | (1L << SWITCH) | (1L << PRAGMA) | (1L << AnnotationKeyword) | (1L << INPUT) | (1L << OUTPUT) | (1L << CONST) | (1L << QREG) | (1L << QUBIT) | (1L << CREG) | (1L << BOOL) | (1L << BIT) | (1L << INT) | (1L << UINT) | (1L << FLOAT) | (1L << ANGLE) | (1L << COMPLEX) | (1L << ARRAY) | (1L << DURATION) | (1L << STRETCH) | (1L << GPHASE) | (1L << INV) | (1L << POW) | (1L << CTRL) | (1L << NEGCTRL) | (1L << DURATIONOF) | (1L << DELAY) | (1L << RESET) | (1L << MEASURE) | (1L << BARRIER) | (1L << BooleanLiteral) | (1L << LBRACE) | (1L << LPAREN))) != 0) || ((((_la - 70)) & ~0x3f) == 0 && ((1L << (_la - 70)) & ((1L << (MINUS - 70)) | (1L << (TILDE - 70)) | (1L << (EXCLAMATION_POINT - 70)) | (1L << (ImaginaryLiteral - 70)) | (1L << (BinaryIntegerLiteral - 70)) | (1L << (OctalIntegerLiteral - 70)) | (1L << (DecimalIntegerLiteral - 70)) | (1L << (HexIntegerLiteral - 70)) | (1L << (Identifier - 70)) | (1L << (HardwareQubit - 70)) | (1L << (FloatLiteral - 70)) | (1L << (TimingLiteral - 70)) | (1L << (BitstringLiteral - 70)))) != 0)) {
 				{
 				{
-				setState(187);
-				statement();
-				}
-				}
 				setState(192);
+				statementOrScope();
+				}
+				}
+				setState(197);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(193);
+			setState(198);
 			match(RBRACE);
 			}
 		}
@@ -746,7 +820,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class PragmaContext extends ParserRuleContext {
 		public TerminalNode PRAGMA() { return getToken(qasm3Parser.PRAGMA, 0); }
 		public TerminalNode RemainingLineContent() { return getToken(qasm3Parser.RemainingLineContent, 0); }
@@ -754,6 +827,19 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_pragma; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterPragma(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitPragma(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitPragma(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final PragmaContext pragma() throws RecognitionException {
@@ -762,9 +848,9 @@ public class qasm3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(195);
+			setState(200);
 			match(PRAGMA);
-			setState(196);
+			setState(201);
 			match(RemainingLineContent);
 			}
 		}
@@ -779,7 +865,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class StatementOrScopeContext extends ParserRuleContext {
 		public StatementContext statement() {
 			return getRuleContext(StatementContext.class,0);
@@ -791,13 +876,26 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_statementOrScope; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterStatementOrScope(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitStatementOrScope(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitStatementOrScope(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final StatementOrScopeContext statementOrScope() throws RecognitionException {
 		StatementOrScopeContext _localctx = new StatementOrScopeContext(_ctx, getState());
 		enterRule(_localctx, 12, RULE_statementOrScope);
 		try {
-			setState(200);
+			setState(205);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case INCLUDE:
@@ -816,6 +914,7 @@ public class qasm3Parser extends Parser {
 			case RETURN:
 			case FOR:
 			case WHILE:
+			case SWITCH:
 			case PRAGMA:
 			case AnnotationKeyword:
 			case INPUT:
@@ -861,14 +960,14 @@ public class qasm3Parser extends Parser {
 			case BitstringLiteral:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(198);
+				setState(203);
 				statement();
 				}
 				break;
 			case LBRACE:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(199);
+				setState(204);
 				scope();
 				}
 				break;
@@ -887,7 +986,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class CalibrationGrammarStatementContext extends ParserRuleContext {
 		public TerminalNode DEFCALGRAMMAR() { return getToken(qasm3Parser.DEFCALGRAMMAR, 0); }
 		public TerminalNode StringLiteral() { return getToken(qasm3Parser.StringLiteral, 0); }
@@ -896,6 +994,19 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_calibrationGrammarStatement; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterCalibrationGrammarStatement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitCalibrationGrammarStatement(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitCalibrationGrammarStatement(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final CalibrationGrammarStatementContext calibrationGrammarStatement() throws RecognitionException {
@@ -904,11 +1015,11 @@ public class qasm3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(202);
+			setState(207);
 			match(DEFCALGRAMMAR);
-			setState(203);
+			setState(208);
 			match(StringLiteral);
-			setState(204);
+			setState(209);
 			match(SEMICOLON);
 			}
 		}
@@ -923,7 +1034,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class IncludeStatementContext extends ParserRuleContext {
 		public TerminalNode INCLUDE() { return getToken(qasm3Parser.INCLUDE, 0); }
 		public TerminalNode StringLiteral() { return getToken(qasm3Parser.StringLiteral, 0); }
@@ -932,6 +1042,19 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_includeStatement; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterIncludeStatement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitIncludeStatement(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitIncludeStatement(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final IncludeStatementContext includeStatement() throws RecognitionException {
@@ -940,11 +1063,11 @@ public class qasm3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(206);
+			setState(211);
 			match(INCLUDE);
-			setState(207);
+			setState(212);
 			match(StringLiteral);
-			setState(208);
+			setState(213);
 			match(SEMICOLON);
 			}
 		}
@@ -959,7 +1082,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class BreakStatementContext extends ParserRuleContext {
 		public TerminalNode BREAK() { return getToken(qasm3Parser.BREAK, 0); }
 		public TerminalNode SEMICOLON() { return getToken(qasm3Parser.SEMICOLON, 0); }
@@ -967,6 +1089,19 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_breakStatement; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterBreakStatement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitBreakStatement(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitBreakStatement(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final BreakStatementContext breakStatement() throws RecognitionException {
@@ -975,9 +1110,9 @@ public class qasm3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(210);
+			setState(215);
 			match(BREAK);
-			setState(211);
+			setState(216);
 			match(SEMICOLON);
 			}
 		}
@@ -992,7 +1127,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class ContinueStatementContext extends ParserRuleContext {
 		public TerminalNode CONTINUE() { return getToken(qasm3Parser.CONTINUE, 0); }
 		public TerminalNode SEMICOLON() { return getToken(qasm3Parser.SEMICOLON, 0); }
@@ -1000,6 +1134,19 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_continueStatement; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterContinueStatement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitContinueStatement(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitContinueStatement(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ContinueStatementContext continueStatement() throws RecognitionException {
@@ -1008,9 +1155,9 @@ public class qasm3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(213);
+			setState(218);
 			match(CONTINUE);
-			setState(214);
+			setState(219);
 			match(SEMICOLON);
 			}
 		}
@@ -1025,7 +1172,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class EndStatementContext extends ParserRuleContext {
 		public TerminalNode END() { return getToken(qasm3Parser.END, 0); }
 		public TerminalNode SEMICOLON() { return getToken(qasm3Parser.SEMICOLON, 0); }
@@ -1033,6 +1179,19 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_endStatement; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterEndStatement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitEndStatement(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitEndStatement(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final EndStatementContext endStatement() throws RecognitionException {
@@ -1041,9 +1200,9 @@ public class qasm3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(216);
+			setState(221);
 			match(END);
-			setState(217);
+			setState(222);
 			match(SEMICOLON);
 			}
 		}
@@ -1058,7 +1217,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class ForStatementContext extends ParserRuleContext {
 		public StatementOrScopeContext body;
 		public TerminalNode FOR() { return getToken(qasm3Parser.FOR, 0); }
@@ -1085,6 +1243,19 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_forStatement; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterForStatement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitForStatement(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitForStatement(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ForStatementContext forStatement() throws RecognitionException {
@@ -1093,30 +1264,30 @@ public class qasm3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(219);
+			setState(224);
 			match(FOR);
-			setState(220);
+			setState(225);
 			scalarType();
-			setState(221);
+			setState(226);
 			match(Identifier);
-			setState(222);
+			setState(227);
 			match(IN);
-			setState(229);
+			setState(234);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case LBRACE:
 				{
-				setState(223);
+				setState(228);
 				setExpression();
 				}
 				break;
 			case LBRACKET:
 				{
-				setState(224);
+				setState(229);
 				match(LBRACKET);
-				setState(225);
+				setState(230);
 				rangeExpression();
-				setState(226);
+				setState(231);
 				match(RBRACKET);
 				}
 				break;
@@ -1147,14 +1318,14 @@ public class qasm3Parser extends Parser {
 			case TimingLiteral:
 			case BitstringLiteral:
 				{
-				setState(228);
+				setState(233);
 				expression(0);
 				}
 				break;
 			default:
 				throw new NoViableAltException(this);
 			}
-			setState(231);
+			setState(236);
 			((ForStatementContext)_localctx).body = statementOrScope();
 			}
 		}
@@ -1169,7 +1340,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class IfStatementContext extends ParserRuleContext {
 		public StatementOrScopeContext if_body;
 		public StatementOrScopeContext else_body;
@@ -1190,6 +1360,19 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_ifStatement; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterIfStatement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitIfStatement(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitIfStatement(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final IfStatementContext ifStatement() throws RecognitionException {
@@ -1198,24 +1381,24 @@ public class qasm3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(233);
+			setState(238);
 			match(IF);
-			setState(234);
+			setState(239);
 			match(LPAREN);
-			setState(235);
-			expression(0);
-			setState(236);
-			match(RPAREN);
-			setState(237);
-			((IfStatementContext)_localctx).if_body = statementOrScope();
 			setState(240);
+			expression(0);
+			setState(241);
+			match(RPAREN);
+			setState(242);
+			((IfStatementContext)_localctx).if_body = statementOrScope();
+			setState(245);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,9,_ctx) ) {
 			case 1:
 				{
-				setState(238);
+				setState(243);
 				match(ELSE);
-				setState(239);
+				setState(244);
 				((IfStatementContext)_localctx).else_body = statementOrScope();
 				}
 				break;
@@ -1233,7 +1416,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class ReturnStatementContext extends ParserRuleContext {
 		public TerminalNode RETURN() { return getToken(qasm3Parser.RETURN, 0); }
 		public TerminalNode SEMICOLON() { return getToken(qasm3Parser.SEMICOLON, 0); }
@@ -1247,6 +1429,19 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_returnStatement; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterReturnStatement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitReturnStatement(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitReturnStatement(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ReturnStatementContext returnStatement() throws RecognitionException {
@@ -1255,9 +1450,9 @@ public class qasm3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(242);
+			setState(247);
 			match(RETURN);
-			setState(245);
+			setState(250);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case BOOL:
@@ -1287,13 +1482,13 @@ public class qasm3Parser extends Parser {
 			case TimingLiteral:
 			case BitstringLiteral:
 				{
-				setState(243);
+				setState(248);
 				expression(0);
 				}
 				break;
 			case MEASURE:
 				{
-				setState(244);
+				setState(249);
 				measureExpression();
 				}
 				break;
@@ -1302,7 +1497,7 @@ public class qasm3Parser extends Parser {
 			default:
 				break;
 			}
-			setState(247);
+			setState(252);
 			match(SEMICOLON);
 			}
 		}
@@ -1317,7 +1512,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class WhileStatementContext extends ParserRuleContext {
 		public StatementOrScopeContext body;
 		public TerminalNode WHILE() { return getToken(qasm3Parser.WHILE, 0); }
@@ -1333,6 +1527,19 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_whileStatement; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterWhileStatement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitWhileStatement(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitWhileStatement(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final WhileStatementContext whileStatement() throws RecognitionException {
@@ -1341,15 +1548,15 @@ public class qasm3Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(249);
+			setState(254);
 			match(WHILE);
-			setState(250);
+			setState(255);
 			match(LPAREN);
-			setState(251);
+			setState(256);
 			expression(0);
-			setState(252);
+			setState(257);
 			match(RPAREN);
-			setState(253);
+			setState(258);
 			((WhileStatementContext)_localctx).body = statementOrScope();
 			}
 		}
@@ -1364,7 +1571,156 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
+	public static class SwitchStatementContext extends ParserRuleContext {
+		public TerminalNode SWITCH() { return getToken(qasm3Parser.SWITCH, 0); }
+		public TerminalNode LPAREN() { return getToken(qasm3Parser.LPAREN, 0); }
+		public ExpressionContext expression() {
+			return getRuleContext(ExpressionContext.class,0);
+		}
+		public TerminalNode RPAREN() { return getToken(qasm3Parser.RPAREN, 0); }
+		public TerminalNode LBRACE() { return getToken(qasm3Parser.LBRACE, 0); }
+		public TerminalNode RBRACE() { return getToken(qasm3Parser.RBRACE, 0); }
+		public List<SwitchCaseItemContext> switchCaseItem() {
+			return getRuleContexts(SwitchCaseItemContext.class);
+		}
+		public SwitchCaseItemContext switchCaseItem(int i) {
+			return getRuleContext(SwitchCaseItemContext.class,i);
+		}
+		public SwitchStatementContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_switchStatement; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterSwitchStatement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitSwitchStatement(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitSwitchStatement(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final SwitchStatementContext switchStatement() throws RecognitionException {
+		SwitchStatementContext _localctx = new SwitchStatementContext(_ctx, getState());
+		enterRule(_localctx, 32, RULE_switchStatement);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(260);
+			match(SWITCH);
+			setState(261);
+			match(LPAREN);
+			setState(262);
+			expression(0);
+			setState(263);
+			match(RPAREN);
+			setState(264);
+			match(LBRACE);
+			setState(268);
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			while (_la==CASE || _la==DEFAULT) {
+				{
+				{
+				setState(265);
+				switchCaseItem();
+				}
+				}
+				setState(270);
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+			}
+			setState(271);
+			match(RBRACE);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class SwitchCaseItemContext extends ParserRuleContext {
+		public TerminalNode CASE() { return getToken(qasm3Parser.CASE, 0); }
+		public ExpressionListContext expressionList() {
+			return getRuleContext(ExpressionListContext.class,0);
+		}
+		public ScopeContext scope() {
+			return getRuleContext(ScopeContext.class,0);
+		}
+		public TerminalNode DEFAULT() { return getToken(qasm3Parser.DEFAULT, 0); }
+		public SwitchCaseItemContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_switchCaseItem; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterSwitchCaseItem(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitSwitchCaseItem(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitSwitchCaseItem(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final SwitchCaseItemContext switchCaseItem() throws RecognitionException {
+		SwitchCaseItemContext _localctx = new SwitchCaseItemContext(_ctx, getState());
+		enterRule(_localctx, 34, RULE_switchCaseItem);
+		try {
+			setState(279);
+			_errHandler.sync(this);
+			switch (_input.LA(1)) {
+			case CASE:
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(273);
+				match(CASE);
+				setState(274);
+				expressionList();
+				setState(275);
+				scope();
+				}
+				break;
+			case DEFAULT:
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(277);
+				match(DEFAULT);
+				setState(278);
+				scope();
+				}
+				break;
+			default:
+				throw new NoViableAltException(this);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
 	public static class BarrierStatementContext extends ParserRuleContext {
 		public TerminalNode BARRIER() { return getToken(qasm3Parser.BARRIER, 0); }
 		public TerminalNode SEMICOLON() { return getToken(qasm3Parser.SEMICOLON, 0); }
@@ -1375,28 +1731,41 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_barrierStatement; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterBarrierStatement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitBarrierStatement(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitBarrierStatement(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final BarrierStatementContext barrierStatement() throws RecognitionException {
 		BarrierStatementContext _localctx = new BarrierStatementContext(_ctx, getState());
-		enterRule(_localctx, 32, RULE_barrierStatement);
+		enterRule(_localctx, 36, RULE_barrierStatement);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(255);
+			setState(281);
 			match(BARRIER);
-			setState(257);
+			setState(283);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==Identifier || _la==HardwareQubit) {
 				{
-				setState(256);
+				setState(282);
 				gateOperandList();
 				}
 			}
 
-			setState(259);
+			setState(285);
 			match(SEMICOLON);
 			}
 		}
@@ -1411,7 +1780,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class BoxStatementContext extends ParserRuleContext {
 		public TerminalNode BOX() { return getToken(qasm3Parser.BOX, 0); }
 		public ScopeContext scope() {
@@ -1424,28 +1792,41 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_boxStatement; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterBoxStatement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitBoxStatement(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitBoxStatement(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final BoxStatementContext boxStatement() throws RecognitionException {
 		BoxStatementContext _localctx = new BoxStatementContext(_ctx, getState());
-		enterRule(_localctx, 34, RULE_boxStatement);
+		enterRule(_localctx, 38, RULE_boxStatement);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(261);
+			setState(287);
 			match(BOX);
-			setState(263);
+			setState(289);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==LBRACKET) {
 				{
-				setState(262);
+				setState(288);
 				designator();
 				}
 			}
 
-			setState(265);
+			setState(291);
 			scope();
 			}
 		}
@@ -1460,7 +1841,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class DelayStatementContext extends ParserRuleContext {
 		public TerminalNode DELAY() { return getToken(qasm3Parser.DELAY, 0); }
 		public DesignatorContext designator() {
@@ -1474,30 +1854,43 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_delayStatement; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterDelayStatement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitDelayStatement(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitDelayStatement(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final DelayStatementContext delayStatement() throws RecognitionException {
 		DelayStatementContext _localctx = new DelayStatementContext(_ctx, getState());
-		enterRule(_localctx, 36, RULE_delayStatement);
+		enterRule(_localctx, 40, RULE_delayStatement);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(267);
+			setState(293);
 			match(DELAY);
-			setState(268);
+			setState(294);
 			designator();
-			setState(270);
+			setState(296);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==Identifier || _la==HardwareQubit) {
 				{
-				setState(269);
+				setState(295);
 				gateOperandList();
 				}
 			}
 
-			setState(272);
+			setState(298);
 			match(SEMICOLON);
 			}
 		}
@@ -1512,7 +1905,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class GateCallStatementContext extends ParserRuleContext {
 		public TerminalNode Identifier() { return getToken(qasm3Parser.Identifier, 0); }
 		public GateOperandListContext gateOperandList() {
@@ -1538,135 +1930,148 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_gateCallStatement; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterGateCallStatement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitGateCallStatement(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitGateCallStatement(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final GateCallStatementContext gateCallStatement() throws RecognitionException {
 		GateCallStatementContext _localctx = new GateCallStatementContext(_ctx, getState());
-		enterRule(_localctx, 38, RULE_gateCallStatement);
+		enterRule(_localctx, 42, RULE_gateCallStatement);
 		int _la;
 		try {
-			setState(315);
+			setState(341);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,23,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,25,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(277);
+				setState(303);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
-				while ((((_la) & ~0x3f) == 0 && ((1L << _la) & 65970697666560L) != 0)) {
+				while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << INV) | (1L << POW) | (1L << CTRL) | (1L << NEGCTRL))) != 0)) {
 					{
 					{
-					setState(274);
+					setState(300);
 					gateModifier();
 					}
 					}
-					setState(279);
+					setState(305);
 					_errHandler.sync(this);
 					_la = _input.LA(1);
 				}
-				setState(280);
+				setState(306);
 				match(Identifier);
-				setState(286);
+				setState(312);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==LPAREN) {
 					{
-					setState(281);
+					setState(307);
 					match(LPAREN);
-					setState(283);
+					setState(309);
 					_errHandler.sync(this);
 					_la = _input.LA(1);
-					if ((((_la) & ~0x3f) == 0 && ((1L << _la) & 148761448263188480L) != 0) || ((((_la - 67)) & ~0x3f) == 0 && ((1L << (_la - 67)) & 268179457L) != 0)) {
+					if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << BOOL) | (1L << BIT) | (1L << INT) | (1L << UINT) | (1L << FLOAT) | (1L << ANGLE) | (1L << COMPLEX) | (1L << ARRAY) | (1L << DURATION) | (1L << STRETCH) | (1L << DURATIONOF) | (1L << BooleanLiteral) | (1L << LPAREN))) != 0) || ((((_la - 70)) & ~0x3f) == 0 && ((1L << (_la - 70)) & ((1L << (MINUS - 70)) | (1L << (TILDE - 70)) | (1L << (EXCLAMATION_POINT - 70)) | (1L << (ImaginaryLiteral - 70)) | (1L << (BinaryIntegerLiteral - 70)) | (1L << (OctalIntegerLiteral - 70)) | (1L << (DecimalIntegerLiteral - 70)) | (1L << (HexIntegerLiteral - 70)) | (1L << (Identifier - 70)) | (1L << (HardwareQubit - 70)) | (1L << (FloatLiteral - 70)) | (1L << (TimingLiteral - 70)) | (1L << (BitstringLiteral - 70)))) != 0)) {
 						{
-						setState(282);
+						setState(308);
 						expressionList();
 						}
 					}
 
-					setState(285);
+					setState(311);
 					match(RPAREN);
 					}
 				}
 
-				setState(289);
+				setState(315);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==LBRACKET) {
 					{
-					setState(288);
+					setState(314);
 					designator();
 					}
 				}
 
-				setState(291);
+				setState(317);
 				gateOperandList();
-				setState(292);
+				setState(318);
 				match(SEMICOLON);
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(297);
+				setState(323);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
-				while ((((_la) & ~0x3f) == 0 && ((1L << _la) & 65970697666560L) != 0)) {
+				while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << INV) | (1L << POW) | (1L << CTRL) | (1L << NEGCTRL))) != 0)) {
 					{
 					{
-					setState(294);
+					setState(320);
 					gateModifier();
 					}
 					}
-					setState(299);
+					setState(325);
 					_errHandler.sync(this);
 					_la = _input.LA(1);
 				}
-				setState(300);
+				setState(326);
 				match(GPHASE);
-				setState(306);
+				setState(332);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==LPAREN) {
 					{
-					setState(301);
+					setState(327);
 					match(LPAREN);
-					setState(303);
+					setState(329);
 					_errHandler.sync(this);
 					_la = _input.LA(1);
-					if ((((_la) & ~0x3f) == 0 && ((1L << _la) & 148761448263188480L) != 0) || ((((_la - 67)) & ~0x3f) == 0 && ((1L << (_la - 67)) & 268179457L) != 0)) {
+					if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << BOOL) | (1L << BIT) | (1L << INT) | (1L << UINT) | (1L << FLOAT) | (1L << ANGLE) | (1L << COMPLEX) | (1L << ARRAY) | (1L << DURATION) | (1L << STRETCH) | (1L << DURATIONOF) | (1L << BooleanLiteral) | (1L << LPAREN))) != 0) || ((((_la - 70)) & ~0x3f) == 0 && ((1L << (_la - 70)) & ((1L << (MINUS - 70)) | (1L << (TILDE - 70)) | (1L << (EXCLAMATION_POINT - 70)) | (1L << (ImaginaryLiteral - 70)) | (1L << (BinaryIntegerLiteral - 70)) | (1L << (OctalIntegerLiteral - 70)) | (1L << (DecimalIntegerLiteral - 70)) | (1L << (HexIntegerLiteral - 70)) | (1L << (Identifier - 70)) | (1L << (HardwareQubit - 70)) | (1L << (FloatLiteral - 70)) | (1L << (TimingLiteral - 70)) | (1L << (BitstringLiteral - 70)))) != 0)) {
 						{
-						setState(302);
+						setState(328);
 						expressionList();
 						}
 					}
 
-					setState(305);
+					setState(331);
 					match(RPAREN);
 					}
 				}
 
-				setState(309);
+				setState(335);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==LBRACKET) {
 					{
-					setState(308);
+					setState(334);
 					designator();
 					}
 				}
 
-				setState(312);
+				setState(338);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==Identifier || _la==HardwareQubit) {
 					{
-					setState(311);
+					setState(337);
 					gateOperandList();
 					}
 				}
 
-				setState(314);
+				setState(340);
 				match(SEMICOLON);
 				}
 				break;
@@ -1683,7 +2088,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class MeasureArrowAssignmentStatementContext extends ParserRuleContext {
 		public MeasureExpressionContext measureExpression() {
 			return getRuleContext(MeasureExpressionContext.class,0);
@@ -1697,30 +2101,43 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_measureArrowAssignmentStatement; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterMeasureArrowAssignmentStatement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitMeasureArrowAssignmentStatement(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitMeasureArrowAssignmentStatement(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final MeasureArrowAssignmentStatementContext measureArrowAssignmentStatement() throws RecognitionException {
 		MeasureArrowAssignmentStatementContext _localctx = new MeasureArrowAssignmentStatementContext(_ctx, getState());
-		enterRule(_localctx, 40, RULE_measureArrowAssignmentStatement);
+		enterRule(_localctx, 44, RULE_measureArrowAssignmentStatement);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(317);
+			setState(343);
 			measureExpression();
-			setState(320);
+			setState(346);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==ARROW) {
 				{
-				setState(318);
+				setState(344);
 				match(ARROW);
-				setState(319);
+				setState(345);
 				indexedIdentifier();
 				}
 			}
 
-			setState(322);
+			setState(348);
 			match(SEMICOLON);
 			}
 		}
@@ -1735,7 +2152,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class ResetStatementContext extends ParserRuleContext {
 		public TerminalNode RESET() { return getToken(qasm3Parser.RESET, 0); }
 		public GateOperandContext gateOperand() {
@@ -1746,19 +2162,32 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_resetStatement; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterResetStatement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitResetStatement(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitResetStatement(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ResetStatementContext resetStatement() throws RecognitionException {
 		ResetStatementContext _localctx = new ResetStatementContext(_ctx, getState());
-		enterRule(_localctx, 42, RULE_resetStatement);
+		enterRule(_localctx, 46, RULE_resetStatement);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(324);
+			setState(350);
 			match(RESET);
-			setState(325);
+			setState(351);
 			gateOperand();
-			setState(326);
+			setState(352);
 			match(SEMICOLON);
 			}
 		}
@@ -1773,7 +2202,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class AliasDeclarationStatementContext extends ParserRuleContext {
 		public TerminalNode LET() { return getToken(qasm3Parser.LET, 0); }
 		public TerminalNode Identifier() { return getToken(qasm3Parser.Identifier, 0); }
@@ -1786,23 +2214,36 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_aliasDeclarationStatement; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterAliasDeclarationStatement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitAliasDeclarationStatement(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitAliasDeclarationStatement(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final AliasDeclarationStatementContext aliasDeclarationStatement() throws RecognitionException {
 		AliasDeclarationStatementContext _localctx = new AliasDeclarationStatementContext(_ctx, getState());
-		enterRule(_localctx, 44, RULE_aliasDeclarationStatement);
+		enterRule(_localctx, 48, RULE_aliasDeclarationStatement);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(328);
+			setState(354);
 			match(LET);
-			setState(329);
+			setState(355);
 			match(Identifier);
-			setState(330);
+			setState(356);
 			match(EQUALS);
-			setState(331);
+			setState(357);
 			aliasExpression();
-			setState(332);
+			setState(358);
 			match(SEMICOLON);
 			}
 		}
@@ -1817,7 +2258,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class ClassicalDeclarationStatementContext extends ParserRuleContext {
 		public TerminalNode Identifier() { return getToken(qasm3Parser.Identifier, 0); }
 		public TerminalNode SEMICOLON() { return getToken(qasm3Parser.SEMICOLON, 0); }
@@ -1835,16 +2275,29 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_classicalDeclarationStatement; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterClassicalDeclarationStatement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitClassicalDeclarationStatement(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitClassicalDeclarationStatement(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ClassicalDeclarationStatementContext classicalDeclarationStatement() throws RecognitionException {
 		ClassicalDeclarationStatementContext _localctx = new ClassicalDeclarationStatementContext(_ctx, getState());
-		enterRule(_localctx, 46, RULE_classicalDeclarationStatement);
+		enterRule(_localctx, 50, RULE_classicalDeclarationStatement);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(336);
+			setState(362);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case BOOL:
@@ -1857,257 +2310,33 @@ public class qasm3Parser extends Parser {
 			case DURATION:
 			case STRETCH:
 				{
-				setState(334);
+				setState(360);
 				scalarType();
 				}
 				break;
 			case ARRAY:
 				{
-				setState(335);
+				setState(361);
 				arrayType();
 				}
 				break;
 			default:
 				throw new NoViableAltException(this);
 			}
-			setState(338);
+			setState(364);
 			match(Identifier);
-			setState(341);
+			setState(367);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==EQUALS) {
 				{
-				setState(339);
+				setState(365);
 				match(EQUALS);
-				setState(340);
+				setState(366);
 				declarationExpression();
 				}
 			}
 
-			setState(343);
-			match(SEMICOLON);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	@SuppressWarnings("CheckReturnValue")
-	public static class ConstDeclarationStatementContext extends ParserRuleContext {
-		public TerminalNode CONST() { return getToken(qasm3Parser.CONST, 0); }
-		public ScalarTypeContext scalarType() {
-			return getRuleContext(ScalarTypeContext.class,0);
-		}
-		public TerminalNode Identifier() { return getToken(qasm3Parser.Identifier, 0); }
-		public TerminalNode EQUALS() { return getToken(qasm3Parser.EQUALS, 0); }
-		public DeclarationExpressionContext declarationExpression() {
-			return getRuleContext(DeclarationExpressionContext.class,0);
-		}
-		public TerminalNode SEMICOLON() { return getToken(qasm3Parser.SEMICOLON, 0); }
-		public ConstDeclarationStatementContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_constDeclarationStatement; }
-	}
-
-	public final ConstDeclarationStatementContext constDeclarationStatement() throws RecognitionException {
-		ConstDeclarationStatementContext _localctx = new ConstDeclarationStatementContext(_ctx, getState());
-		enterRule(_localctx, 48, RULE_constDeclarationStatement);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(345);
-			match(CONST);
-			setState(346);
-			scalarType();
-			setState(347);
-			match(Identifier);
-			setState(348);
-			match(EQUALS);
-			setState(349);
-			declarationExpression();
-			setState(350);
-			match(SEMICOLON);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	@SuppressWarnings("CheckReturnValue")
-	public static class IoDeclarationStatementContext extends ParserRuleContext {
-		public TerminalNode Identifier() { return getToken(qasm3Parser.Identifier, 0); }
-		public TerminalNode SEMICOLON() { return getToken(qasm3Parser.SEMICOLON, 0); }
-		public TerminalNode INPUT() { return getToken(qasm3Parser.INPUT, 0); }
-		public TerminalNode OUTPUT() { return getToken(qasm3Parser.OUTPUT, 0); }
-		public ScalarTypeContext scalarType() {
-			return getRuleContext(ScalarTypeContext.class,0);
-		}
-		public ArrayTypeContext arrayType() {
-			return getRuleContext(ArrayTypeContext.class,0);
-		}
-		public IoDeclarationStatementContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_ioDeclarationStatement; }
-	}
-
-	public final IoDeclarationStatementContext ioDeclarationStatement() throws RecognitionException {
-		IoDeclarationStatementContext _localctx = new IoDeclarationStatementContext(_ctx, getState());
-		enterRule(_localctx, 50, RULE_ioDeclarationStatement);
-		int _la;
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(352);
-			_la = _input.LA(1);
-			if ( !(_la==INPUT || _la==OUTPUT) ) {
-			_errHandler.recoverInline(this);
-			}
-			else {
-				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
-				_errHandler.reportMatch(this);
-				consume();
-			}
-			setState(355);
-			_errHandler.sync(this);
-			switch (_input.LA(1)) {
-			case BOOL:
-			case BIT:
-			case INT:
-			case UINT:
-			case FLOAT:
-			case ANGLE:
-			case COMPLEX:
-			case DURATION:
-			case STRETCH:
-				{
-				setState(353);
-				scalarType();
-				}
-				break;
-			case ARRAY:
-				{
-				setState(354);
-				arrayType();
-				}
-				break;
-			default:
-				throw new NoViableAltException(this);
-			}
-			setState(357);
-			match(Identifier);
-			setState(358);
-			match(SEMICOLON);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	@SuppressWarnings("CheckReturnValue")
-	public static class OldStyleDeclarationStatementContext extends ParserRuleContext {
-		public TerminalNode Identifier() { return getToken(qasm3Parser.Identifier, 0); }
-		public TerminalNode SEMICOLON() { return getToken(qasm3Parser.SEMICOLON, 0); }
-		public TerminalNode CREG() { return getToken(qasm3Parser.CREG, 0); }
-		public TerminalNode QREG() { return getToken(qasm3Parser.QREG, 0); }
-		public DesignatorContext designator() {
-			return getRuleContext(DesignatorContext.class,0);
-		}
-		public OldStyleDeclarationStatementContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_oldStyleDeclarationStatement; }
-	}
-
-	public final OldStyleDeclarationStatementContext oldStyleDeclarationStatement() throws RecognitionException {
-		OldStyleDeclarationStatementContext _localctx = new OldStyleDeclarationStatementContext(_ctx, getState());
-		enterRule(_localctx, 52, RULE_oldStyleDeclarationStatement);
-		int _la;
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(360);
-			_la = _input.LA(1);
-			if ( !(_la==QREG || _la==CREG) ) {
-			_errHandler.recoverInline(this);
-			}
-			else {
-				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
-				_errHandler.reportMatch(this);
-				consume();
-			}
-			setState(361);
-			match(Identifier);
-			setState(363);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			if (_la==LBRACKET) {
-				{
-				setState(362);
-				designator();
-				}
-			}
-
-			setState(365);
-			match(SEMICOLON);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	@SuppressWarnings("CheckReturnValue")
-	public static class QuantumDeclarationStatementContext extends ParserRuleContext {
-		public QubitTypeContext qubitType() {
-			return getRuleContext(QubitTypeContext.class,0);
-		}
-		public TerminalNode Identifier() { return getToken(qasm3Parser.Identifier, 0); }
-		public TerminalNode SEMICOLON() { return getToken(qasm3Parser.SEMICOLON, 0); }
-		public QuantumDeclarationStatementContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_quantumDeclarationStatement; }
-	}
-
-	public final QuantumDeclarationStatementContext quantumDeclarationStatement() throws RecognitionException {
-		QuantumDeclarationStatementContext _localctx = new QuantumDeclarationStatementContext(_ctx, getState());
-		enterRule(_localctx, 54, RULE_quantumDeclarationStatement);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(367);
-			qubitType();
-			setState(368);
-			match(Identifier);
 			setState(369);
 			match(SEMICOLON);
 			}
@@ -2123,7 +2352,278 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
+	public static class ConstDeclarationStatementContext extends ParserRuleContext {
+		public TerminalNode CONST() { return getToken(qasm3Parser.CONST, 0); }
+		public ScalarTypeContext scalarType() {
+			return getRuleContext(ScalarTypeContext.class,0);
+		}
+		public TerminalNode Identifier() { return getToken(qasm3Parser.Identifier, 0); }
+		public TerminalNode EQUALS() { return getToken(qasm3Parser.EQUALS, 0); }
+		public DeclarationExpressionContext declarationExpression() {
+			return getRuleContext(DeclarationExpressionContext.class,0);
+		}
+		public TerminalNode SEMICOLON() { return getToken(qasm3Parser.SEMICOLON, 0); }
+		public ConstDeclarationStatementContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_constDeclarationStatement; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterConstDeclarationStatement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitConstDeclarationStatement(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitConstDeclarationStatement(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final ConstDeclarationStatementContext constDeclarationStatement() throws RecognitionException {
+		ConstDeclarationStatementContext _localctx = new ConstDeclarationStatementContext(_ctx, getState());
+		enterRule(_localctx, 52, RULE_constDeclarationStatement);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(371);
+			match(CONST);
+			setState(372);
+			scalarType();
+			setState(373);
+			match(Identifier);
+			setState(374);
+			match(EQUALS);
+			setState(375);
+			declarationExpression();
+			setState(376);
+			match(SEMICOLON);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class IoDeclarationStatementContext extends ParserRuleContext {
+		public TerminalNode Identifier() { return getToken(qasm3Parser.Identifier, 0); }
+		public TerminalNode SEMICOLON() { return getToken(qasm3Parser.SEMICOLON, 0); }
+		public TerminalNode INPUT() { return getToken(qasm3Parser.INPUT, 0); }
+		public TerminalNode OUTPUT() { return getToken(qasm3Parser.OUTPUT, 0); }
+		public ScalarTypeContext scalarType() {
+			return getRuleContext(ScalarTypeContext.class,0);
+		}
+		public ArrayTypeContext arrayType() {
+			return getRuleContext(ArrayTypeContext.class,0);
+		}
+		public IoDeclarationStatementContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_ioDeclarationStatement; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterIoDeclarationStatement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitIoDeclarationStatement(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitIoDeclarationStatement(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final IoDeclarationStatementContext ioDeclarationStatement() throws RecognitionException {
+		IoDeclarationStatementContext _localctx = new IoDeclarationStatementContext(_ctx, getState());
+		enterRule(_localctx, 54, RULE_ioDeclarationStatement);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(378);
+			_la = _input.LA(1);
+			if ( !(_la==INPUT || _la==OUTPUT) ) {
+			_errHandler.recoverInline(this);
+			}
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
+				consume();
+			}
+			setState(381);
+			_errHandler.sync(this);
+			switch (_input.LA(1)) {
+			case BOOL:
+			case BIT:
+			case INT:
+			case UINT:
+			case FLOAT:
+			case ANGLE:
+			case COMPLEX:
+			case DURATION:
+			case STRETCH:
+				{
+				setState(379);
+				scalarType();
+				}
+				break;
+			case ARRAY:
+				{
+				setState(380);
+				arrayType();
+				}
+				break;
+			default:
+				throw new NoViableAltException(this);
+			}
+			setState(383);
+			match(Identifier);
+			setState(384);
+			match(SEMICOLON);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class OldStyleDeclarationStatementContext extends ParserRuleContext {
+		public TerminalNode Identifier() { return getToken(qasm3Parser.Identifier, 0); }
+		public TerminalNode SEMICOLON() { return getToken(qasm3Parser.SEMICOLON, 0); }
+		public TerminalNode CREG() { return getToken(qasm3Parser.CREG, 0); }
+		public TerminalNode QREG() { return getToken(qasm3Parser.QREG, 0); }
+		public DesignatorContext designator() {
+			return getRuleContext(DesignatorContext.class,0);
+		}
+		public OldStyleDeclarationStatementContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_oldStyleDeclarationStatement; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterOldStyleDeclarationStatement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitOldStyleDeclarationStatement(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitOldStyleDeclarationStatement(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final OldStyleDeclarationStatementContext oldStyleDeclarationStatement() throws RecognitionException {
+		OldStyleDeclarationStatementContext _localctx = new OldStyleDeclarationStatementContext(_ctx, getState());
+		enterRule(_localctx, 56, RULE_oldStyleDeclarationStatement);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(386);
+			_la = _input.LA(1);
+			if ( !(_la==QREG || _la==CREG) ) {
+			_errHandler.recoverInline(this);
+			}
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
+				consume();
+			}
+			setState(387);
+			match(Identifier);
+			setState(389);
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			if (_la==LBRACKET) {
+				{
+				setState(388);
+				designator();
+				}
+			}
+
+			setState(391);
+			match(SEMICOLON);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class QuantumDeclarationStatementContext extends ParserRuleContext {
+		public QubitTypeContext qubitType() {
+			return getRuleContext(QubitTypeContext.class,0);
+		}
+		public TerminalNode Identifier() { return getToken(qasm3Parser.Identifier, 0); }
+		public TerminalNode SEMICOLON() { return getToken(qasm3Parser.SEMICOLON, 0); }
+		public QuantumDeclarationStatementContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_quantumDeclarationStatement; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterQuantumDeclarationStatement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitQuantumDeclarationStatement(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitQuantumDeclarationStatement(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final QuantumDeclarationStatementContext quantumDeclarationStatement() throws RecognitionException {
+		QuantumDeclarationStatementContext _localctx = new QuantumDeclarationStatementContext(_ctx, getState());
+		enterRule(_localctx, 58, RULE_quantumDeclarationStatement);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(393);
+			qubitType();
+			setState(394);
+			match(Identifier);
+			setState(395);
+			match(SEMICOLON);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
 	public static class DefStatementContext extends ParserRuleContext {
 		public TerminalNode DEF() { return getToken(qasm3Parser.DEF, 0); }
 		public TerminalNode Identifier() { return getToken(qasm3Parser.Identifier, 0); }
@@ -2142,44 +2642,57 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_defStatement; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterDefStatement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitDefStatement(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitDefStatement(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final DefStatementContext defStatement() throws RecognitionException {
 		DefStatementContext _localctx = new DefStatementContext(_ctx, getState());
-		enterRule(_localctx, 56, RULE_defStatement);
+		enterRule(_localctx, 60, RULE_defStatement);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(371);
+			setState(397);
 			match(DEF);
-			setState(372);
+			setState(398);
 			match(Identifier);
-			setState(373);
+			setState(399);
 			match(LPAREN);
-			setState(375);
+			setState(401);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & 1786672840704L) != 0)) {
+			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << READONLY) | (1L << MUTABLE) | (1L << QREG) | (1L << QUBIT) | (1L << CREG) | (1L << BOOL) | (1L << BIT) | (1L << INT) | (1L << UINT) | (1L << FLOAT) | (1L << ANGLE) | (1L << COMPLEX) | (1L << DURATION) | (1L << STRETCH))) != 0)) {
 				{
-				setState(374);
+				setState(400);
 				argumentDefinitionList();
 				}
 			}
 
-			setState(377);
+			setState(403);
 			match(RPAREN);
-			setState(379);
+			setState(405);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==ARROW) {
 				{
-				setState(378);
+				setState(404);
 				returnSignature();
 				}
 			}
 
-			setState(381);
+			setState(407);
 			scope();
 			}
 		}
@@ -2194,7 +2707,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class ExternStatementContext extends ParserRuleContext {
 		public TerminalNode EXTERN() { return getToken(qasm3Parser.EXTERN, 0); }
 		public TerminalNode Identifier() { return getToken(qasm3Parser.Identifier, 0); }
@@ -2211,44 +2723,57 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_externStatement; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterExternStatement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitExternStatement(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitExternStatement(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ExternStatementContext externStatement() throws RecognitionException {
 		ExternStatementContext _localctx = new ExternStatementContext(_ctx, getState());
-		enterRule(_localctx, 58, RULE_externStatement);
+		enterRule(_localctx, 62, RULE_externStatement);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(383);
+			setState(409);
 			match(EXTERN);
-			setState(384);
+			setState(410);
 			match(Identifier);
-			setState(385);
+			setState(411);
 			match(LPAREN);
-			setState(387);
+			setState(413);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & 1786270187520L) != 0)) {
+			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << READONLY) | (1L << MUTABLE) | (1L << CREG) | (1L << BOOL) | (1L << BIT) | (1L << INT) | (1L << UINT) | (1L << FLOAT) | (1L << ANGLE) | (1L << COMPLEX) | (1L << DURATION) | (1L << STRETCH))) != 0)) {
 				{
-				setState(386);
+				setState(412);
 				externArgumentList();
 				}
 			}
 
-			setState(389);
+			setState(415);
 			match(RPAREN);
-			setState(391);
+			setState(417);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==ARROW) {
 				{
-				setState(390);
+				setState(416);
 				returnSignature();
 				}
 			}
 
-			setState(393);
+			setState(419);
 			match(SEMICOLON);
 			}
 		}
@@ -2263,7 +2788,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class GateStatementContext extends ParserRuleContext {
 		public IdentifierListContext params;
 		public IdentifierListContext qubits;
@@ -2284,44 +2808,57 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_gateStatement; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterGateStatement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitGateStatement(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitGateStatement(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final GateStatementContext gateStatement() throws RecognitionException {
 		GateStatementContext _localctx = new GateStatementContext(_ctx, getState());
-		enterRule(_localctx, 60, RULE_gateStatement);
+		enterRule(_localctx, 64, RULE_gateStatement);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(395);
+			setState(421);
 			match(GATE);
-			setState(396);
+			setState(422);
 			match(Identifier);
-			setState(402);
+			setState(428);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==LPAREN) {
 				{
-				setState(397);
+				setState(423);
 				match(LPAREN);
-				setState(399);
+				setState(425);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==Identifier) {
 					{
-					setState(398);
+					setState(424);
 					((GateStatementContext)_localctx).params = identifierList();
 					}
 				}
 
-				setState(401);
+				setState(427);
 				match(RPAREN);
 				}
 			}
 
-			setState(404);
+			setState(430);
 			((GateStatementContext)_localctx).qubits = identifierList();
-			setState(405);
+			setState(431);
 			scope();
 			}
 		}
@@ -2336,7 +2873,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class AssignmentStatementContext extends ParserRuleContext {
 		public Token op;
 		public IndexedIdentifierContext indexedIdentifier() {
@@ -2355,18 +2891,31 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_assignmentStatement; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterAssignmentStatement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitAssignmentStatement(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitAssignmentStatement(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final AssignmentStatementContext assignmentStatement() throws RecognitionException {
 		AssignmentStatementContext _localctx = new AssignmentStatementContext(_ctx, getState());
-		enterRule(_localctx, 62, RULE_assignmentStatement);
+		enterRule(_localctx, 66, RULE_assignmentStatement);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(407);
+			setState(433);
 			indexedIdentifier();
-			setState(408);
+			setState(434);
 			((AssignmentStatementContext)_localctx).op = _input.LT(1);
 			_la = _input.LA(1);
 			if ( !(_la==EQUALS || _la==CompoundAssignmentOperator) ) {
@@ -2377,7 +2926,7 @@ public class qasm3Parser extends Parser {
 				_errHandler.reportMatch(this);
 				consume();
 			}
-			setState(411);
+			setState(437);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case BOOL:
@@ -2407,20 +2956,20 @@ public class qasm3Parser extends Parser {
 			case TimingLiteral:
 			case BitstringLiteral:
 				{
-				setState(409);
+				setState(435);
 				expression(0);
 				}
 				break;
 			case MEASURE:
 				{
-				setState(410);
+				setState(436);
 				measureExpression();
 				}
 				break;
 			default:
 				throw new NoViableAltException(this);
 			}
-			setState(413);
+			setState(439);
 			match(SEMICOLON);
 			}
 		}
@@ -2435,7 +2984,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class ExpressionStatementContext extends ParserRuleContext {
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
@@ -2445,17 +2993,30 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_expressionStatement; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterExpressionStatement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitExpressionStatement(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitExpressionStatement(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ExpressionStatementContext expressionStatement() throws RecognitionException {
 		ExpressionStatementContext _localctx = new ExpressionStatementContext(_ctx, getState());
-		enterRule(_localctx, 64, RULE_expressionStatement);
+		enterRule(_localctx, 68, RULE_expressionStatement);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(415);
+			setState(441);
 			expression(0);
-			setState(416);
+			setState(442);
 			match(SEMICOLON);
 			}
 		}
@@ -2470,7 +3031,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class CalStatementContext extends ParserRuleContext {
 		public TerminalNode CAL() { return getToken(qasm3Parser.CAL, 0); }
 		public TerminalNode LBRACE() { return getToken(qasm3Parser.LBRACE, 0); }
@@ -2480,30 +3040,43 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_calStatement; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterCalStatement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitCalStatement(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitCalStatement(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final CalStatementContext calStatement() throws RecognitionException {
 		CalStatementContext _localctx = new CalStatementContext(_ctx, getState());
-		enterRule(_localctx, 66, RULE_calStatement);
+		enterRule(_localctx, 70, RULE_calStatement);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(418);
+			setState(444);
 			match(CAL);
-			setState(419);
+			setState(445);
 			match(LBRACE);
-			setState(421);
+			setState(447);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==CalibrationBlock) {
 				{
-				setState(420);
+				setState(446);
 				match(CalibrationBlock);
 				}
 			}
 
-			setState(423);
+			setState(449);
 			match(RBRACE);
 			}
 		}
@@ -2518,7 +3091,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class DefcalStatementContext extends ParserRuleContext {
 		public TerminalNode DEFCAL() { return getToken(qasm3Parser.DEFCAL, 0); }
 		public DefcalTargetContext defcalTarget() {
@@ -2542,66 +3114,79 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_defcalStatement; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterDefcalStatement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitDefcalStatement(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitDefcalStatement(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final DefcalStatementContext defcalStatement() throws RecognitionException {
 		DefcalStatementContext _localctx = new DefcalStatementContext(_ctx, getState());
-		enterRule(_localctx, 68, RULE_defcalStatement);
+		enterRule(_localctx, 72, RULE_defcalStatement);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(425);
+			setState(451);
 			match(DEFCAL);
-			setState(426);
+			setState(452);
 			defcalTarget();
-			setState(432);
+			setState(458);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==LPAREN) {
 				{
-				setState(427);
+				setState(453);
 				match(LPAREN);
-				setState(429);
+				setState(455);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
-				if ((((_la) & ~0x3f) == 0 && ((1L << _la) & 148761449303375872L) != 0) || ((((_la - 67)) & ~0x3f) == 0 && ((1L << (_la - 67)) & 268179457L) != 0)) {
+				if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << READONLY) | (1L << MUTABLE) | (1L << QREG) | (1L << QUBIT) | (1L << CREG) | (1L << BOOL) | (1L << BIT) | (1L << INT) | (1L << UINT) | (1L << FLOAT) | (1L << ANGLE) | (1L << COMPLEX) | (1L << ARRAY) | (1L << DURATION) | (1L << STRETCH) | (1L << DURATIONOF) | (1L << BooleanLiteral) | (1L << LPAREN))) != 0) || ((((_la - 70)) & ~0x3f) == 0 && ((1L << (_la - 70)) & ((1L << (MINUS - 70)) | (1L << (TILDE - 70)) | (1L << (EXCLAMATION_POINT - 70)) | (1L << (ImaginaryLiteral - 70)) | (1L << (BinaryIntegerLiteral - 70)) | (1L << (OctalIntegerLiteral - 70)) | (1L << (DecimalIntegerLiteral - 70)) | (1L << (HexIntegerLiteral - 70)) | (1L << (Identifier - 70)) | (1L << (HardwareQubit - 70)) | (1L << (FloatLiteral - 70)) | (1L << (TimingLiteral - 70)) | (1L << (BitstringLiteral - 70)))) != 0)) {
 					{
-					setState(428);
+					setState(454);
 					defcalArgumentDefinitionList();
 					}
 				}
 
-				setState(431);
+				setState(457);
 				match(RPAREN);
 				}
 			}
 
-			setState(434);
+			setState(460);
 			defcalOperandList();
-			setState(436);
+			setState(462);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==ARROW) {
 				{
-				setState(435);
+				setState(461);
 				returnSignature();
 				}
 			}
 
-			setState(438);
+			setState(464);
 			match(LBRACE);
-			setState(440);
+			setState(466);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==CalibrationBlock) {
 				{
-				setState(439);
+				setState(465);
 				match(CalibrationBlock);
 				}
 			}
 
-			setState(442);
+			setState(468);
 			match(RBRACE);
 			}
 		}
@@ -2616,7 +3201,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class ExpressionContext extends ParserRuleContext {
 		public ExpressionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -2628,7 +3212,6 @@ public class qasm3Parser extends Parser {
 			super.copyFrom(ctx);
 		}
 	}
-	@SuppressWarnings("CheckReturnValue")
 	public static class BitwiseXorExpressionContext extends ExpressionContext {
 		public Token op;
 		public List<ExpressionContext> expression() {
@@ -2639,8 +3222,20 @@ public class qasm3Parser extends Parser {
 		}
 		public TerminalNode CARET() { return getToken(qasm3Parser.CARET, 0); }
 		public BitwiseXorExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterBitwiseXorExpression(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitBitwiseXorExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitBitwiseXorExpression(this);
+			else return visitor.visitChildren(this);
+		}
 	}
-	@SuppressWarnings("CheckReturnValue")
 	public static class AdditiveExpressionContext extends ExpressionContext {
 		public Token op;
 		public List<ExpressionContext> expression() {
@@ -2652,8 +3247,20 @@ public class qasm3Parser extends Parser {
 		public TerminalNode PLUS() { return getToken(qasm3Parser.PLUS, 0); }
 		public TerminalNode MINUS() { return getToken(qasm3Parser.MINUS, 0); }
 		public AdditiveExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterAdditiveExpression(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitAdditiveExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitAdditiveExpression(this);
+			else return visitor.visitChildren(this);
+		}
 	}
-	@SuppressWarnings("CheckReturnValue")
 	public static class DurationofExpressionContext extends ExpressionContext {
 		public TerminalNode DURATIONOF() { return getToken(qasm3Parser.DURATIONOF, 0); }
 		public TerminalNode LPAREN() { return getToken(qasm3Parser.LPAREN, 0); }
@@ -2662,8 +3269,20 @@ public class qasm3Parser extends Parser {
 		}
 		public TerminalNode RPAREN() { return getToken(qasm3Parser.RPAREN, 0); }
 		public DurationofExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterDurationofExpression(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitDurationofExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitDurationofExpression(this);
+			else return visitor.visitChildren(this);
+		}
 	}
-	@SuppressWarnings("CheckReturnValue")
 	public static class ParenthesisExpressionContext extends ExpressionContext {
 		public TerminalNode LPAREN() { return getToken(qasm3Parser.LPAREN, 0); }
 		public ExpressionContext expression() {
@@ -2671,8 +3290,20 @@ public class qasm3Parser extends Parser {
 		}
 		public TerminalNode RPAREN() { return getToken(qasm3Parser.RPAREN, 0); }
 		public ParenthesisExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterParenthesisExpression(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitParenthesisExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitParenthesisExpression(this);
+			else return visitor.visitChildren(this);
+		}
 	}
-	@SuppressWarnings("CheckReturnValue")
 	public static class ComparisonExpressionContext extends ExpressionContext {
 		public Token op;
 		public List<ExpressionContext> expression() {
@@ -2683,8 +3314,20 @@ public class qasm3Parser extends Parser {
 		}
 		public TerminalNode ComparisonOperator() { return getToken(qasm3Parser.ComparisonOperator, 0); }
 		public ComparisonExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterComparisonExpression(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitComparisonExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitComparisonExpression(this);
+			else return visitor.visitChildren(this);
+		}
 	}
-	@SuppressWarnings("CheckReturnValue")
 	public static class MultiplicativeExpressionContext extends ExpressionContext {
 		public Token op;
 		public List<ExpressionContext> expression() {
@@ -2697,8 +3340,20 @@ public class qasm3Parser extends Parser {
 		public TerminalNode SLASH() { return getToken(qasm3Parser.SLASH, 0); }
 		public TerminalNode PERCENT() { return getToken(qasm3Parser.PERCENT, 0); }
 		public MultiplicativeExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterMultiplicativeExpression(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitMultiplicativeExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitMultiplicativeExpression(this);
+			else return visitor.visitChildren(this);
+		}
 	}
-	@SuppressWarnings("CheckReturnValue")
 	public static class LogicalOrExpressionContext extends ExpressionContext {
 		public Token op;
 		public List<ExpressionContext> expression() {
@@ -2709,8 +3364,20 @@ public class qasm3Parser extends Parser {
 		}
 		public TerminalNode DOUBLE_PIPE() { return getToken(qasm3Parser.DOUBLE_PIPE, 0); }
 		public LogicalOrExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterLogicalOrExpression(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitLogicalOrExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitLogicalOrExpression(this);
+			else return visitor.visitChildren(this);
+		}
 	}
-	@SuppressWarnings("CheckReturnValue")
 	public static class CastExpressionContext extends ExpressionContext {
 		public TerminalNode LPAREN() { return getToken(qasm3Parser.LPAREN, 0); }
 		public ExpressionContext expression() {
@@ -2724,8 +3391,20 @@ public class qasm3Parser extends Parser {
 			return getRuleContext(ArrayTypeContext.class,0);
 		}
 		public CastExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterCastExpression(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitCastExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitCastExpression(this);
+			else return visitor.visitChildren(this);
+		}
 	}
-	@SuppressWarnings("CheckReturnValue")
 	public static class PowerExpressionContext extends ExpressionContext {
 		public Token op;
 		public List<ExpressionContext> expression() {
@@ -2736,8 +3415,20 @@ public class qasm3Parser extends Parser {
 		}
 		public TerminalNode DOUBLE_ASTERISK() { return getToken(qasm3Parser.DOUBLE_ASTERISK, 0); }
 		public PowerExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterPowerExpression(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitPowerExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitPowerExpression(this);
+			else return visitor.visitChildren(this);
+		}
 	}
-	@SuppressWarnings("CheckReturnValue")
 	public static class BitwiseOrExpressionContext extends ExpressionContext {
 		public Token op;
 		public List<ExpressionContext> expression() {
@@ -2748,8 +3439,20 @@ public class qasm3Parser extends Parser {
 		}
 		public TerminalNode PIPE() { return getToken(qasm3Parser.PIPE, 0); }
 		public BitwiseOrExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterBitwiseOrExpression(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitBitwiseOrExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitBitwiseOrExpression(this);
+			else return visitor.visitChildren(this);
+		}
 	}
-	@SuppressWarnings("CheckReturnValue")
 	public static class CallExpressionContext extends ExpressionContext {
 		public TerminalNode Identifier() { return getToken(qasm3Parser.Identifier, 0); }
 		public TerminalNode LPAREN() { return getToken(qasm3Parser.LPAREN, 0); }
@@ -2758,8 +3461,20 @@ public class qasm3Parser extends Parser {
 			return getRuleContext(ExpressionListContext.class,0);
 		}
 		public CallExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterCallExpression(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitCallExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitCallExpression(this);
+			else return visitor.visitChildren(this);
+		}
 	}
-	@SuppressWarnings("CheckReturnValue")
 	public static class BitshiftExpressionContext extends ExpressionContext {
 		public Token op;
 		public List<ExpressionContext> expression() {
@@ -2770,8 +3485,20 @@ public class qasm3Parser extends Parser {
 		}
 		public TerminalNode BitshiftOperator() { return getToken(qasm3Parser.BitshiftOperator, 0); }
 		public BitshiftExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterBitshiftExpression(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitBitshiftExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitBitshiftExpression(this);
+			else return visitor.visitChildren(this);
+		}
 	}
-	@SuppressWarnings("CheckReturnValue")
 	public static class BitwiseAndExpressionContext extends ExpressionContext {
 		public Token op;
 		public List<ExpressionContext> expression() {
@@ -2782,8 +3509,20 @@ public class qasm3Parser extends Parser {
 		}
 		public TerminalNode AMPERSAND() { return getToken(qasm3Parser.AMPERSAND, 0); }
 		public BitwiseAndExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterBitwiseAndExpression(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitBitwiseAndExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitBitwiseAndExpression(this);
+			else return visitor.visitChildren(this);
+		}
 	}
-	@SuppressWarnings("CheckReturnValue")
 	public static class EqualityExpressionContext extends ExpressionContext {
 		public Token op;
 		public List<ExpressionContext> expression() {
@@ -2794,8 +3533,20 @@ public class qasm3Parser extends Parser {
 		}
 		public TerminalNode EqualityOperator() { return getToken(qasm3Parser.EqualityOperator, 0); }
 		public EqualityExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterEqualityExpression(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitEqualityExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitEqualityExpression(this);
+			else return visitor.visitChildren(this);
+		}
 	}
-	@SuppressWarnings("CheckReturnValue")
 	public static class LogicalAndExpressionContext extends ExpressionContext {
 		public Token op;
 		public List<ExpressionContext> expression() {
@@ -2806,8 +3557,20 @@ public class qasm3Parser extends Parser {
 		}
 		public TerminalNode DOUBLE_AMPERSAND() { return getToken(qasm3Parser.DOUBLE_AMPERSAND, 0); }
 		public LogicalAndExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterLogicalAndExpression(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitLogicalAndExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitLogicalAndExpression(this);
+			else return visitor.visitChildren(this);
+		}
 	}
-	@SuppressWarnings("CheckReturnValue")
 	public static class IndexExpressionContext extends ExpressionContext {
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
@@ -2816,8 +3579,20 @@ public class qasm3Parser extends Parser {
 			return getRuleContext(IndexOperatorContext.class,0);
 		}
 		public IndexExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterIndexExpression(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitIndexExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitIndexExpression(this);
+			else return visitor.visitChildren(this);
+		}
 	}
-	@SuppressWarnings("CheckReturnValue")
 	public static class UnaryExpressionContext extends ExpressionContext {
 		public Token op;
 		public ExpressionContext expression() {
@@ -2827,8 +3602,20 @@ public class qasm3Parser extends Parser {
 		public TerminalNode EXCLAMATION_POINT() { return getToken(qasm3Parser.EXCLAMATION_POINT, 0); }
 		public TerminalNode MINUS() { return getToken(qasm3Parser.MINUS, 0); }
 		public UnaryExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterUnaryExpression(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitUnaryExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitUnaryExpression(this);
+			else return visitor.visitChildren(this);
+		}
 	}
-	@SuppressWarnings("CheckReturnValue")
 	public static class LiteralExpressionContext extends ExpressionContext {
 		public TerminalNode Identifier() { return getToken(qasm3Parser.Identifier, 0); }
 		public TerminalNode BinaryIntegerLiteral() { return getToken(qasm3Parser.BinaryIntegerLiteral, 0); }
@@ -2842,6 +3629,19 @@ public class qasm3Parser extends Parser {
 		public TerminalNode TimingLiteral() { return getToken(qasm3Parser.TimingLiteral, 0); }
 		public TerminalNode HardwareQubit() { return getToken(qasm3Parser.HardwareQubit, 0); }
 		public LiteralExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterLiteralExpression(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitLiteralExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitLiteralExpression(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ExpressionContext expression() throws RecognitionException {
@@ -2853,27 +3653,27 @@ public class qasm3Parser extends Parser {
 		int _parentState = getState();
 		ExpressionContext _localctx = new ExpressionContext(_ctx, _parentState);
 		ExpressionContext _prevctx = _localctx;
-		int _startState = 70;
-		enterRecursionRule(_localctx, 70, RULE_expression, _p);
+		int _startState = 74;
+		enterRecursionRule(_localctx, 74, RULE_expression, _p);
 		int _la;
 		try {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(471);
+			setState(497);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,43,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,45,_ctx) ) {
 			case 1:
 				{
 				_localctx = new ParenthesisExpressionContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
 
-				setState(445);
+				setState(471);
 				match(LPAREN);
-				setState(446);
+				setState(472);
 				expression(0);
-				setState(447);
+				setState(473);
 				match(RPAREN);
 				}
 				break;
@@ -2882,10 +3682,10 @@ public class qasm3Parser extends Parser {
 				_localctx = new UnaryExpressionContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(449);
+				setState(475);
 				((UnaryExpressionContext)_localctx).op = _input.LT(1);
 				_la = _input.LA(1);
-				if ( !(((((_la - 67)) & ~0x3f) == 0 && ((1L << (_la - 67)) & 6145L) != 0)) ) {
+				if ( !(((((_la - 70)) & ~0x3f) == 0 && ((1L << (_la - 70)) & ((1L << (MINUS - 70)) | (1L << (TILDE - 70)) | (1L << (EXCLAMATION_POINT - 70)))) != 0)) ) {
 					((UnaryExpressionContext)_localctx).op = (Token)_errHandler.recoverInline(this);
 				}
 				else {
@@ -2893,7 +3693,7 @@ public class qasm3Parser extends Parser {
 					_errHandler.reportMatch(this);
 					consume();
 				}
-				setState(450);
+				setState(476);
 				expression(15);
 				}
 				break;
@@ -2902,7 +3702,7 @@ public class qasm3Parser extends Parser {
 				_localctx = new CastExpressionContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(453);
+				setState(479);
 				_errHandler.sync(this);
 				switch (_input.LA(1)) {
 				case BOOL:
@@ -2915,24 +3715,24 @@ public class qasm3Parser extends Parser {
 				case DURATION:
 				case STRETCH:
 					{
-					setState(451);
+					setState(477);
 					scalarType();
 					}
 					break;
 				case ARRAY:
 					{
-					setState(452);
+					setState(478);
 					arrayType();
 					}
 					break;
 				default:
 					throw new NoViableAltException(this);
 				}
-				setState(455);
+				setState(481);
 				match(LPAREN);
-				setState(456);
+				setState(482);
 				expression(0);
-				setState(457);
+				setState(483);
 				match(RPAREN);
 				}
 				break;
@@ -2941,13 +3741,13 @@ public class qasm3Parser extends Parser {
 				_localctx = new DurationofExpressionContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(459);
+				setState(485);
 				match(DURATIONOF);
-				setState(460);
+				setState(486);
 				match(LPAREN);
-				setState(461);
+				setState(487);
 				scope();
-				setState(462);
+				setState(488);
 				match(RPAREN);
 				}
 				break;
@@ -2956,21 +3756,21 @@ public class qasm3Parser extends Parser {
 				_localctx = new CallExpressionContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(464);
+				setState(490);
 				match(Identifier);
-				setState(465);
+				setState(491);
 				match(LPAREN);
-				setState(467);
+				setState(493);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
-				if ((((_la) & ~0x3f) == 0 && ((1L << _la) & 148761448263188480L) != 0) || ((((_la - 67)) & ~0x3f) == 0 && ((1L << (_la - 67)) & 268179457L) != 0)) {
+				if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << BOOL) | (1L << BIT) | (1L << INT) | (1L << UINT) | (1L << FLOAT) | (1L << ANGLE) | (1L << COMPLEX) | (1L << ARRAY) | (1L << DURATION) | (1L << STRETCH) | (1L << DURATIONOF) | (1L << BooleanLiteral) | (1L << LPAREN))) != 0) || ((((_la - 70)) & ~0x3f) == 0 && ((1L << (_la - 70)) & ((1L << (MINUS - 70)) | (1L << (TILDE - 70)) | (1L << (EXCLAMATION_POINT - 70)) | (1L << (ImaginaryLiteral - 70)) | (1L << (BinaryIntegerLiteral - 70)) | (1L << (OctalIntegerLiteral - 70)) | (1L << (DecimalIntegerLiteral - 70)) | (1L << (HexIntegerLiteral - 70)) | (1L << (Identifier - 70)) | (1L << (HardwareQubit - 70)) | (1L << (FloatLiteral - 70)) | (1L << (TimingLiteral - 70)) | (1L << (BitstringLiteral - 70)))) != 0)) {
 					{
-					setState(466);
+					setState(492);
 					expressionList();
 					}
 				}
 
-				setState(469);
+				setState(495);
 				match(RPAREN);
 				}
 				break;
@@ -2979,9 +3779,9 @@ public class qasm3Parser extends Parser {
 				_localctx = new LiteralExpressionContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(470);
+				setState(496);
 				_la = _input.LA(1);
-				if ( !(((((_la - 52)) & ~0x3f) == 0 && ((1L << (_la - 52)) & 8787503087617L) != 0)) ) {
+				if ( !(((((_la - 55)) & ~0x3f) == 0 && ((1L << (_la - 55)) & ((1L << (BooleanLiteral - 55)) | (1L << (ImaginaryLiteral - 55)) | (1L << (BinaryIntegerLiteral - 55)) | (1L << (OctalIntegerLiteral - 55)) | (1L << (DecimalIntegerLiteral - 55)) | (1L << (HexIntegerLiteral - 55)) | (1L << (Identifier - 55)) | (1L << (HardwareQubit - 55)) | (1L << (FloatLiteral - 55)) | (1L << (TimingLiteral - 55)) | (1L << (BitstringLiteral - 55)))) != 0)) ) {
 				_errHandler.recoverInline(this);
 				}
 				else {
@@ -2993,26 +3793,26 @@ public class qasm3Parser extends Parser {
 				break;
 			}
 			_ctx.stop = _input.LT(-1);
-			setState(510);
+			setState(536);
 			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,45,_ctx);
+			_alt = getInterpreter().adaptivePredict(_input,47,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					if ( _parseListeners!=null ) triggerExitRuleEvent();
 					_prevctx = _localctx;
 					{
-					setState(508);
+					setState(534);
 					_errHandler.sync(this);
-					switch ( getInterpreter().adaptivePredict(_input,44,_ctx) ) {
+					switch ( getInterpreter().adaptivePredict(_input,46,_ctx) ) {
 					case 1:
 						{
 						_localctx = new PowerExpressionContext(new ExpressionContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(473);
+						setState(499);
 						if (!(precpred(_ctx, 16))) throw new FailedPredicateException(this, "precpred(_ctx, 16)");
-						setState(474);
+						setState(500);
 						((PowerExpressionContext)_localctx).op = match(DOUBLE_ASTERISK);
-						setState(475);
+						setState(501);
 						expression(16);
 						}
 						break;
@@ -3020,12 +3820,12 @@ public class qasm3Parser extends Parser {
 						{
 						_localctx = new MultiplicativeExpressionContext(new ExpressionContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(476);
+						setState(502);
 						if (!(precpred(_ctx, 14))) throw new FailedPredicateException(this, "precpred(_ctx, 14)");
-						setState(477);
+						setState(503);
 						((MultiplicativeExpressionContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
-						if ( !(((((_la - 68)) & ~0x3f) == 0 && ((1L << (_la - 68)) & 13L) != 0)) ) {
+						if ( !(((((_la - 71)) & ~0x3f) == 0 && ((1L << (_la - 71)) & ((1L << (ASTERISK - 71)) | (1L << (SLASH - 71)) | (1L << (PERCENT - 71)))) != 0)) ) {
 							((MultiplicativeExpressionContext)_localctx).op = (Token)_errHandler.recoverInline(this);
 						}
 						else {
@@ -3033,7 +3833,7 @@ public class qasm3Parser extends Parser {
 							_errHandler.reportMatch(this);
 							consume();
 						}
-						setState(478);
+						setState(504);
 						expression(15);
 						}
 						break;
@@ -3041,9 +3841,9 @@ public class qasm3Parser extends Parser {
 						{
 						_localctx = new AdditiveExpressionContext(new ExpressionContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(479);
+						setState(505);
 						if (!(precpred(_ctx, 13))) throw new FailedPredicateException(this, "precpred(_ctx, 13)");
-						setState(480);
+						setState(506);
 						((AdditiveExpressionContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
 						if ( !(_la==PLUS || _la==MINUS) ) {
@@ -3054,7 +3854,7 @@ public class qasm3Parser extends Parser {
 							_errHandler.reportMatch(this);
 							consume();
 						}
-						setState(481);
+						setState(507);
 						expression(14);
 						}
 						break;
@@ -3062,11 +3862,11 @@ public class qasm3Parser extends Parser {
 						{
 						_localctx = new BitshiftExpressionContext(new ExpressionContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(482);
+						setState(508);
 						if (!(precpred(_ctx, 12))) throw new FailedPredicateException(this, "precpred(_ctx, 12)");
-						setState(483);
+						setState(509);
 						((BitshiftExpressionContext)_localctx).op = match(BitshiftOperator);
-						setState(484);
+						setState(510);
 						expression(13);
 						}
 						break;
@@ -3074,11 +3874,11 @@ public class qasm3Parser extends Parser {
 						{
 						_localctx = new ComparisonExpressionContext(new ExpressionContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(485);
+						setState(511);
 						if (!(precpred(_ctx, 11))) throw new FailedPredicateException(this, "precpred(_ctx, 11)");
-						setState(486);
+						setState(512);
 						((ComparisonExpressionContext)_localctx).op = match(ComparisonOperator);
-						setState(487);
+						setState(513);
 						expression(12);
 						}
 						break;
@@ -3086,11 +3886,11 @@ public class qasm3Parser extends Parser {
 						{
 						_localctx = new EqualityExpressionContext(new ExpressionContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(488);
+						setState(514);
 						if (!(precpred(_ctx, 10))) throw new FailedPredicateException(this, "precpred(_ctx, 10)");
-						setState(489);
+						setState(515);
 						((EqualityExpressionContext)_localctx).op = match(EqualityOperator);
-						setState(490);
+						setState(516);
 						expression(11);
 						}
 						break;
@@ -3098,11 +3898,11 @@ public class qasm3Parser extends Parser {
 						{
 						_localctx = new BitwiseAndExpressionContext(new ExpressionContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(491);
+						setState(517);
 						if (!(precpred(_ctx, 9))) throw new FailedPredicateException(this, "precpred(_ctx, 9)");
-						setState(492);
+						setState(518);
 						((BitwiseAndExpressionContext)_localctx).op = match(AMPERSAND);
-						setState(493);
+						setState(519);
 						expression(10);
 						}
 						break;
@@ -3110,11 +3910,11 @@ public class qasm3Parser extends Parser {
 						{
 						_localctx = new BitwiseXorExpressionContext(new ExpressionContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(494);
+						setState(520);
 						if (!(precpred(_ctx, 8))) throw new FailedPredicateException(this, "precpred(_ctx, 8)");
-						setState(495);
+						setState(521);
 						((BitwiseXorExpressionContext)_localctx).op = match(CARET);
-						setState(496);
+						setState(522);
 						expression(9);
 						}
 						break;
@@ -3122,11 +3922,11 @@ public class qasm3Parser extends Parser {
 						{
 						_localctx = new BitwiseOrExpressionContext(new ExpressionContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(497);
+						setState(523);
 						if (!(precpred(_ctx, 7))) throw new FailedPredicateException(this, "precpred(_ctx, 7)");
-						setState(498);
+						setState(524);
 						((BitwiseOrExpressionContext)_localctx).op = match(PIPE);
-						setState(499);
+						setState(525);
 						expression(8);
 						}
 						break;
@@ -3134,11 +3934,11 @@ public class qasm3Parser extends Parser {
 						{
 						_localctx = new LogicalAndExpressionContext(new ExpressionContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(500);
+						setState(526);
 						if (!(precpred(_ctx, 6))) throw new FailedPredicateException(this, "precpred(_ctx, 6)");
-						setState(501);
+						setState(527);
 						((LogicalAndExpressionContext)_localctx).op = match(DOUBLE_AMPERSAND);
-						setState(502);
+						setState(528);
 						expression(7);
 						}
 						break;
@@ -3146,11 +3946,11 @@ public class qasm3Parser extends Parser {
 						{
 						_localctx = new LogicalOrExpressionContext(new ExpressionContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(503);
+						setState(529);
 						if (!(precpred(_ctx, 5))) throw new FailedPredicateException(this, "precpred(_ctx, 5)");
-						setState(504);
+						setState(530);
 						((LogicalOrExpressionContext)_localctx).op = match(DOUBLE_PIPE);
-						setState(505);
+						setState(531);
 						expression(6);
 						}
 						break;
@@ -3158,18 +3958,18 @@ public class qasm3Parser extends Parser {
 						{
 						_localctx = new IndexExpressionContext(new ExpressionContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(506);
+						setState(532);
 						if (!(precpred(_ctx, 17))) throw new FailedPredicateException(this, "precpred(_ctx, 17)");
-						setState(507);
+						setState(533);
 						indexOperator();
 						}
 						break;
 					}
 					} 
 				}
-				setState(512);
+				setState(538);
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,45,_ctx);
+				_alt = getInterpreter().adaptivePredict(_input,47,_ctx);
 			}
 			}
 		}
@@ -3184,7 +3984,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class AliasExpressionContext extends ParserRuleContext {
 		public List<ExpressionContext> expression() {
 			return getRuleContexts(ExpressionContext.class);
@@ -3200,30 +3999,43 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_aliasExpression; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterAliasExpression(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitAliasExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitAliasExpression(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final AliasExpressionContext aliasExpression() throws RecognitionException {
 		AliasExpressionContext _localctx = new AliasExpressionContext(_ctx, getState());
-		enterRule(_localctx, 72, RULE_aliasExpression);
+		enterRule(_localctx, 76, RULE_aliasExpression);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(513);
+			setState(539);
 			expression(0);
-			setState(518);
+			setState(544);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==DOUBLE_PLUS) {
 				{
 				{
-				setState(514);
+				setState(540);
 				match(DOUBLE_PLUS);
-				setState(515);
+				setState(541);
 				expression(0);
 				}
 				}
-				setState(520);
+				setState(546);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -3240,7 +4052,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class DeclarationExpressionContext extends ParserRuleContext {
 		public ArrayLiteralContext arrayLiteral() {
 			return getRuleContext(ArrayLiteralContext.class,0);
@@ -3255,19 +4066,32 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_declarationExpression; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterDeclarationExpression(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitDeclarationExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitDeclarationExpression(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final DeclarationExpressionContext declarationExpression() throws RecognitionException {
 		DeclarationExpressionContext _localctx = new DeclarationExpressionContext(_ctx, getState());
-		enterRule(_localctx, 74, RULE_declarationExpression);
+		enterRule(_localctx, 78, RULE_declarationExpression);
 		try {
-			setState(524);
+			setState(550);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case LBRACE:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(521);
+				setState(547);
 				arrayLiteral();
 				}
 				break;
@@ -3299,14 +4123,14 @@ public class qasm3Parser extends Parser {
 			case BitstringLiteral:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(522);
+				setState(548);
 				expression(0);
 				}
 				break;
 			case MEASURE:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(523);
+				setState(549);
 				measureExpression();
 				}
 				break;
@@ -3325,7 +4149,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class MeasureExpressionContext extends ParserRuleContext {
 		public TerminalNode MEASURE() { return getToken(qasm3Parser.MEASURE, 0); }
 		public GateOperandContext gateOperand() {
@@ -3335,17 +4158,30 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_measureExpression; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterMeasureExpression(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitMeasureExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitMeasureExpression(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final MeasureExpressionContext measureExpression() throws RecognitionException {
 		MeasureExpressionContext _localctx = new MeasureExpressionContext(_ctx, getState());
-		enterRule(_localctx, 76, RULE_measureExpression);
+		enterRule(_localctx, 80, RULE_measureExpression);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(526);
+			setState(552);
 			match(MEASURE);
-			setState(527);
+			setState(553);
 			gateOperand();
 			}
 		}
@@ -3360,7 +4196,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class RangeExpressionContext extends ParserRuleContext {
 		public List<TerminalNode> COLON() { return getTokens(qasm3Parser.COLON); }
 		public TerminalNode COLON(int i) {
@@ -3376,45 +4211,58 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_rangeExpression; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterRangeExpression(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitRangeExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitRangeExpression(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final RangeExpressionContext rangeExpression() throws RecognitionException {
 		RangeExpressionContext _localctx = new RangeExpressionContext(_ctx, getState());
-		enterRule(_localctx, 78, RULE_rangeExpression);
+		enterRule(_localctx, 82, RULE_rangeExpression);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(530);
+			setState(556);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & 148761448263188480L) != 0) || ((((_la - 67)) & ~0x3f) == 0 && ((1L << (_la - 67)) & 268179457L) != 0)) {
+			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << BOOL) | (1L << BIT) | (1L << INT) | (1L << UINT) | (1L << FLOAT) | (1L << ANGLE) | (1L << COMPLEX) | (1L << ARRAY) | (1L << DURATION) | (1L << STRETCH) | (1L << DURATIONOF) | (1L << BooleanLiteral) | (1L << LPAREN))) != 0) || ((((_la - 70)) & ~0x3f) == 0 && ((1L << (_la - 70)) & ((1L << (MINUS - 70)) | (1L << (TILDE - 70)) | (1L << (EXCLAMATION_POINT - 70)) | (1L << (ImaginaryLiteral - 70)) | (1L << (BinaryIntegerLiteral - 70)) | (1L << (OctalIntegerLiteral - 70)) | (1L << (DecimalIntegerLiteral - 70)) | (1L << (HexIntegerLiteral - 70)) | (1L << (Identifier - 70)) | (1L << (HardwareQubit - 70)) | (1L << (FloatLiteral - 70)) | (1L << (TimingLiteral - 70)) | (1L << (BitstringLiteral - 70)))) != 0)) {
 				{
-				setState(529);
+				setState(555);
 				expression(0);
 				}
 			}
 
-			setState(532);
+			setState(558);
 			match(COLON);
-			setState(534);
+			setState(560);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & 148761448263188480L) != 0) || ((((_la - 67)) & ~0x3f) == 0 && ((1L << (_la - 67)) & 268179457L) != 0)) {
+			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << BOOL) | (1L << BIT) | (1L << INT) | (1L << UINT) | (1L << FLOAT) | (1L << ANGLE) | (1L << COMPLEX) | (1L << ARRAY) | (1L << DURATION) | (1L << STRETCH) | (1L << DURATIONOF) | (1L << BooleanLiteral) | (1L << LPAREN))) != 0) || ((((_la - 70)) & ~0x3f) == 0 && ((1L << (_la - 70)) & ((1L << (MINUS - 70)) | (1L << (TILDE - 70)) | (1L << (EXCLAMATION_POINT - 70)) | (1L << (ImaginaryLiteral - 70)) | (1L << (BinaryIntegerLiteral - 70)) | (1L << (OctalIntegerLiteral - 70)) | (1L << (DecimalIntegerLiteral - 70)) | (1L << (HexIntegerLiteral - 70)) | (1L << (Identifier - 70)) | (1L << (HardwareQubit - 70)) | (1L << (FloatLiteral - 70)) | (1L << (TimingLiteral - 70)) | (1L << (BitstringLiteral - 70)))) != 0)) {
 				{
-				setState(533);
+				setState(559);
 				expression(0);
 				}
 			}
 
-			setState(538);
+			setState(564);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==COLON) {
 				{
-				setState(536);
+				setState(562);
 				match(COLON);
-				setState(537);
+				setState(563);
 				expression(0);
 				}
 			}
@@ -3432,7 +4280,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class SetExpressionContext extends ParserRuleContext {
 		public TerminalNode LBRACE() { return getToken(qasm3Parser.LBRACE, 0); }
 		public List<ExpressionContext> expression() {
@@ -3450,49 +4297,62 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_setExpression; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterSetExpression(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitSetExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitSetExpression(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final SetExpressionContext setExpression() throws RecognitionException {
 		SetExpressionContext _localctx = new SetExpressionContext(_ctx, getState());
-		enterRule(_localctx, 80, RULE_setExpression);
+		enterRule(_localctx, 84, RULE_setExpression);
 		int _la;
 		try {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(540);
+			setState(566);
 			match(LBRACE);
-			setState(541);
+			setState(567);
 			expression(0);
-			setState(546);
+			setState(572);
 			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,51,_ctx);
+			_alt = getInterpreter().adaptivePredict(_input,53,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(542);
+					setState(568);
 					match(COMMA);
-					setState(543);
+					setState(569);
 					expression(0);
 					}
 					} 
 				}
-				setState(548);
+				setState(574);
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,51,_ctx);
+				_alt = getInterpreter().adaptivePredict(_input,53,_ctx);
 			}
-			setState(550);
+			setState(576);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==COMMA) {
 				{
-				setState(549);
+				setState(575);
 				match(COMMA);
 				}
 			}
 
-			setState(552);
+			setState(578);
 			match(RBRACE);
 			}
 		}
@@ -3507,7 +4367,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class ArrayLiteralContext extends ParserRuleContext {
 		public TerminalNode LBRACE() { return getToken(qasm3Parser.LBRACE, 0); }
 		public TerminalNode RBRACE() { return getToken(qasm3Parser.RBRACE, 0); }
@@ -3531,19 +4390,32 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_arrayLiteral; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterArrayLiteral(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitArrayLiteral(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitArrayLiteral(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ArrayLiteralContext arrayLiteral() throws RecognitionException {
 		ArrayLiteralContext _localctx = new ArrayLiteralContext(_ctx, getState());
-		enterRule(_localctx, 82, RULE_arrayLiteral);
+		enterRule(_localctx, 86, RULE_arrayLiteral);
 		int _la;
 		try {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(554);
+			setState(580);
 			match(LBRACE);
-			setState(557);
+			setState(583);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case BOOL:
@@ -3573,29 +4445,29 @@ public class qasm3Parser extends Parser {
 			case TimingLiteral:
 			case BitstringLiteral:
 				{
-				setState(555);
+				setState(581);
 				expression(0);
 				}
 				break;
 			case LBRACE:
 				{
-				setState(556);
+				setState(582);
 				arrayLiteral();
 				}
 				break;
 			default:
 				throw new NoViableAltException(this);
 			}
-			setState(566);
+			setState(592);
 			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,55,_ctx);
+			_alt = getInterpreter().adaptivePredict(_input,57,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(559);
+					setState(585);
 					match(COMMA);
-					setState(562);
+					setState(588);
 					_errHandler.sync(this);
 					switch (_input.LA(1)) {
 					case BOOL:
@@ -3625,13 +4497,13 @@ public class qasm3Parser extends Parser {
 					case TimingLiteral:
 					case BitstringLiteral:
 						{
-						setState(560);
+						setState(586);
 						expression(0);
 						}
 						break;
 					case LBRACE:
 						{
-						setState(561);
+						setState(587);
 						arrayLiteral();
 						}
 						break;
@@ -3641,21 +4513,21 @@ public class qasm3Parser extends Parser {
 					}
 					} 
 				}
-				setState(568);
+				setState(594);
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,55,_ctx);
+				_alt = getInterpreter().adaptivePredict(_input,57,_ctx);
 			}
-			setState(570);
+			setState(596);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==COMMA) {
 				{
-				setState(569);
+				setState(595);
 				match(COMMA);
 				}
 			}
 
-			setState(572);
+			setState(598);
 			match(RBRACE);
 			}
 		}
@@ -3670,7 +4542,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class IndexOperatorContext extends ParserRuleContext {
 		public TerminalNode LBRACKET() { return getToken(qasm3Parser.LBRACKET, 0); }
 		public TerminalNode RBRACKET() { return getToken(qasm3Parser.RBRACKET, 0); }
@@ -3697,24 +4568,37 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_indexOperator; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterIndexOperator(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitIndexOperator(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitIndexOperator(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final IndexOperatorContext indexOperator() throws RecognitionException {
 		IndexOperatorContext _localctx = new IndexOperatorContext(_ctx, getState());
-		enterRule(_localctx, 84, RULE_indexOperator);
+		enterRule(_localctx, 88, RULE_indexOperator);
 		int _la;
 		try {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(574);
+			setState(600);
 			match(LBRACKET);
-			setState(593);
+			setState(619);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case LBRACE:
 				{
-				setState(575);
+				setState(601);
 				setExpression();
 				}
 				break;
@@ -3746,43 +4630,43 @@ public class qasm3Parser extends Parser {
 			case TimingLiteral:
 			case BitstringLiteral:
 				{
-				setState(578);
+				setState(604);
 				_errHandler.sync(this);
-				switch ( getInterpreter().adaptivePredict(_input,57,_ctx) ) {
+				switch ( getInterpreter().adaptivePredict(_input,59,_ctx) ) {
 				case 1:
 					{
-					setState(576);
+					setState(602);
 					expression(0);
 					}
 					break;
 				case 2:
 					{
-					setState(577);
+					setState(603);
 					rangeExpression();
 					}
 					break;
 				}
-				setState(587);
+				setState(613);
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,59,_ctx);
+				_alt = getInterpreter().adaptivePredict(_input,61,_ctx);
 				while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
 					if ( _alt==1 ) {
 						{
 						{
-						setState(580);
+						setState(606);
 						match(COMMA);
-						setState(583);
+						setState(609);
 						_errHandler.sync(this);
-						switch ( getInterpreter().adaptivePredict(_input,58,_ctx) ) {
+						switch ( getInterpreter().adaptivePredict(_input,60,_ctx) ) {
 						case 1:
 							{
-							setState(581);
+							setState(607);
 							expression(0);
 							}
 							break;
 						case 2:
 							{
-							setState(582);
+							setState(608);
 							rangeExpression();
 							}
 							break;
@@ -3790,16 +4674,16 @@ public class qasm3Parser extends Parser {
 						}
 						} 
 					}
-					setState(589);
+					setState(615);
 					_errHandler.sync(this);
-					_alt = getInterpreter().adaptivePredict(_input,59,_ctx);
+					_alt = getInterpreter().adaptivePredict(_input,61,_ctx);
 				}
-				setState(591);
+				setState(617);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==COMMA) {
 					{
-					setState(590);
+					setState(616);
 					match(COMMA);
 					}
 				}
@@ -3809,7 +4693,7 @@ public class qasm3Parser extends Parser {
 			default:
 				throw new NoViableAltException(this);
 			}
-			setState(595);
+			setState(621);
 			match(RBRACKET);
 			}
 		}
@@ -3824,7 +4708,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class IndexedIdentifierContext extends ParserRuleContext {
 		public TerminalNode Identifier() { return getToken(qasm3Parser.Identifier, 0); }
 		public List<IndexOperatorContext> indexOperator() {
@@ -3837,28 +4720,41 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_indexedIdentifier; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterIndexedIdentifier(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitIndexedIdentifier(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitIndexedIdentifier(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final IndexedIdentifierContext indexedIdentifier() throws RecognitionException {
 		IndexedIdentifierContext _localctx = new IndexedIdentifierContext(_ctx, getState());
-		enterRule(_localctx, 86, RULE_indexedIdentifier);
+		enterRule(_localctx, 90, RULE_indexedIdentifier);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(597);
+			setState(623);
 			match(Identifier);
-			setState(601);
+			setState(627);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==LBRACKET) {
 				{
 				{
-				setState(598);
+				setState(624);
 				indexOperator();
 				}
 				}
-				setState(603);
+				setState(629);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -3875,7 +4771,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class ReturnSignatureContext extends ParserRuleContext {
 		public TerminalNode ARROW() { return getToken(qasm3Parser.ARROW, 0); }
 		public ScalarTypeContext scalarType() {
@@ -3885,17 +4780,30 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_returnSignature; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterReturnSignature(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitReturnSignature(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitReturnSignature(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ReturnSignatureContext returnSignature() throws RecognitionException {
 		ReturnSignatureContext _localctx = new ReturnSignatureContext(_ctx, getState());
-		enterRule(_localctx, 88, RULE_returnSignature);
+		enterRule(_localctx, 92, RULE_returnSignature);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(604);
+			setState(630);
 			match(ARROW);
-			setState(605);
+			setState(631);
 			scalarType();
 			}
 		}
@@ -3910,7 +4818,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class GateModifierContext extends ParserRuleContext {
 		public TerminalNode AT() { return getToken(qasm3Parser.AT, 0); }
 		public TerminalNode INV() { return getToken(qasm3Parser.INV, 0); }
@@ -3926,40 +4833,53 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_gateModifier; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterGateModifier(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitGateModifier(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitGateModifier(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final GateModifierContext gateModifier() throws RecognitionException {
 		GateModifierContext _localctx = new GateModifierContext(_ctx, getState());
-		enterRule(_localctx, 90, RULE_gateModifier);
+		enterRule(_localctx, 94, RULE_gateModifier);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(620);
+			setState(646);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case INV:
 				{
-				setState(607);
+				setState(633);
 				match(INV);
 				}
 				break;
 			case POW:
 				{
-				setState(608);
+				setState(634);
 				match(POW);
-				setState(609);
+				setState(635);
 				match(LPAREN);
-				setState(610);
+				setState(636);
 				expression(0);
-				setState(611);
+				setState(637);
 				match(RPAREN);
 				}
 				break;
 			case CTRL:
 			case NEGCTRL:
 				{
-				setState(613);
+				setState(639);
 				_la = _input.LA(1);
 				if ( !(_la==CTRL || _la==NEGCTRL) ) {
 				_errHandler.recoverInline(this);
@@ -3969,16 +4889,16 @@ public class qasm3Parser extends Parser {
 					_errHandler.reportMatch(this);
 					consume();
 				}
-				setState(618);
+				setState(644);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==LPAREN) {
 					{
-					setState(614);
+					setState(640);
 					match(LPAREN);
-					setState(615);
+					setState(641);
 					expression(0);
-					setState(616);
+					setState(642);
 					match(RPAREN);
 					}
 				}
@@ -3988,7 +4908,7 @@ public class qasm3Parser extends Parser {
 			default:
 				throw new NoViableAltException(this);
 			}
-			setState(622);
+			setState(648);
 			match(AT);
 			}
 		}
@@ -4003,7 +4923,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class ScalarTypeContext extends ParserRuleContext {
 		public TerminalNode BIT() { return getToken(qasm3Parser.BIT, 0); }
 		public DesignatorContext designator() {
@@ -4026,27 +4945,40 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_scalarType; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterScalarType(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitScalarType(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitScalarType(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ScalarTypeContext scalarType() throws RecognitionException {
 		ScalarTypeContext _localctx = new ScalarTypeContext(_ctx, getState());
-		enterRule(_localctx, 92, RULE_scalarType);
+		enterRule(_localctx, 96, RULE_scalarType);
 		int _la;
 		try {
-			setState(654);
+			setState(680);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case BIT:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(624);
+				setState(650);
 				match(BIT);
-				setState(626);
+				setState(652);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==LBRACKET) {
 					{
-					setState(625);
+					setState(651);
 					designator();
 					}
 				}
@@ -4056,14 +4988,14 @@ public class qasm3Parser extends Parser {
 			case INT:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(628);
+				setState(654);
 				match(INT);
-				setState(630);
+				setState(656);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==LBRACKET) {
 					{
-					setState(629);
+					setState(655);
 					designator();
 					}
 				}
@@ -4073,14 +5005,14 @@ public class qasm3Parser extends Parser {
 			case UINT:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(632);
+				setState(658);
 				match(UINT);
-				setState(634);
+				setState(660);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==LBRACKET) {
 					{
-					setState(633);
+					setState(659);
 					designator();
 					}
 				}
@@ -4090,14 +5022,14 @@ public class qasm3Parser extends Parser {
 			case FLOAT:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(636);
+				setState(662);
 				match(FLOAT);
-				setState(638);
+				setState(664);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==LBRACKET) {
 					{
-					setState(637);
+					setState(663);
 					designator();
 					}
 				}
@@ -4107,14 +5039,14 @@ public class qasm3Parser extends Parser {
 			case ANGLE:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(640);
+				setState(666);
 				match(ANGLE);
-				setState(642);
+				setState(668);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==LBRACKET) {
 					{
-					setState(641);
+					setState(667);
 					designator();
 					}
 				}
@@ -4124,39 +5056,39 @@ public class qasm3Parser extends Parser {
 			case BOOL:
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(644);
+				setState(670);
 				match(BOOL);
 				}
 				break;
 			case DURATION:
 				enterOuterAlt(_localctx, 7);
 				{
-				setState(645);
+				setState(671);
 				match(DURATION);
 				}
 				break;
 			case STRETCH:
 				enterOuterAlt(_localctx, 8);
 				{
-				setState(646);
+				setState(672);
 				match(STRETCH);
 				}
 				break;
 			case COMPLEX:
 				enterOuterAlt(_localctx, 9);
 				{
-				setState(647);
+				setState(673);
 				match(COMPLEX);
-				setState(652);
+				setState(678);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==LBRACKET) {
 					{
-					setState(648);
+					setState(674);
 					match(LBRACKET);
-					setState(649);
+					setState(675);
 					scalarType();
-					setState(650);
+					setState(676);
 					match(RBRACKET);
 					}
 				}
@@ -4178,7 +5110,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class QubitTypeContext extends ParserRuleContext {
 		public TerminalNode QUBIT() { return getToken(qasm3Parser.QUBIT, 0); }
 		public DesignatorContext designator() {
@@ -4188,23 +5119,36 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_qubitType; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterQubitType(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitQubitType(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitQubitType(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final QubitTypeContext qubitType() throws RecognitionException {
 		QubitTypeContext _localctx = new QubitTypeContext(_ctx, getState());
-		enterRule(_localctx, 94, RULE_qubitType);
+		enterRule(_localctx, 98, RULE_qubitType);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(656);
+			setState(682);
 			match(QUBIT);
-			setState(658);
+			setState(684);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==LBRACKET) {
 				{
-				setState(657);
+				setState(683);
 				designator();
 				}
 			}
@@ -4222,7 +5166,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class ArrayTypeContext extends ParserRuleContext {
 		public TerminalNode ARRAY() { return getToken(qasm3Parser.ARRAY, 0); }
 		public TerminalNode LBRACKET() { return getToken(qasm3Parser.LBRACKET, 0); }
@@ -4238,25 +5181,38 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_arrayType; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterArrayType(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitArrayType(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitArrayType(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ArrayTypeContext arrayType() throws RecognitionException {
 		ArrayTypeContext _localctx = new ArrayTypeContext(_ctx, getState());
-		enterRule(_localctx, 96, RULE_arrayType);
+		enterRule(_localctx, 100, RULE_arrayType);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(660);
+			setState(686);
 			match(ARRAY);
-			setState(661);
+			setState(687);
 			match(LBRACKET);
-			setState(662);
+			setState(688);
 			scalarType();
-			setState(663);
+			setState(689);
 			match(COMMA);
-			setState(664);
+			setState(690);
 			expressionList();
-			setState(665);
+			setState(691);
 			match(RBRACKET);
 			}
 		}
@@ -4271,7 +5227,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class ArrayReferenceTypeContext extends ParserRuleContext {
 		public TerminalNode ARRAY() { return getToken(qasm3Parser.ARRAY, 0); }
 		public TerminalNode LBRACKET() { return getToken(qasm3Parser.LBRACKET, 0); }
@@ -4294,16 +5249,29 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_arrayReferenceType; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterArrayReferenceType(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitArrayReferenceType(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitArrayReferenceType(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ArrayReferenceTypeContext arrayReferenceType() throws RecognitionException {
 		ArrayReferenceTypeContext _localctx = new ArrayReferenceTypeContext(_ctx, getState());
-		enterRule(_localctx, 98, RULE_arrayReferenceType);
+		enterRule(_localctx, 102, RULE_arrayReferenceType);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(667);
+			setState(693);
 			_la = _input.LA(1);
 			if ( !(_la==READONLY || _la==MUTABLE) ) {
 			_errHandler.recoverInline(this);
@@ -4313,15 +5281,15 @@ public class qasm3Parser extends Parser {
 				_errHandler.reportMatch(this);
 				consume();
 			}
-			setState(668);
+			setState(694);
 			match(ARRAY);
-			setState(669);
+			setState(695);
 			match(LBRACKET);
-			setState(670);
+			setState(696);
 			scalarType();
-			setState(671);
+			setState(697);
 			match(COMMA);
-			setState(676);
+			setState(702);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case BOOL:
@@ -4351,24 +5319,24 @@ public class qasm3Parser extends Parser {
 			case TimingLiteral:
 			case BitstringLiteral:
 				{
-				setState(672);
+				setState(698);
 				expressionList();
 				}
 				break;
 			case DIM:
 				{
-				setState(673);
+				setState(699);
 				match(DIM);
-				setState(674);
+				setState(700);
 				match(EQUALS);
-				setState(675);
+				setState(701);
 				expression(0);
 				}
 				break;
 			default:
 				throw new NoViableAltException(this);
 			}
-			setState(678);
+			setState(704);
 			match(RBRACKET);
 			}
 		}
@@ -4383,7 +5351,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class DesignatorContext extends ParserRuleContext {
 		public TerminalNode LBRACKET() { return getToken(qasm3Parser.LBRACKET, 0); }
 		public ExpressionContext expression() {
@@ -4394,19 +5361,32 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_designator; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterDesignator(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitDesignator(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitDesignator(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final DesignatorContext designator() throws RecognitionException {
 		DesignatorContext _localctx = new DesignatorContext(_ctx, getState());
-		enterRule(_localctx, 100, RULE_designator);
+		enterRule(_localctx, 104, RULE_designator);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(680);
+			setState(706);
 			match(LBRACKET);
-			setState(681);
+			setState(707);
 			expression(0);
-			setState(682);
+			setState(708);
 			match(RBRACKET);
 			}
 		}
@@ -4421,7 +5401,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class DefcalTargetContext extends ParserRuleContext {
 		public TerminalNode MEASURE() { return getToken(qasm3Parser.MEASURE, 0); }
 		public TerminalNode RESET() { return getToken(qasm3Parser.RESET, 0); }
@@ -4431,18 +5410,31 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_defcalTarget; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterDefcalTarget(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitDefcalTarget(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitDefcalTarget(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final DefcalTargetContext defcalTarget() throws RecognitionException {
 		DefcalTargetContext _localctx = new DefcalTargetContext(_ctx, getState());
-		enterRule(_localctx, 102, RULE_defcalTarget);
+		enterRule(_localctx, 106, RULE_defcalTarget);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(684);
+			setState(710);
 			_la = _input.LA(1);
-			if ( !(((((_la - 48)) & ~0x3f) == 0 && ((1L << (_la - 48)) & 4398046511111L) != 0)) ) {
+			if ( !(((((_la - 51)) & ~0x3f) == 0 && ((1L << (_la - 51)) & ((1L << (DELAY - 51)) | (1L << (RESET - 51)) | (1L << (MEASURE - 51)) | (1L << (Identifier - 51)))) != 0)) ) {
 			_errHandler.recoverInline(this);
 			}
 			else {
@@ -4463,7 +5455,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class DefcalArgumentDefinitionContext extends ParserRuleContext {
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
@@ -4475,26 +5466,39 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_defcalArgumentDefinition; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterDefcalArgumentDefinition(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitDefcalArgumentDefinition(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitDefcalArgumentDefinition(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final DefcalArgumentDefinitionContext defcalArgumentDefinition() throws RecognitionException {
 		DefcalArgumentDefinitionContext _localctx = new DefcalArgumentDefinitionContext(_ctx, getState());
-		enterRule(_localctx, 104, RULE_defcalArgumentDefinition);
+		enterRule(_localctx, 108, RULE_defcalArgumentDefinition);
 		try {
-			setState(688);
+			setState(714);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,74,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,76,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(686);
+				setState(712);
 				expression(0);
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(687);
+				setState(713);
 				argumentDefinition();
 				}
 				break;
@@ -4511,7 +5515,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class DefcalOperandContext extends ParserRuleContext {
 		public TerminalNode HardwareQubit() { return getToken(qasm3Parser.HardwareQubit, 0); }
 		public TerminalNode Identifier() { return getToken(qasm3Parser.Identifier, 0); }
@@ -4519,16 +5522,29 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_defcalOperand; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterDefcalOperand(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitDefcalOperand(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitDefcalOperand(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final DefcalOperandContext defcalOperand() throws RecognitionException {
 		DefcalOperandContext _localctx = new DefcalOperandContext(_ctx, getState());
-		enterRule(_localctx, 106, RULE_defcalOperand);
+		enterRule(_localctx, 110, RULE_defcalOperand);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(690);
+			setState(716);
 			_la = _input.LA(1);
 			if ( !(_la==Identifier || _la==HardwareQubit) ) {
 			_errHandler.recoverInline(this);
@@ -4551,7 +5567,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class GateOperandContext extends ParserRuleContext {
 		public IndexedIdentifierContext indexedIdentifier() {
 			return getRuleContext(IndexedIdentifierContext.class,0);
@@ -4561,26 +5576,39 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_gateOperand; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterGateOperand(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitGateOperand(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitGateOperand(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final GateOperandContext gateOperand() throws RecognitionException {
 		GateOperandContext _localctx = new GateOperandContext(_ctx, getState());
-		enterRule(_localctx, 108, RULE_gateOperand);
+		enterRule(_localctx, 112, RULE_gateOperand);
 		try {
-			setState(694);
+			setState(720);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case Identifier:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(692);
+				setState(718);
 				indexedIdentifier();
 				}
 				break;
 			case HardwareQubit:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(693);
+				setState(719);
 				match(HardwareQubit);
 				}
 				break;
@@ -4599,7 +5627,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class ExternArgumentContext extends ParserRuleContext {
 		public ScalarTypeContext scalarType() {
 			return getRuleContext(ScalarTypeContext.class,0);
@@ -4615,14 +5642,27 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_externArgument; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterExternArgument(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitExternArgument(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitExternArgument(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ExternArgumentContext externArgument() throws RecognitionException {
 		ExternArgumentContext _localctx = new ExternArgumentContext(_ctx, getState());
-		enterRule(_localctx, 110, RULE_externArgument);
+		enterRule(_localctx, 114, RULE_externArgument);
 		int _la;
 		try {
-			setState(702);
+			setState(728);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case BOOL:
@@ -4636,7 +5676,7 @@ public class qasm3Parser extends Parser {
 			case STRETCH:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(696);
+				setState(722);
 				scalarType();
 				}
 				break;
@@ -4644,21 +5684,21 @@ public class qasm3Parser extends Parser {
 			case MUTABLE:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(697);
+				setState(723);
 				arrayReferenceType();
 				}
 				break;
 			case CREG:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(698);
+				setState(724);
 				match(CREG);
-				setState(700);
+				setState(726);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==LBRACKET) {
 					{
-					setState(699);
+					setState(725);
 					designator();
 					}
 				}
@@ -4680,7 +5720,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class ArgumentDefinitionContext extends ParserRuleContext {
 		public ScalarTypeContext scalarType() {
 			return getRuleContext(ScalarTypeContext.class,0);
@@ -4701,14 +5740,27 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_argumentDefinition; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterArgumentDefinition(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitArgumentDefinition(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitArgumentDefinition(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ArgumentDefinitionContext argumentDefinition() throws RecognitionException {
 		ArgumentDefinitionContext _localctx = new ArgumentDefinitionContext(_ctx, getState());
-		enterRule(_localctx, 112, RULE_argumentDefinition);
+		enterRule(_localctx, 116, RULE_argumentDefinition);
 		int _la;
 		try {
-			setState(718);
+			setState(744);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case BOOL:
@@ -4722,18 +5774,18 @@ public class qasm3Parser extends Parser {
 			case STRETCH:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(704);
+				setState(730);
 				scalarType();
-				setState(705);
+				setState(731);
 				match(Identifier);
 				}
 				break;
 			case QUBIT:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(707);
+				setState(733);
 				qubitType();
-				setState(708);
+				setState(734);
 				match(Identifier);
 				}
 				break;
@@ -4741,7 +5793,7 @@ public class qasm3Parser extends Parser {
 			case CREG:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(710);
+				setState(736);
 				_la = _input.LA(1);
 				if ( !(_la==QREG || _la==CREG) ) {
 				_errHandler.recoverInline(this);
@@ -4751,14 +5803,14 @@ public class qasm3Parser extends Parser {
 					_errHandler.reportMatch(this);
 					consume();
 				}
-				setState(711);
+				setState(737);
 				match(Identifier);
-				setState(713);
+				setState(739);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==LBRACKET) {
 					{
-					setState(712);
+					setState(738);
 					designator();
 					}
 				}
@@ -4769,9 +5821,9 @@ public class qasm3Parser extends Parser {
 			case MUTABLE:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(715);
+				setState(741);
 				arrayReferenceType();
-				setState(716);
+				setState(742);
 				match(Identifier);
 				}
 				break;
@@ -4790,7 +5842,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class ArgumentDefinitionListContext extends ParserRuleContext {
 		public List<ArgumentDefinitionContext> argumentDefinition() {
 			return getRuleContexts(ArgumentDefinitionContext.class);
@@ -4806,42 +5857,55 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_argumentDefinitionList; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterArgumentDefinitionList(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitArgumentDefinitionList(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitArgumentDefinitionList(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ArgumentDefinitionListContext argumentDefinitionList() throws RecognitionException {
 		ArgumentDefinitionListContext _localctx = new ArgumentDefinitionListContext(_ctx, getState());
-		enterRule(_localctx, 114, RULE_argumentDefinitionList);
+		enterRule(_localctx, 118, RULE_argumentDefinitionList);
 		int _la;
 		try {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(720);
+			setState(746);
 			argumentDefinition();
-			setState(725);
+			setState(751);
 			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,80,_ctx);
+			_alt = getInterpreter().adaptivePredict(_input,82,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(721);
+					setState(747);
 					match(COMMA);
-					setState(722);
+					setState(748);
 					argumentDefinition();
 					}
 					} 
 				}
-				setState(727);
+				setState(753);
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,80,_ctx);
+				_alt = getInterpreter().adaptivePredict(_input,82,_ctx);
 			}
-			setState(729);
+			setState(755);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==COMMA) {
 				{
-				setState(728);
+				setState(754);
 				match(COMMA);
 				}
 			}
@@ -4859,7 +5923,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class DefcalArgumentDefinitionListContext extends ParserRuleContext {
 		public List<DefcalArgumentDefinitionContext> defcalArgumentDefinition() {
 			return getRuleContexts(DefcalArgumentDefinitionContext.class);
@@ -4875,42 +5938,55 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_defcalArgumentDefinitionList; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterDefcalArgumentDefinitionList(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitDefcalArgumentDefinitionList(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitDefcalArgumentDefinitionList(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final DefcalArgumentDefinitionListContext defcalArgumentDefinitionList() throws RecognitionException {
 		DefcalArgumentDefinitionListContext _localctx = new DefcalArgumentDefinitionListContext(_ctx, getState());
-		enterRule(_localctx, 116, RULE_defcalArgumentDefinitionList);
+		enterRule(_localctx, 120, RULE_defcalArgumentDefinitionList);
 		int _la;
 		try {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(731);
+			setState(757);
 			defcalArgumentDefinition();
-			setState(736);
+			setState(762);
 			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,82,_ctx);
+			_alt = getInterpreter().adaptivePredict(_input,84,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(732);
+					setState(758);
 					match(COMMA);
-					setState(733);
+					setState(759);
 					defcalArgumentDefinition();
 					}
 					} 
 				}
-				setState(738);
+				setState(764);
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,82,_ctx);
+				_alt = getInterpreter().adaptivePredict(_input,84,_ctx);
 			}
-			setState(740);
+			setState(766);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==COMMA) {
 				{
-				setState(739);
+				setState(765);
 				match(COMMA);
 				}
 			}
@@ -4928,7 +6004,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class DefcalOperandListContext extends ParserRuleContext {
 		public List<DefcalOperandContext> defcalOperand() {
 			return getRuleContexts(DefcalOperandContext.class);
@@ -4944,42 +6019,55 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_defcalOperandList; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterDefcalOperandList(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitDefcalOperandList(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitDefcalOperandList(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final DefcalOperandListContext defcalOperandList() throws RecognitionException {
 		DefcalOperandListContext _localctx = new DefcalOperandListContext(_ctx, getState());
-		enterRule(_localctx, 118, RULE_defcalOperandList);
+		enterRule(_localctx, 122, RULE_defcalOperandList);
 		int _la;
 		try {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(742);
+			setState(768);
 			defcalOperand();
-			setState(747);
+			setState(773);
 			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,84,_ctx);
+			_alt = getInterpreter().adaptivePredict(_input,86,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(743);
+					setState(769);
 					match(COMMA);
-					setState(744);
+					setState(770);
 					defcalOperand();
 					}
 					} 
 				}
-				setState(749);
+				setState(775);
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,84,_ctx);
+				_alt = getInterpreter().adaptivePredict(_input,86,_ctx);
 			}
-			setState(751);
+			setState(777);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==COMMA) {
 				{
-				setState(750);
+				setState(776);
 				match(COMMA);
 				}
 			}
@@ -4997,7 +6085,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class ExpressionListContext extends ParserRuleContext {
 		public List<ExpressionContext> expression() {
 			return getRuleContexts(ExpressionContext.class);
@@ -5013,42 +6100,55 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_expressionList; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterExpressionList(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitExpressionList(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitExpressionList(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ExpressionListContext expressionList() throws RecognitionException {
 		ExpressionListContext _localctx = new ExpressionListContext(_ctx, getState());
-		enterRule(_localctx, 120, RULE_expressionList);
+		enterRule(_localctx, 124, RULE_expressionList);
 		int _la;
 		try {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(753);
+			setState(779);
 			expression(0);
-			setState(758);
+			setState(784);
 			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,86,_ctx);
+			_alt = getInterpreter().adaptivePredict(_input,88,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(754);
+					setState(780);
 					match(COMMA);
-					setState(755);
+					setState(781);
 					expression(0);
 					}
 					} 
 				}
-				setState(760);
+				setState(786);
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,86,_ctx);
+				_alt = getInterpreter().adaptivePredict(_input,88,_ctx);
 			}
-			setState(762);
+			setState(788);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==COMMA) {
 				{
-				setState(761);
+				setState(787);
 				match(COMMA);
 				}
 			}
@@ -5066,7 +6166,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class IdentifierListContext extends ParserRuleContext {
 		public List<TerminalNode> Identifier() { return getTokens(qasm3Parser.Identifier); }
 		public TerminalNode Identifier(int i) {
@@ -5080,42 +6179,55 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_identifierList; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterIdentifierList(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitIdentifierList(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitIdentifierList(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final IdentifierListContext identifierList() throws RecognitionException {
 		IdentifierListContext _localctx = new IdentifierListContext(_ctx, getState());
-		enterRule(_localctx, 122, RULE_identifierList);
+		enterRule(_localctx, 126, RULE_identifierList);
 		int _la;
 		try {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(764);
+			setState(790);
 			match(Identifier);
-			setState(769);
+			setState(795);
 			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,88,_ctx);
+			_alt = getInterpreter().adaptivePredict(_input,90,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(765);
+					setState(791);
 					match(COMMA);
-					setState(766);
+					setState(792);
 					match(Identifier);
 					}
 					} 
 				}
-				setState(771);
+				setState(797);
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,88,_ctx);
+				_alt = getInterpreter().adaptivePredict(_input,90,_ctx);
 			}
-			setState(773);
+			setState(799);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==COMMA) {
 				{
-				setState(772);
+				setState(798);
 				match(COMMA);
 				}
 			}
@@ -5133,7 +6245,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class GateOperandListContext extends ParserRuleContext {
 		public List<GateOperandContext> gateOperand() {
 			return getRuleContexts(GateOperandContext.class);
@@ -5149,42 +6260,55 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_gateOperandList; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterGateOperandList(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitGateOperandList(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitGateOperandList(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final GateOperandListContext gateOperandList() throws RecognitionException {
 		GateOperandListContext _localctx = new GateOperandListContext(_ctx, getState());
-		enterRule(_localctx, 124, RULE_gateOperandList);
+		enterRule(_localctx, 128, RULE_gateOperandList);
 		int _la;
 		try {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(775);
+			setState(801);
 			gateOperand();
-			setState(780);
+			setState(806);
 			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,90,_ctx);
+			_alt = getInterpreter().adaptivePredict(_input,92,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(776);
+					setState(802);
 					match(COMMA);
-					setState(777);
+					setState(803);
 					gateOperand();
 					}
 					} 
 				}
-				setState(782);
+				setState(808);
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,90,_ctx);
+				_alt = getInterpreter().adaptivePredict(_input,92,_ctx);
 			}
-			setState(784);
+			setState(810);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==COMMA) {
 				{
-				setState(783);
+				setState(809);
 				match(COMMA);
 				}
 			}
@@ -5202,7 +6326,6 @@ public class qasm3Parser extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class ExternArgumentListContext extends ParserRuleContext {
 		public List<ExternArgumentContext> externArgument() {
 			return getRuleContexts(ExternArgumentContext.class);
@@ -5218,42 +6341,55 @@ public class qasm3Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_externArgumentList; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).enterExternArgumentList(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof qasm3ParserListener ) ((qasm3ParserListener)listener).exitExternArgumentList(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof qasm3ParserVisitor ) return ((qasm3ParserVisitor<? extends T>)visitor).visitExternArgumentList(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ExternArgumentListContext externArgumentList() throws RecognitionException {
 		ExternArgumentListContext _localctx = new ExternArgumentListContext(_ctx, getState());
-		enterRule(_localctx, 126, RULE_externArgumentList);
+		enterRule(_localctx, 130, RULE_externArgumentList);
 		int _la;
 		try {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(786);
+			setState(812);
 			externArgument();
-			setState(791);
+			setState(817);
 			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,92,_ctx);
+			_alt = getInterpreter().adaptivePredict(_input,94,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(787);
+					setState(813);
 					match(COMMA);
-					setState(788);
+					setState(814);
 					externArgument();
 					}
 					} 
 				}
-				setState(793);
+				setState(819);
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,92,_ctx);
+				_alt = getInterpreter().adaptivePredict(_input,94,_ctx);
 			}
-			setState(795);
+			setState(821);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==COMMA) {
 				{
-				setState(794);
+				setState(820);
 				match(COMMA);
 				}
 			}
@@ -5273,7 +6409,7 @@ public class qasm3Parser extends Parser {
 
 	public boolean sempred(RuleContext _localctx, int ruleIndex, int predIndex) {
 		switch (ruleIndex) {
-		case 35:
+		case 37:
 			return expression_sempred((ExpressionContext)_localctx, predIndex);
 		}
 		return true;
@@ -5309,523 +6445,321 @@ public class qasm3Parser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\u0004\u0001n\u031e\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001\u0002"+
-		"\u0002\u0007\u0002\u0002\u0003\u0007\u0003\u0002\u0004\u0007\u0004\u0002"+
-		"\u0005\u0007\u0005\u0002\u0006\u0007\u0006\u0002\u0007\u0007\u0007\u0002"+
-		"\b\u0007\b\u0002\t\u0007\t\u0002\n\u0007\n\u0002\u000b\u0007\u000b\u0002"+
-		"\f\u0007\f\u0002\r\u0007\r\u0002\u000e\u0007\u000e\u0002\u000f\u0007\u000f"+
-		"\u0002\u0010\u0007\u0010\u0002\u0011\u0007\u0011\u0002\u0012\u0007\u0012"+
-		"\u0002\u0013\u0007\u0013\u0002\u0014\u0007\u0014\u0002\u0015\u0007\u0015"+
-		"\u0002\u0016\u0007\u0016\u0002\u0017\u0007\u0017\u0002\u0018\u0007\u0018"+
-		"\u0002\u0019\u0007\u0019\u0002\u001a\u0007\u001a\u0002\u001b\u0007\u001b"+
-		"\u0002\u001c\u0007\u001c\u0002\u001d\u0007\u001d\u0002\u001e\u0007\u001e"+
-		"\u0002\u001f\u0007\u001f\u0002 \u0007 \u0002!\u0007!\u0002\"\u0007\"\u0002"+
-		"#\u0007#\u0002$\u0007$\u0002%\u0007%\u0002&\u0007&\u0002\'\u0007\'\u0002"+
-		"(\u0007(\u0002)\u0007)\u0002*\u0007*\u0002+\u0007+\u0002,\u0007,\u0002"+
-		"-\u0007-\u0002.\u0007.\u0002/\u0007/\u00020\u00070\u00021\u00071\u0002"+
-		"2\u00072\u00023\u00073\u00024\u00074\u00025\u00075\u00026\u00076\u0002"+
-		"7\u00077\u00028\u00078\u00029\u00079\u0002:\u0007:\u0002;\u0007;\u0002"+
-		"<\u0007<\u0002=\u0007=\u0002>\u0007>\u0002?\u0007?\u0001\u0000\u0003\u0000"+
-		"\u0082\b\u0000\u0001\u0000\u0005\u0000\u0085\b\u0000\n\u0000\f\u0000\u0088"+
-		"\t\u0000\u0001\u0000\u0001\u0000\u0001\u0001\u0001\u0001\u0001\u0001\u0001"+
-		"\u0001\u0001\u0002\u0001\u0002\u0005\u0002\u0092\b\u0002\n\u0002\f\u0002"+
-		"\u0095\t\u0002\u0001\u0002\u0001\u0002\u0001\u0002\u0001\u0002\u0001\u0002"+
-		"\u0001\u0002\u0001\u0002\u0001\u0002\u0001\u0002\u0001\u0002\u0001\u0002"+
-		"\u0001\u0002\u0001\u0002\u0001\u0002\u0001\u0002\u0001\u0002\u0001\u0002"+
-		"\u0001\u0002\u0001\u0002\u0001\u0002\u0001\u0002\u0001\u0002\u0001\u0002"+
-		"\u0001\u0002\u0001\u0002\u0001\u0002\u0001\u0002\u0001\u0002\u0003\u0002"+
-		"\u00b3\b\u0002\u0003\u0002\u00b5\b\u0002\u0001\u0003\u0001\u0003\u0003"+
-		"\u0003\u00b9\b\u0003\u0001\u0004\u0001\u0004\u0005\u0004\u00bd\b\u0004"+
-		"\n\u0004\f\u0004\u00c0\t\u0004\u0001\u0004\u0001\u0004\u0001\u0005\u0001"+
-		"\u0005\u0001\u0005\u0001\u0006\u0001\u0006\u0003\u0006\u00c9\b\u0006\u0001"+
-		"\u0007\u0001\u0007\u0001\u0007\u0001\u0007\u0001\b\u0001\b\u0001\b\u0001"+
-		"\b\u0001\t\u0001\t\u0001\t\u0001\n\u0001\n\u0001\n\u0001\u000b\u0001\u000b"+
-		"\u0001\u000b\u0001\f\u0001\f\u0001\f\u0001\f\u0001\f\u0001\f\u0001\f\u0001"+
-		"\f\u0001\f\u0001\f\u0003\f\u00e6\b\f\u0001\f\u0001\f\u0001\r\u0001\r\u0001"+
-		"\r\u0001\r\u0001\r\u0001\r\u0001\r\u0003\r\u00f1\b\r\u0001\u000e\u0001"+
-		"\u000e\u0001\u000e\u0003\u000e\u00f6\b\u000e\u0001\u000e\u0001\u000e\u0001"+
-		"\u000f\u0001\u000f\u0001\u000f\u0001\u000f\u0001\u000f\u0001\u000f\u0001"+
-		"\u0010\u0001\u0010\u0003\u0010\u0102\b\u0010\u0001\u0010\u0001\u0010\u0001"+
-		"\u0011\u0001\u0011\u0003\u0011\u0108\b\u0011\u0001\u0011\u0001\u0011\u0001"+
-		"\u0012\u0001\u0012\u0001\u0012\u0003\u0012\u010f\b\u0012\u0001\u0012\u0001"+
-		"\u0012\u0001\u0013\u0005\u0013\u0114\b\u0013\n\u0013\f\u0013\u0117\t\u0013"+
-		"\u0001\u0013\u0001\u0013\u0001\u0013\u0003\u0013\u011c\b\u0013\u0001\u0013"+
-		"\u0003\u0013\u011f\b\u0013\u0001\u0013\u0003\u0013\u0122\b\u0013\u0001"+
-		"\u0013\u0001\u0013\u0001\u0013\u0001\u0013\u0005\u0013\u0128\b\u0013\n"+
-		"\u0013\f\u0013\u012b\t\u0013\u0001\u0013\u0001\u0013\u0001\u0013\u0003"+
-		"\u0013\u0130\b\u0013\u0001\u0013\u0003\u0013\u0133\b\u0013\u0001\u0013"+
-		"\u0003\u0013\u0136\b\u0013\u0001\u0013\u0003\u0013\u0139\b\u0013\u0001"+
-		"\u0013\u0003\u0013\u013c\b\u0013\u0001\u0014\u0001\u0014\u0001\u0014\u0003"+
-		"\u0014\u0141\b\u0014\u0001\u0014\u0001\u0014\u0001\u0015\u0001\u0015\u0001"+
-		"\u0015\u0001\u0015\u0001\u0016\u0001\u0016\u0001\u0016\u0001\u0016\u0001"+
-		"\u0016\u0001\u0016\u0001\u0017\u0001\u0017\u0003\u0017\u0151\b\u0017\u0001"+
-		"\u0017\u0001\u0017\u0001\u0017\u0003\u0017\u0156\b\u0017\u0001\u0017\u0001"+
-		"\u0017\u0001\u0018\u0001\u0018\u0001\u0018\u0001\u0018\u0001\u0018\u0001"+
-		"\u0018\u0001\u0018\u0001\u0019\u0001\u0019\u0001\u0019\u0003\u0019\u0164"+
-		"\b\u0019\u0001\u0019\u0001\u0019\u0001\u0019\u0001\u001a\u0001\u001a\u0001"+
-		"\u001a\u0003\u001a\u016c\b\u001a\u0001\u001a\u0001\u001a\u0001\u001b\u0001"+
-		"\u001b\u0001\u001b\u0001\u001b\u0001\u001c\u0001\u001c\u0001\u001c\u0001"+
-		"\u001c\u0003\u001c\u0178\b\u001c\u0001\u001c\u0001\u001c\u0003\u001c\u017c"+
-		"\b\u001c\u0001\u001c\u0001\u001c\u0001\u001d\u0001\u001d\u0001\u001d\u0001"+
-		"\u001d\u0003\u001d\u0184\b\u001d\u0001\u001d\u0001\u001d\u0003\u001d\u0188"+
-		"\b\u001d\u0001\u001d\u0001\u001d\u0001\u001e\u0001\u001e\u0001\u001e\u0001"+
-		"\u001e\u0003\u001e\u0190\b\u001e\u0001\u001e\u0003\u001e\u0193\b\u001e"+
-		"\u0001\u001e\u0001\u001e\u0001\u001e\u0001\u001f\u0001\u001f\u0001\u001f"+
-		"\u0001\u001f\u0003\u001f\u019c\b\u001f\u0001\u001f\u0001\u001f\u0001 "+
-		"\u0001 \u0001 \u0001!\u0001!\u0001!\u0003!\u01a6\b!\u0001!\u0001!\u0001"+
-		"\"\u0001\"\u0001\"\u0001\"\u0003\"\u01ae\b\"\u0001\"\u0003\"\u01b1\b\""+
-		"\u0001\"\u0001\"\u0003\"\u01b5\b\"\u0001\"\u0001\"\u0003\"\u01b9\b\"\u0001"+
-		"\"\u0001\"\u0001#\u0001#\u0001#\u0001#\u0001#\u0001#\u0001#\u0001#\u0001"+
-		"#\u0003#\u01c6\b#\u0001#\u0001#\u0001#\u0001#\u0001#\u0001#\u0001#\u0001"+
-		"#\u0001#\u0001#\u0001#\u0001#\u0003#\u01d4\b#\u0001#\u0001#\u0003#\u01d8"+
-		"\b#\u0001#\u0001#\u0001#\u0001#\u0001#\u0001#\u0001#\u0001#\u0001#\u0001"+
-		"#\u0001#\u0001#\u0001#\u0001#\u0001#\u0001#\u0001#\u0001#\u0001#\u0001"+
-		"#\u0001#\u0001#\u0001#\u0001#\u0001#\u0001#\u0001#\u0001#\u0001#\u0001"+
-		"#\u0001#\u0001#\u0001#\u0001#\u0001#\u0005#\u01fd\b#\n#\f#\u0200\t#\u0001"+
-		"$\u0001$\u0001$\u0005$\u0205\b$\n$\f$\u0208\t$\u0001%\u0001%\u0001%\u0003"+
-		"%\u020d\b%\u0001&\u0001&\u0001&\u0001\'\u0003\'\u0213\b\'\u0001\'\u0001"+
-		"\'\u0003\'\u0217\b\'\u0001\'\u0001\'\u0003\'\u021b\b\'\u0001(\u0001(\u0001"+
-		"(\u0001(\u0005(\u0221\b(\n(\f(\u0224\t(\u0001(\u0003(\u0227\b(\u0001("+
-		"\u0001(\u0001)\u0001)\u0001)\u0003)\u022e\b)\u0001)\u0001)\u0001)\u0003"+
-		")\u0233\b)\u0005)\u0235\b)\n)\f)\u0238\t)\u0001)\u0003)\u023b\b)\u0001"+
-		")\u0001)\u0001*\u0001*\u0001*\u0001*\u0003*\u0243\b*\u0001*\u0001*\u0001"+
-		"*\u0003*\u0248\b*\u0005*\u024a\b*\n*\f*\u024d\t*\u0001*\u0003*\u0250\b"+
-		"*\u0003*\u0252\b*\u0001*\u0001*\u0001+\u0001+\u0005+\u0258\b+\n+\f+\u025b"+
-		"\t+\u0001,\u0001,\u0001,\u0001-\u0001-\u0001-\u0001-\u0001-\u0001-\u0001"+
-		"-\u0001-\u0001-\u0001-\u0001-\u0003-\u026b\b-\u0003-\u026d\b-\u0001-\u0001"+
-		"-\u0001.\u0001.\u0003.\u0273\b.\u0001.\u0001.\u0003.\u0277\b.\u0001.\u0001"+
-		".\u0003.\u027b\b.\u0001.\u0001.\u0003.\u027f\b.\u0001.\u0001.\u0003.\u0283"+
-		"\b.\u0001.\u0001.\u0001.\u0001.\u0001.\u0001.\u0001.\u0001.\u0003.\u028d"+
-		"\b.\u0003.\u028f\b.\u0001/\u0001/\u0003/\u0293\b/\u00010\u00010\u0001"+
-		"0\u00010\u00010\u00010\u00010\u00011\u00011\u00011\u00011\u00011\u0001"+
-		"1\u00011\u00011\u00011\u00031\u02a5\b1\u00011\u00011\u00012\u00012\u0001"+
-		"2\u00012\u00013\u00013\u00014\u00014\u00034\u02b1\b4\u00015\u00015\u0001"+
-		"6\u00016\u00036\u02b7\b6\u00017\u00017\u00017\u00017\u00037\u02bd\b7\u0003"+
-		"7\u02bf\b7\u00018\u00018\u00018\u00018\u00018\u00018\u00018\u00018\u0001"+
-		"8\u00038\u02ca\b8\u00018\u00018\u00018\u00038\u02cf\b8\u00019\u00019\u0001"+
-		"9\u00059\u02d4\b9\n9\f9\u02d7\t9\u00019\u00039\u02da\b9\u0001:\u0001:"+
-		"\u0001:\u0005:\u02df\b:\n:\f:\u02e2\t:\u0001:\u0003:\u02e5\b:\u0001;\u0001"+
-		";\u0001;\u0005;\u02ea\b;\n;\f;\u02ed\t;\u0001;\u0003;\u02f0\b;\u0001<"+
-		"\u0001<\u0001<\u0005<\u02f5\b<\n<\f<\u02f8\t<\u0001<\u0003<\u02fb\b<\u0001"+
-		"=\u0001=\u0001=\u0005=\u0300\b=\n=\f=\u0303\t=\u0001=\u0003=\u0306\b="+
-		"\u0001>\u0001>\u0001>\u0005>\u030b\b>\n>\f>\u030e\t>\u0001>\u0003>\u0311"+
-		"\b>\u0001?\u0001?\u0001?\u0005?\u0316\b?\n?\f?\u0319\t?\u0001?\u0003?"+
-		"\u031c\b?\u0001?\u0000\u0001F@\u0000\u0002\u0004\u0006\b\n\f\u000e\u0010"+
-		"\u0012\u0014\u0016\u0018\u001a\u001c\u001e \"$&(*,.02468:<>@BDFHJLNPR"+
-		"TVXZ\\^`bdfhjlnprtvxz|~\u0000\u000b\u0001\u0000\u0016\u0017\u0002\u0000"+
-		"\u001b\u001b\u001d\u001d\u0002\u0000??QQ\u0002\u0000CCNO\u0002\u00004"+
-		"4U^\u0002\u0000DDFG\u0002\u0000AACC\u0001\u0000,-\u0001\u0000\u0019\u001a"+
-		"\u0002\u000002ZZ\u0001\u0000Z[\u0371\u0000\u0081\u0001\u0000\u0000\u0000"+
-		"\u0002\u008b\u0001\u0000\u0000\u0000\u0004\u00b4\u0001\u0000\u0000\u0000"+
-		"\u0006\u00b6\u0001\u0000\u0000\u0000\b\u00ba\u0001\u0000\u0000\u0000\n"+
-		"\u00c3\u0001\u0000\u0000\u0000\f\u00c8\u0001\u0000\u0000\u0000\u000e\u00ca"+
-		"\u0001\u0000\u0000\u0000\u0010\u00ce\u0001\u0000\u0000\u0000\u0012\u00d2"+
-		"\u0001\u0000\u0000\u0000\u0014\u00d5\u0001\u0000\u0000\u0000\u0016\u00d8"+
-		"\u0001\u0000\u0000\u0000\u0018\u00db\u0001\u0000\u0000\u0000\u001a\u00e9"+
-		"\u0001\u0000\u0000\u0000\u001c\u00f2\u0001\u0000\u0000\u0000\u001e\u00f9"+
-		"\u0001\u0000\u0000\u0000 \u00ff\u0001\u0000\u0000\u0000\"\u0105\u0001"+
-		"\u0000\u0000\u0000$\u010b\u0001\u0000\u0000\u0000&\u013b\u0001\u0000\u0000"+
-		"\u0000(\u013d\u0001\u0000\u0000\u0000*\u0144\u0001\u0000\u0000\u0000,"+
-		"\u0148\u0001\u0000\u0000\u0000.\u0150\u0001\u0000\u0000\u00000\u0159\u0001"+
-		"\u0000\u0000\u00002\u0160\u0001\u0000\u0000\u00004\u0168\u0001\u0000\u0000"+
-		"\u00006\u016f\u0001\u0000\u0000\u00008\u0173\u0001\u0000\u0000\u0000:"+
-		"\u017f\u0001\u0000\u0000\u0000<\u018b\u0001\u0000\u0000\u0000>\u0197\u0001"+
-		"\u0000\u0000\u0000@\u019f\u0001\u0000\u0000\u0000B\u01a2\u0001\u0000\u0000"+
-		"\u0000D\u01a9\u0001\u0000\u0000\u0000F\u01d7\u0001\u0000\u0000\u0000H"+
-		"\u0201\u0001\u0000\u0000\u0000J\u020c\u0001\u0000\u0000\u0000L\u020e\u0001"+
-		"\u0000\u0000\u0000N\u0212\u0001\u0000\u0000\u0000P\u021c\u0001\u0000\u0000"+
-		"\u0000R\u022a\u0001\u0000\u0000\u0000T\u023e\u0001\u0000\u0000\u0000V"+
-		"\u0255\u0001\u0000\u0000\u0000X\u025c\u0001\u0000\u0000\u0000Z\u026c\u0001"+
-		"\u0000\u0000\u0000\\\u028e\u0001\u0000\u0000\u0000^\u0290\u0001\u0000"+
-		"\u0000\u0000`\u0294\u0001\u0000\u0000\u0000b\u029b\u0001\u0000\u0000\u0000"+
-		"d\u02a8\u0001\u0000\u0000\u0000f\u02ac\u0001\u0000\u0000\u0000h\u02b0"+
-		"\u0001\u0000\u0000\u0000j\u02b2\u0001\u0000\u0000\u0000l\u02b6\u0001\u0000"+
-		"\u0000\u0000n\u02be\u0001\u0000\u0000\u0000p\u02ce\u0001\u0000\u0000\u0000"+
-		"r\u02d0\u0001\u0000\u0000\u0000t\u02db\u0001\u0000\u0000\u0000v\u02e6"+
-		"\u0001\u0000\u0000\u0000x\u02f1\u0001\u0000\u0000\u0000z\u02fc\u0001\u0000"+
-		"\u0000\u0000|\u0307\u0001\u0000\u0000\u0000~\u0312\u0001\u0000\u0000\u0000"+
-		"\u0080\u0082\u0003\u0002\u0001\u0000\u0081\u0080\u0001\u0000\u0000\u0000"+
-		"\u0081\u0082\u0001\u0000\u0000\u0000\u0082\u0086\u0001\u0000\u0000\u0000"+
-		"\u0083\u0085\u0003\u0004\u0002\u0000\u0084\u0083\u0001\u0000\u0000\u0000"+
-		"\u0085\u0088\u0001\u0000\u0000\u0000\u0086\u0084\u0001\u0000\u0000\u0000"+
-		"\u0086\u0087\u0001\u0000\u0000\u0000\u0087\u0089\u0001\u0000\u0000\u0000"+
-		"\u0088\u0086\u0001\u0000\u0000\u0000\u0089\u008a\u0005\u0000\u0000\u0001"+
-		"\u008a\u0001\u0001\u0000\u0000\u0000\u008b\u008c\u0005\u0001\u0000\u0000"+
-		"\u008c\u008d\u0005d\u0000\u0000\u008d\u008e\u0005<\u0000\u0000\u008e\u0003"+
-		"\u0001\u0000\u0000\u0000\u008f\u00b5\u0003\n\u0005\u0000\u0090\u0092\u0003"+
-		"\u0006\u0003\u0000\u0091\u0090\u0001\u0000\u0000\u0000\u0092\u0095\u0001"+
-		"\u0000\u0000\u0000\u0093\u0091\u0001\u0000\u0000\u0000\u0093\u0094\u0001"+
-		"\u0000\u0000\u0000\u0094\u00b2\u0001\u0000\u0000\u0000\u0095\u0093\u0001"+
-		"\u0000\u0000\u0000\u0096\u00b3\u0003,\u0016\u0000\u0097\u00b3\u0003>\u001f"+
-		"\u0000\u0098\u00b3\u0003 \u0010\u0000\u0099\u00b3\u0003\"\u0011\u0000"+
-		"\u009a\u00b3\u0003\u0012\t\u0000\u009b\u00b3\u0003B!\u0000\u009c\u00b3"+
-		"\u0003\u000e\u0007\u0000\u009d\u00b3\u0003.\u0017\u0000\u009e\u00b3\u0003"+
-		"0\u0018\u0000\u009f\u00b3\u0003\u0014\n\u0000\u00a0\u00b3\u00038\u001c"+
-		"\u0000\u00a1\u00b3\u0003D\"\u0000\u00a2\u00b3\u0003$\u0012\u0000\u00a3"+
-		"\u00b3\u0003\u0016\u000b\u0000\u00a4\u00b3\u0003@ \u0000\u00a5\u00b3\u0003"+
-		":\u001d\u0000\u00a6\u00b3\u0003\u0018\f\u0000\u00a7\u00b3\u0003&\u0013"+
-		"\u0000\u00a8\u00b3\u0003<\u001e\u0000\u00a9\u00b3\u0003\u001a\r\u0000"+
-		"\u00aa\u00b3\u0003\u0010\b\u0000\u00ab\u00b3\u00032\u0019\u0000\u00ac"+
-		"\u00b3\u0003(\u0014\u0000\u00ad\u00b3\u00034\u001a\u0000\u00ae\u00b3\u0003"+
-		"6\u001b\u0000\u00af\u00b3\u0003*\u0015\u0000\u00b0\u00b3\u0003\u001c\u000e"+
-		"\u0000\u00b1\u00b3\u0003\u001e\u000f\u0000\u00b2\u0096\u0001\u0000\u0000"+
-		"\u0000\u00b2\u0097\u0001\u0000\u0000\u0000\u00b2\u0098\u0001\u0000\u0000"+
-		"\u0000\u00b2\u0099\u0001\u0000\u0000\u0000\u00b2\u009a\u0001\u0000\u0000"+
-		"\u0000\u00b2\u009b\u0001\u0000\u0000\u0000\u00b2\u009c\u0001\u0000\u0000"+
-		"\u0000\u00b2\u009d\u0001\u0000\u0000\u0000\u00b2\u009e\u0001\u0000\u0000"+
-		"\u0000\u00b2\u009f\u0001\u0000\u0000\u0000\u00b2\u00a0\u0001\u0000\u0000"+
-		"\u0000\u00b2\u00a1\u0001\u0000\u0000\u0000\u00b2\u00a2\u0001\u0000\u0000"+
-		"\u0000\u00b2\u00a3\u0001\u0000\u0000\u0000\u00b2\u00a4\u0001\u0000\u0000"+
-		"\u0000\u00b2\u00a5\u0001\u0000\u0000\u0000\u00b2\u00a6\u0001\u0000\u0000"+
-		"\u0000\u00b2\u00a7\u0001\u0000\u0000\u0000\u00b2\u00a8\u0001\u0000\u0000"+
-		"\u0000\u00b2\u00a9\u0001\u0000\u0000\u0000\u00b2\u00aa\u0001\u0000\u0000"+
-		"\u0000\u00b2\u00ab\u0001\u0000\u0000\u0000\u00b2\u00ac\u0001\u0000\u0000"+
-		"\u0000\u00b2\u00ad\u0001\u0000\u0000\u0000\u00b2\u00ae\u0001\u0000\u0000"+
-		"\u0000\u00b2\u00af\u0001\u0000\u0000\u0000\u00b2\u00b0\u0001\u0000\u0000"+
-		"\u0000\u00b2\u00b1\u0001\u0000\u0000\u0000\u00b3\u00b5\u0001\u0000\u0000"+
-		"\u0000\u00b4\u008f\u0001\u0000\u0000\u0000\u00b4\u0093\u0001\u0000\u0000"+
-		"\u0000\u00b5\u0005\u0001\u0000\u0000\u0000\u00b6\u00b8\u0005\u0015\u0000"+
-		"\u0000\u00b7\u00b9\u0005i\u0000\u0000\u00b8\u00b7\u0001\u0000\u0000\u0000"+
-		"\u00b8\u00b9\u0001\u0000\u0000\u0000\u00b9\u0007\u0001\u0000\u0000\u0000"+
-		"\u00ba\u00be\u00057\u0000\u0000\u00bb\u00bd\u0003\u0004\u0002\u0000\u00bc"+
-		"\u00bb\u0001\u0000\u0000\u0000\u00bd\u00c0\u0001\u0000\u0000\u0000\u00be"+
-		"\u00bc\u0001\u0000\u0000\u0000\u00be\u00bf\u0001\u0000\u0000\u0000\u00bf"+
-		"\u00c1\u0001\u0000\u0000\u0000\u00c0\u00be\u0001\u0000\u0000\u0000\u00c1"+
-		"\u00c2\u00058\u0000\u0000\u00c2\t\u0001\u0000\u0000\u0000\u00c3\u00c4"+
-		"\u0005\u0014\u0000\u0000\u00c4\u00c5\u0005i\u0000\u0000\u00c5\u000b\u0001"+
-		"\u0000\u0000\u0000\u00c6\u00c9\u0003\u0004\u0002\u0000\u00c7\u00c9\u0003"+
-		"\b\u0004\u0000\u00c8\u00c6\u0001\u0000\u0000\u0000\u00c8\u00c7\u0001\u0000"+
-		"\u0000\u0000\u00c9\r\u0001\u0000\u0000\u0000\u00ca\u00cb\u0005\u0003\u0000"+
-		"\u0000\u00cb\u00cc\u0005f\u0000\u0000\u00cc\u00cd\u0005<\u0000\u0000\u00cd"+
-		"\u000f\u0001\u0000\u0000\u0000\u00ce\u00cf\u0005\u0002\u0000\u0000\u00cf"+
-		"\u00d0\u0005f\u0000\u0000\u00d0\u00d1\u0005<\u0000\u0000\u00d1\u0011\u0001"+
-		"\u0000\u0000\u0000\u00d2\u00d3\u0005\u000b\u0000\u0000\u00d3\u00d4\u0005"+
-		"<\u0000\u0000\u00d4\u0013\u0001\u0000\u0000\u0000\u00d5\u00d6\u0005\f"+
-		"\u0000\u0000\u00d6\u00d7\u0005<\u0000\u0000\u00d7\u0015\u0001\u0000\u0000"+
-		"\u0000\u00d8\u00d9\u0005\u000f\u0000\u0000\u00d9\u00da\u0005<\u0000\u0000"+
-		"\u00da\u0017\u0001\u0000\u0000\u0000\u00db\u00dc\u0005\u0011\u0000\u0000"+
-		"\u00dc\u00dd\u0003\\.\u0000\u00dd\u00de\u0005Z\u0000\u0000\u00de\u00e5"+
-		"\u0005\u0013\u0000\u0000\u00df\u00e6\u0003P(\u0000\u00e0\u00e1\u00055"+
-		"\u0000\u0000\u00e1\u00e2\u0003N\'\u0000\u00e2\u00e3\u00056\u0000\u0000"+
-		"\u00e3\u00e6\u0001\u0000\u0000\u0000\u00e4\u00e6\u0003F#\u0000\u00e5\u00df"+
-		"\u0001\u0000\u0000\u0000\u00e5\u00e0\u0001\u0000\u0000\u0000\u00e5\u00e4"+
-		"\u0001\u0000\u0000\u0000\u00e6\u00e7\u0001\u0000\u0000\u0000\u00e7\u00e8"+
-		"\u0003\f\u0006\u0000\u00e8\u0019\u0001\u0000\u0000\u0000\u00e9\u00ea\u0005"+
-		"\r\u0000\u0000\u00ea\u00eb\u00059\u0000\u0000\u00eb\u00ec\u0003F#\u0000"+
-		"\u00ec\u00ed\u0005:\u0000\u0000\u00ed\u00f0\u0003\f\u0006\u0000\u00ee"+
-		"\u00ef\u0005\u000e\u0000\u0000\u00ef\u00f1\u0003\f\u0006\u0000\u00f0\u00ee"+
-		"\u0001\u0000\u0000\u0000\u00f0\u00f1\u0001\u0000\u0000\u0000\u00f1\u001b"+
-		"\u0001\u0000\u0000\u0000\u00f2\u00f5\u0005\u0010\u0000\u0000\u00f3\u00f6"+
-		"\u0003F#\u0000\u00f4\u00f6\u0003L&\u0000\u00f5\u00f3\u0001\u0000\u0000"+
-		"\u0000\u00f5\u00f4\u0001\u0000\u0000\u0000\u00f5\u00f6\u0001\u0000\u0000"+
-		"\u0000\u00f6\u00f7\u0001\u0000\u0000\u0000\u00f7\u00f8\u0005<\u0000\u0000"+
-		"\u00f8\u001d\u0001\u0000\u0000\u0000\u00f9\u00fa\u0005\u0012\u0000\u0000"+
-		"\u00fa\u00fb\u00059\u0000\u0000\u00fb\u00fc\u0003F#\u0000\u00fc\u00fd"+
-		"\u0005:\u0000\u0000\u00fd\u00fe\u0003\f\u0006\u0000\u00fe\u001f\u0001"+
-		"\u0000\u0000\u0000\u00ff\u0101\u00053\u0000\u0000\u0100\u0102\u0003|>"+
-		"\u0000\u0101\u0100\u0001\u0000\u0000\u0000\u0101\u0102\u0001\u0000\u0000"+
-		"\u0000\u0102\u0103\u0001\u0000\u0000\u0000\u0103\u0104\u0005<\u0000\u0000"+
-		"\u0104!\u0001\u0000\u0000\u0000\u0105\u0107\u0005\t\u0000\u0000\u0106"+
-		"\u0108\u0003d2\u0000\u0107\u0106\u0001\u0000\u0000\u0000\u0107\u0108\u0001"+
-		"\u0000\u0000\u0000\u0108\u0109\u0001\u0000\u0000\u0000\u0109\u010a\u0003"+
-		"\b\u0004\u0000\u010a#\u0001\u0000\u0000\u0000\u010b\u010c\u00050\u0000"+
-		"\u0000\u010c\u010e\u0003d2\u0000\u010d\u010f\u0003|>\u0000\u010e\u010d"+
-		"\u0001\u0000\u0000\u0000\u010e\u010f\u0001\u0000\u0000\u0000\u010f\u0110"+
-		"\u0001\u0000\u0000\u0000\u0110\u0111\u0005<\u0000\u0000\u0111%\u0001\u0000"+
-		"\u0000\u0000\u0112\u0114\u0003Z-\u0000\u0113\u0112\u0001\u0000\u0000\u0000"+
-		"\u0114\u0117\u0001\u0000\u0000\u0000\u0115\u0113\u0001\u0000\u0000\u0000"+
-		"\u0115\u0116\u0001\u0000\u0000\u0000\u0116\u0118\u0001\u0000\u0000\u0000"+
-		"\u0117\u0115\u0001\u0000\u0000\u0000\u0118\u011e\u0005Z\u0000\u0000\u0119"+
-		"\u011b\u00059\u0000\u0000\u011a\u011c\u0003x<\u0000\u011b\u011a\u0001"+
-		"\u0000\u0000\u0000\u011b\u011c\u0001\u0000\u0000\u0000\u011c\u011d\u0001"+
-		"\u0000\u0000\u0000\u011d\u011f\u0005:\u0000\u0000\u011e\u0119\u0001\u0000"+
-		"\u0000\u0000\u011e\u011f\u0001\u0000\u0000\u0000\u011f\u0121\u0001\u0000"+
-		"\u0000\u0000\u0120\u0122\u0003d2\u0000\u0121\u0120\u0001\u0000\u0000\u0000"+
-		"\u0121\u0122\u0001\u0000\u0000\u0000\u0122\u0123\u0001\u0000\u0000\u0000"+
-		"\u0123\u0124\u0003|>\u0000\u0124\u0125\u0005<\u0000\u0000\u0125\u013c"+
-		"\u0001\u0000\u0000\u0000\u0126\u0128\u0003Z-\u0000\u0127\u0126\u0001\u0000"+
-		"\u0000\u0000\u0128\u012b\u0001\u0000\u0000\u0000\u0129\u0127\u0001\u0000"+
-		"\u0000\u0000\u0129\u012a\u0001\u0000\u0000\u0000\u012a\u012c\u0001\u0000"+
-		"\u0000\u0000\u012b\u0129\u0001\u0000\u0000\u0000\u012c\u0132\u0005)\u0000"+
-		"\u0000\u012d\u012f\u00059\u0000\u0000\u012e\u0130\u0003x<\u0000\u012f"+
-		"\u012e\u0001\u0000\u0000\u0000\u012f\u0130\u0001\u0000\u0000\u0000\u0130"+
-		"\u0131\u0001\u0000\u0000\u0000\u0131\u0133\u0005:\u0000\u0000\u0132\u012d"+
-		"\u0001\u0000\u0000\u0000\u0132\u0133\u0001\u0000\u0000\u0000\u0133\u0135"+
-		"\u0001\u0000\u0000\u0000\u0134\u0136\u0003d2\u0000\u0135\u0134\u0001\u0000"+
-		"\u0000\u0000\u0135\u0136\u0001\u0000\u0000\u0000\u0136\u0138\u0001\u0000"+
-		"\u0000\u0000\u0137\u0139\u0003|>\u0000\u0138\u0137\u0001\u0000\u0000\u0000"+
-		"\u0138\u0139\u0001\u0000\u0000\u0000\u0139\u013a\u0001\u0000\u0000\u0000"+
-		"\u013a\u013c\u0005<\u0000\u0000\u013b\u0115\u0001\u0000\u0000\u0000\u013b"+
-		"\u0129\u0001\u0000\u0000\u0000\u013c\'\u0001\u0000\u0000\u0000\u013d\u0140"+
-		"\u0003L&\u0000\u013e\u013f\u0005@\u0000\u0000\u013f\u0141\u0003V+\u0000"+
-		"\u0140\u013e\u0001\u0000\u0000\u0000\u0140\u0141\u0001\u0000\u0000\u0000"+
-		"\u0141\u0142\u0001\u0000\u0000\u0000\u0142\u0143\u0005<\u0000\u0000\u0143"+
-		")\u0001\u0000\u0000\u0000\u0144\u0145\u00051\u0000\u0000\u0145\u0146\u0003"+
-		"l6\u0000\u0146\u0147\u0005<\u0000\u0000\u0147+\u0001\u0000\u0000\u0000"+
-		"\u0148\u0149\u0005\n\u0000\u0000\u0149\u014a\u0005Z\u0000\u0000\u014a"+
-		"\u014b\u0005?\u0000\u0000\u014b\u014c\u0003H$\u0000\u014c\u014d\u0005"+
-		"<\u0000\u0000\u014d-\u0001\u0000\u0000\u0000\u014e\u0151\u0003\\.\u0000"+
-		"\u014f\u0151\u0003`0\u0000\u0150\u014e\u0001\u0000\u0000\u0000\u0150\u014f"+
-		"\u0001\u0000\u0000\u0000\u0151\u0152\u0001\u0000\u0000\u0000\u0152\u0155"+
-		"\u0005Z\u0000\u0000\u0153\u0154\u0005?\u0000\u0000\u0154\u0156\u0003J"+
-		"%\u0000\u0155\u0153\u0001\u0000\u0000\u0000\u0155\u0156\u0001\u0000\u0000"+
-		"\u0000\u0156\u0157\u0001\u0000\u0000\u0000\u0157\u0158\u0005<\u0000\u0000"+
-		"\u0158/\u0001\u0000\u0000\u0000\u0159\u015a\u0005\u0018\u0000\u0000\u015a"+
-		"\u015b\u0003\\.\u0000\u015b\u015c\u0005Z\u0000\u0000\u015c\u015d\u0005"+
-		"?\u0000\u0000\u015d\u015e\u0003J%\u0000\u015e\u015f\u0005<\u0000\u0000"+
-		"\u015f1\u0001\u0000\u0000\u0000\u0160\u0163\u0007\u0000\u0000\u0000\u0161"+
-		"\u0164\u0003\\.\u0000\u0162\u0164\u0003`0\u0000\u0163\u0161\u0001\u0000"+
-		"\u0000\u0000\u0163\u0162\u0001\u0000\u0000\u0000\u0164\u0165\u0001\u0000"+
-		"\u0000\u0000\u0165\u0166\u0005Z\u0000\u0000\u0166\u0167\u0005<\u0000\u0000"+
-		"\u01673\u0001\u0000\u0000\u0000\u0168\u0169\u0007\u0001\u0000\u0000\u0169"+
-		"\u016b\u0005Z\u0000\u0000\u016a\u016c\u0003d2\u0000\u016b\u016a\u0001"+
-		"\u0000\u0000\u0000\u016b\u016c\u0001\u0000\u0000\u0000\u016c\u016d\u0001"+
-		"\u0000\u0000\u0000\u016d\u016e\u0005<\u0000\u0000\u016e5\u0001\u0000\u0000"+
-		"\u0000\u016f\u0170\u0003^/\u0000\u0170\u0171\u0005Z\u0000\u0000\u0171"+
-		"\u0172\u0005<\u0000\u0000\u01727\u0001\u0000\u0000\u0000\u0173\u0174\u0005"+
-		"\u0004\u0000\u0000\u0174\u0175\u0005Z\u0000\u0000\u0175\u0177\u00059\u0000"+
-		"\u0000\u0176\u0178\u0003r9\u0000\u0177\u0176\u0001\u0000\u0000\u0000\u0177"+
-		"\u0178\u0001\u0000\u0000\u0000\u0178\u0179\u0001\u0000\u0000\u0000\u0179"+
-		"\u017b\u0005:\u0000\u0000\u017a\u017c\u0003X,\u0000\u017b\u017a\u0001"+
-		"\u0000\u0000\u0000\u017b\u017c\u0001\u0000\u0000\u0000\u017c\u017d\u0001"+
-		"\u0000\u0000\u0000\u017d\u017e\u0003\b\u0004\u0000\u017e9\u0001\u0000"+
-		"\u0000\u0000\u017f\u0180\u0005\b\u0000\u0000\u0180\u0181\u0005Z\u0000"+
-		"\u0000\u0181\u0183\u00059\u0000\u0000\u0182\u0184\u0003~?\u0000\u0183"+
-		"\u0182\u0001\u0000\u0000\u0000\u0183\u0184\u0001\u0000\u0000\u0000\u0184"+
-		"\u0185\u0001\u0000\u0000\u0000\u0185\u0187\u0005:\u0000\u0000\u0186\u0188"+
-		"\u0003X,\u0000\u0187\u0186\u0001\u0000\u0000\u0000\u0187\u0188\u0001\u0000"+
-		"\u0000\u0000\u0188\u0189\u0001\u0000\u0000\u0000\u0189\u018a\u0005<\u0000"+
-		"\u0000\u018a;\u0001\u0000\u0000\u0000\u018b\u018c\u0005\u0007\u0000\u0000"+
-		"\u018c\u0192\u0005Z\u0000\u0000\u018d\u018f\u00059\u0000\u0000\u018e\u0190"+
-		"\u0003z=\u0000\u018f\u018e\u0001\u0000\u0000\u0000\u018f\u0190\u0001\u0000"+
-		"\u0000\u0000\u0190\u0191\u0001\u0000\u0000\u0000\u0191\u0193\u0005:\u0000"+
-		"\u0000\u0192\u018d\u0001\u0000\u0000\u0000\u0192\u0193\u0001\u0000\u0000"+
-		"\u0000\u0193\u0194\u0001\u0000\u0000\u0000\u0194\u0195\u0003z=\u0000\u0195"+
-		"\u0196\u0003\b\u0004\u0000\u0196=\u0001\u0000\u0000\u0000\u0197\u0198"+
-		"\u0003V+\u0000\u0198\u019b\u0007\u0002\u0000\u0000\u0199\u019c\u0003F"+
-		"#\u0000\u019a\u019c\u0003L&\u0000\u019b\u0199\u0001\u0000\u0000\u0000"+
-		"\u019b\u019a\u0001\u0000\u0000\u0000\u019c\u019d\u0001\u0000\u0000\u0000"+
-		"\u019d\u019e\u0005<\u0000\u0000\u019e?\u0001\u0000\u0000\u0000\u019f\u01a0"+
-		"\u0003F#\u0000\u01a0\u01a1\u0005<\u0000\u0000\u01a1A\u0001\u0000\u0000"+
-		"\u0000\u01a2\u01a3\u0005\u0005\u0000\u0000\u01a3\u01a5\u00057\u0000\u0000"+
-		"\u01a4\u01a6\u0005n\u0000\u0000\u01a5\u01a4\u0001\u0000\u0000\u0000\u01a5"+
-		"\u01a6\u0001\u0000\u0000\u0000\u01a6\u01a7\u0001\u0000\u0000\u0000\u01a7"+
-		"\u01a8\u00058\u0000\u0000\u01a8C\u0001\u0000\u0000\u0000\u01a9\u01aa\u0005"+
-		"\u0006\u0000\u0000\u01aa\u01b0\u0003f3\u0000\u01ab\u01ad\u00059\u0000"+
-		"\u0000\u01ac\u01ae\u0003t:\u0000\u01ad\u01ac\u0001\u0000\u0000\u0000\u01ad"+
-		"\u01ae\u0001\u0000\u0000\u0000\u01ae\u01af\u0001\u0000\u0000\u0000\u01af"+
-		"\u01b1\u0005:\u0000\u0000\u01b0\u01ab\u0001\u0000\u0000\u0000\u01b0\u01b1"+
-		"\u0001\u0000\u0000\u0000\u01b1\u01b2\u0001\u0000\u0000\u0000\u01b2\u01b4"+
-		"\u0003v;\u0000\u01b3\u01b5\u0003X,\u0000\u01b4\u01b3\u0001\u0000\u0000"+
-		"\u0000\u01b4\u01b5\u0001\u0000\u0000\u0000\u01b5\u01b6\u0001\u0000\u0000"+
-		"\u0000\u01b6\u01b8\u00057\u0000\u0000\u01b7\u01b9\u0005n\u0000\u0000\u01b8"+
-		"\u01b7\u0001\u0000\u0000\u0000\u01b8\u01b9\u0001\u0000\u0000\u0000\u01b9"+
-		"\u01ba\u0001\u0000\u0000\u0000\u01ba\u01bb\u00058\u0000\u0000\u01bbE\u0001"+
-		"\u0000\u0000\u0000\u01bc\u01bd\u0006#\uffff\uffff\u0000\u01bd\u01be\u0005"+
-		"9\u0000\u0000\u01be\u01bf\u0003F#\u0000\u01bf\u01c0\u0005:\u0000\u0000"+
-		"\u01c0\u01d8\u0001\u0000\u0000\u0000\u01c1\u01c2\u0007\u0003\u0000\u0000"+
-		"\u01c2\u01d8\u0003F#\u000f\u01c3\u01c6\u0003\\.\u0000\u01c4\u01c6\u0003"+
-		"`0\u0000\u01c5\u01c3\u0001\u0000\u0000\u0000\u01c5\u01c4\u0001\u0000\u0000"+
-		"\u0000\u01c6\u01c7\u0001\u0000\u0000\u0000\u01c7\u01c8\u00059\u0000\u0000"+
-		"\u01c8\u01c9\u0003F#\u0000\u01c9\u01ca\u0005:\u0000\u0000\u01ca\u01d8"+
-		"\u0001\u0000\u0000\u0000\u01cb\u01cc\u0005/\u0000\u0000\u01cc\u01cd\u0005"+
-		"9\u0000\u0000\u01cd\u01ce\u0003\b\u0004\u0000\u01ce\u01cf\u0005:\u0000"+
-		"\u0000\u01cf\u01d8\u0001\u0000\u0000\u0000\u01d0\u01d1\u0005Z\u0000\u0000"+
-		"\u01d1\u01d3\u00059\u0000\u0000\u01d2\u01d4\u0003x<\u0000\u01d3\u01d2"+
-		"\u0001\u0000\u0000\u0000\u01d3\u01d4\u0001\u0000\u0000\u0000\u01d4\u01d5"+
-		"\u0001\u0000\u0000\u0000\u01d5\u01d8\u0005:\u0000\u0000\u01d6\u01d8\u0007"+
-		"\u0004\u0000\u0000\u01d7\u01bc\u0001\u0000\u0000\u0000\u01d7\u01c1\u0001"+
-		"\u0000\u0000\u0000\u01d7\u01c5\u0001\u0000\u0000\u0000\u01d7\u01cb\u0001"+
-		"\u0000\u0000\u0000\u01d7\u01d0\u0001\u0000\u0000\u0000\u01d7\u01d6\u0001"+
-		"\u0000\u0000\u0000\u01d8\u01fe\u0001\u0000\u0000\u0000\u01d9\u01da\n\u0010"+
-		"\u0000\u0000\u01da\u01db\u0005E\u0000\u0000\u01db\u01fd\u0003F#\u0010"+
-		"\u01dc\u01dd\n\u000e\u0000\u0000\u01dd\u01de\u0007\u0005\u0000\u0000\u01de"+
-		"\u01fd\u0003F#\u000f\u01df\u01e0\n\r\u0000\u0000\u01e0\u01e1\u0007\u0006"+
-		"\u0000\u0000\u01e1\u01fd\u0003F#\u000e\u01e2\u01e3\n\f\u0000\u0000\u01e3"+
-		"\u01e4\u0005S\u0000\u0000\u01e4\u01fd\u0003F#\r\u01e5\u01e6\n\u000b\u0000"+
-		"\u0000\u01e6\u01e7\u0005R\u0000\u0000\u01e7\u01fd\u0003F#\f\u01e8\u01e9"+
-		"\n\n\u0000\u0000\u01e9\u01ea\u0005P\u0000\u0000\u01ea\u01fd\u0003F#\u000b"+
-		"\u01eb\u01ec\n\t\u0000\u0000\u01ec\u01ed\u0005J\u0000\u0000\u01ed\u01fd"+
-		"\u0003F#\n\u01ee\u01ef\n\b\u0000\u0000\u01ef\u01f0\u0005L\u0000\u0000"+
-		"\u01f0\u01fd\u0003F#\t\u01f1\u01f2\n\u0007\u0000\u0000\u01f2\u01f3\u0005"+
-		"H\u0000\u0000\u01f3\u01fd\u0003F#\b\u01f4\u01f5\n\u0006\u0000\u0000\u01f5"+
-		"\u01f6\u0005K\u0000\u0000\u01f6\u01fd\u0003F#\u0007\u01f7\u01f8\n\u0005"+
-		"\u0000\u0000\u01f8\u01f9\u0005I\u0000\u0000\u01f9\u01fd\u0003F#\u0006"+
-		"\u01fa\u01fb\n\u0011\u0000\u0000\u01fb\u01fd\u0003T*\u0000\u01fc\u01d9"+
-		"\u0001\u0000\u0000\u0000\u01fc\u01dc\u0001\u0000\u0000\u0000\u01fc\u01df"+
-		"\u0001\u0000\u0000\u0000\u01fc\u01e2\u0001\u0000\u0000\u0000\u01fc\u01e5"+
-		"\u0001\u0000\u0000\u0000\u01fc\u01e8\u0001\u0000\u0000\u0000\u01fc\u01eb"+
-		"\u0001\u0000\u0000\u0000\u01fc\u01ee\u0001\u0000\u0000\u0000\u01fc\u01f1"+
-		"\u0001\u0000\u0000\u0000\u01fc\u01f4\u0001\u0000\u0000\u0000\u01fc\u01f7"+
-		"\u0001\u0000\u0000\u0000\u01fc\u01fa\u0001\u0000\u0000\u0000\u01fd\u0200"+
-		"\u0001\u0000\u0000\u0000\u01fe\u01fc\u0001\u0000\u0000\u0000\u01fe\u01ff"+
-		"\u0001\u0000\u0000\u0000\u01ffG\u0001\u0000\u0000\u0000\u0200\u01fe\u0001"+
-		"\u0000\u0000\u0000\u0201\u0206\u0003F#\u0000\u0202\u0203\u0005B\u0000"+
-		"\u0000\u0203\u0205\u0003F#\u0000\u0204\u0202\u0001\u0000\u0000\u0000\u0205"+
-		"\u0208\u0001\u0000\u0000\u0000\u0206\u0204\u0001\u0000\u0000\u0000\u0206"+
-		"\u0207\u0001\u0000\u0000\u0000\u0207I\u0001\u0000\u0000\u0000\u0208\u0206"+
-		"\u0001\u0000\u0000\u0000\u0209\u020d\u0003R)\u0000\u020a\u020d\u0003F"+
-		"#\u0000\u020b\u020d\u0003L&\u0000\u020c\u0209\u0001\u0000\u0000\u0000"+
-		"\u020c\u020a\u0001\u0000\u0000\u0000\u020c\u020b\u0001\u0000\u0000\u0000"+
-		"\u020dK\u0001\u0000\u0000\u0000\u020e\u020f\u00052\u0000\u0000\u020f\u0210"+
-		"\u0003l6\u0000\u0210M\u0001\u0000\u0000\u0000\u0211\u0213\u0003F#\u0000"+
-		"\u0212\u0211\u0001\u0000\u0000\u0000\u0212\u0213\u0001\u0000\u0000\u0000"+
-		"\u0213\u0214\u0001\u0000\u0000\u0000\u0214\u0216\u0005;\u0000\u0000\u0215"+
-		"\u0217\u0003F#\u0000\u0216\u0215\u0001\u0000\u0000\u0000\u0216\u0217\u0001"+
-		"\u0000\u0000\u0000\u0217\u021a\u0001\u0000\u0000\u0000\u0218\u0219\u0005"+
-		";\u0000\u0000\u0219\u021b\u0003F#\u0000\u021a\u0218\u0001\u0000\u0000"+
-		"\u0000\u021a\u021b\u0001\u0000\u0000\u0000\u021bO\u0001\u0000\u0000\u0000"+
-		"\u021c\u021d\u00057\u0000\u0000\u021d\u0222\u0003F#\u0000\u021e\u021f"+
-		"\u0005>\u0000\u0000\u021f\u0221\u0003F#\u0000\u0220\u021e\u0001\u0000"+
-		"\u0000\u0000\u0221\u0224\u0001\u0000\u0000\u0000\u0222\u0220\u0001\u0000"+
-		"\u0000\u0000\u0222\u0223\u0001\u0000\u0000\u0000\u0223\u0226\u0001\u0000"+
-		"\u0000\u0000\u0224\u0222\u0001\u0000\u0000\u0000\u0225\u0227\u0005>\u0000"+
-		"\u0000\u0226\u0225\u0001\u0000\u0000\u0000\u0226\u0227\u0001\u0000\u0000"+
-		"\u0000\u0227\u0228\u0001\u0000\u0000\u0000\u0228\u0229\u00058\u0000\u0000"+
-		"\u0229Q\u0001\u0000\u0000\u0000\u022a\u022d\u00057\u0000\u0000\u022b\u022e"+
-		"\u0003F#\u0000\u022c\u022e\u0003R)\u0000\u022d\u022b\u0001\u0000\u0000"+
-		"\u0000\u022d\u022c\u0001\u0000\u0000\u0000\u022e\u0236\u0001\u0000\u0000"+
-		"\u0000\u022f\u0232\u0005>\u0000\u0000\u0230\u0233\u0003F#\u0000\u0231"+
-		"\u0233\u0003R)\u0000\u0232\u0230\u0001\u0000\u0000\u0000\u0232\u0231\u0001"+
-		"\u0000\u0000\u0000\u0233\u0235\u0001\u0000\u0000\u0000\u0234\u022f\u0001"+
-		"\u0000\u0000\u0000\u0235\u0238\u0001\u0000\u0000\u0000\u0236\u0234\u0001"+
-		"\u0000\u0000\u0000\u0236\u0237\u0001\u0000\u0000\u0000\u0237\u023a\u0001"+
-		"\u0000\u0000\u0000\u0238\u0236\u0001\u0000\u0000\u0000\u0239\u023b\u0005"+
-		">\u0000\u0000\u023a\u0239\u0001\u0000\u0000\u0000\u023a\u023b\u0001\u0000"+
-		"\u0000\u0000\u023b\u023c\u0001\u0000\u0000\u0000\u023c\u023d\u00058\u0000"+
-		"\u0000\u023dS\u0001\u0000\u0000\u0000\u023e\u0251\u00055\u0000\u0000\u023f"+
-		"\u0252\u0003P(\u0000\u0240\u0243\u0003F#\u0000\u0241\u0243\u0003N\'\u0000"+
-		"\u0242\u0240\u0001\u0000\u0000\u0000\u0242\u0241\u0001\u0000\u0000\u0000"+
-		"\u0243\u024b\u0001\u0000\u0000\u0000\u0244\u0247\u0005>\u0000\u0000\u0245"+
-		"\u0248\u0003F#\u0000\u0246\u0248\u0003N\'\u0000\u0247\u0245\u0001\u0000"+
-		"\u0000\u0000\u0247\u0246\u0001\u0000\u0000\u0000\u0248\u024a\u0001\u0000"+
-		"\u0000\u0000\u0249\u0244\u0001\u0000\u0000\u0000\u024a\u024d\u0001\u0000"+
-		"\u0000\u0000\u024b\u0249\u0001\u0000\u0000\u0000\u024b\u024c\u0001\u0000"+
-		"\u0000\u0000\u024c\u024f\u0001\u0000\u0000\u0000\u024d\u024b\u0001\u0000"+
-		"\u0000\u0000\u024e\u0250\u0005>\u0000\u0000\u024f\u024e\u0001\u0000\u0000"+
-		"\u0000\u024f\u0250\u0001\u0000\u0000\u0000\u0250\u0252\u0001\u0000\u0000"+
-		"\u0000\u0251\u023f\u0001\u0000\u0000\u0000\u0251\u0242\u0001\u0000\u0000"+
-		"\u0000\u0252\u0253\u0001\u0000\u0000\u0000\u0253\u0254\u00056\u0000\u0000"+
-		"\u0254U\u0001\u0000\u0000\u0000\u0255\u0259\u0005Z\u0000\u0000\u0256\u0258"+
-		"\u0003T*\u0000\u0257\u0256\u0001\u0000\u0000\u0000\u0258\u025b\u0001\u0000"+
-		"\u0000\u0000\u0259\u0257\u0001\u0000\u0000\u0000\u0259\u025a\u0001\u0000"+
-		"\u0000\u0000\u025aW\u0001\u0000\u0000\u0000\u025b\u0259\u0001\u0000\u0000"+
-		"\u0000\u025c\u025d\u0005@\u0000\u0000\u025d\u025e\u0003\\.\u0000\u025e"+
-		"Y\u0001\u0000\u0000\u0000\u025f\u026d\u0005*\u0000\u0000\u0260\u0261\u0005"+
-		"+\u0000\u0000\u0261\u0262\u00059\u0000\u0000\u0262\u0263\u0003F#\u0000"+
-		"\u0263\u0264\u0005:\u0000\u0000\u0264\u026d\u0001\u0000\u0000\u0000\u0265"+
-		"\u026a\u0007\u0007\u0000\u0000\u0266\u0267\u00059\u0000\u0000\u0267\u0268"+
-		"\u0003F#\u0000\u0268\u0269\u0005:\u0000\u0000\u0269\u026b\u0001\u0000"+
-		"\u0000\u0000\u026a\u0266\u0001\u0000\u0000\u0000\u026a\u026b\u0001\u0000"+
-		"\u0000\u0000\u026b\u026d\u0001\u0000\u0000\u0000\u026c\u025f\u0001\u0000"+
-		"\u0000\u0000\u026c\u0260\u0001\u0000\u0000\u0000\u026c\u0265\u0001\u0000"+
-		"\u0000\u0000\u026d\u026e\u0001\u0000\u0000\u0000\u026e\u026f\u0005M\u0000"+
-		"\u0000\u026f[\u0001\u0000\u0000\u0000\u0270\u0272\u0005\u001f\u0000\u0000"+
-		"\u0271\u0273\u0003d2\u0000\u0272\u0271\u0001\u0000\u0000\u0000\u0272\u0273"+
-		"\u0001\u0000\u0000\u0000\u0273\u028f\u0001\u0000\u0000\u0000\u0274\u0276"+
-		"\u0005 \u0000\u0000\u0275\u0277\u0003d2\u0000\u0276\u0275\u0001\u0000"+
-		"\u0000\u0000\u0276\u0277\u0001\u0000\u0000\u0000\u0277\u028f\u0001\u0000"+
-		"\u0000\u0000\u0278\u027a\u0005!\u0000\u0000\u0279\u027b\u0003d2\u0000"+
-		"\u027a\u0279\u0001\u0000\u0000\u0000\u027a\u027b\u0001\u0000\u0000\u0000"+
-		"\u027b\u028f\u0001\u0000\u0000\u0000\u027c\u027e\u0005\"\u0000\u0000\u027d"+
-		"\u027f\u0003d2\u0000\u027e\u027d\u0001\u0000\u0000\u0000\u027e\u027f\u0001"+
-		"\u0000\u0000\u0000\u027f\u028f\u0001\u0000\u0000\u0000\u0280\u0282\u0005"+
-		"#\u0000\u0000\u0281\u0283\u0003d2\u0000\u0282\u0281\u0001\u0000\u0000"+
-		"\u0000\u0282\u0283\u0001\u0000\u0000\u0000\u0283\u028f\u0001\u0000\u0000"+
-		"\u0000\u0284\u028f\u0005\u001e\u0000\u0000\u0285\u028f\u0005\'\u0000\u0000"+
-		"\u0286\u028f\u0005(\u0000\u0000\u0287\u028c\u0005$\u0000\u0000\u0288\u0289"+
-		"\u00055\u0000\u0000\u0289\u028a\u0003\\.\u0000\u028a\u028b\u00056\u0000"+
-		"\u0000\u028b\u028d\u0001\u0000\u0000\u0000\u028c\u0288\u0001\u0000\u0000"+
-		"\u0000\u028c\u028d\u0001\u0000\u0000\u0000\u028d\u028f\u0001\u0000\u0000"+
-		"\u0000\u028e\u0270\u0001\u0000\u0000\u0000\u028e\u0274\u0001\u0000\u0000"+
-		"\u0000\u028e\u0278\u0001\u0000\u0000\u0000\u028e\u027c\u0001\u0000\u0000"+
-		"\u0000\u028e\u0280\u0001\u0000\u0000\u0000\u028e\u0284\u0001\u0000\u0000"+
-		"\u0000\u028e\u0285\u0001\u0000\u0000\u0000\u028e\u0286\u0001\u0000\u0000"+
-		"\u0000\u028e\u0287\u0001\u0000\u0000\u0000\u028f]\u0001\u0000\u0000\u0000"+
-		"\u0290\u0292\u0005\u001c\u0000\u0000\u0291\u0293\u0003d2\u0000\u0292\u0291"+
-		"\u0001\u0000\u0000\u0000\u0292\u0293\u0001\u0000\u0000\u0000\u0293_\u0001"+
-		"\u0000\u0000\u0000\u0294\u0295\u0005%\u0000\u0000\u0295\u0296\u00055\u0000"+
-		"\u0000\u0296\u0297\u0003\\.\u0000\u0297\u0298\u0005>\u0000\u0000\u0298"+
-		"\u0299\u0003x<\u0000\u0299\u029a\u00056\u0000\u0000\u029aa\u0001\u0000"+
-		"\u0000\u0000\u029b\u029c\u0007\b\u0000\u0000\u029c\u029d\u0005%\u0000"+
-		"\u0000\u029d\u029e\u00055\u0000\u0000\u029e\u029f\u0003\\.\u0000\u029f"+
-		"\u02a4\u0005>\u0000\u0000\u02a0\u02a5\u0003x<\u0000\u02a1\u02a2\u0005"+
-		".\u0000\u0000\u02a2\u02a3\u0005?\u0000\u0000\u02a3\u02a5\u0003F#\u0000"+
-		"\u02a4\u02a0\u0001\u0000\u0000\u0000\u02a4\u02a1\u0001\u0000\u0000\u0000"+
-		"\u02a5\u02a6\u0001\u0000\u0000\u0000\u02a6\u02a7\u00056\u0000\u0000\u02a7"+
-		"c\u0001\u0000\u0000\u0000\u02a8\u02a9\u00055\u0000\u0000\u02a9\u02aa\u0003"+
-		"F#\u0000\u02aa\u02ab\u00056\u0000\u0000\u02abe\u0001\u0000\u0000\u0000"+
-		"\u02ac\u02ad\u0007\t\u0000\u0000\u02adg\u0001\u0000\u0000\u0000\u02ae"+
-		"\u02b1\u0003F#\u0000\u02af\u02b1\u0003p8\u0000\u02b0\u02ae\u0001\u0000"+
-		"\u0000\u0000\u02b0\u02af\u0001\u0000\u0000\u0000\u02b1i\u0001\u0000\u0000"+
-		"\u0000\u02b2\u02b3\u0007\n\u0000\u0000\u02b3k\u0001\u0000\u0000\u0000"+
-		"\u02b4\u02b7\u0003V+\u0000\u02b5\u02b7\u0005[\u0000\u0000\u02b6\u02b4"+
-		"\u0001\u0000\u0000\u0000\u02b6\u02b5\u0001\u0000\u0000\u0000\u02b7m\u0001"+
-		"\u0000\u0000\u0000\u02b8\u02bf\u0003\\.\u0000\u02b9\u02bf\u0003b1\u0000"+
-		"\u02ba\u02bc\u0005\u001d\u0000\u0000\u02bb\u02bd\u0003d2\u0000\u02bc\u02bb"+
-		"\u0001\u0000\u0000\u0000\u02bc\u02bd\u0001\u0000\u0000\u0000\u02bd\u02bf"+
-		"\u0001\u0000\u0000\u0000\u02be\u02b8\u0001\u0000\u0000\u0000\u02be\u02b9"+
-		"\u0001\u0000\u0000\u0000\u02be\u02ba\u0001\u0000\u0000\u0000\u02bfo\u0001"+
-		"\u0000\u0000\u0000\u02c0\u02c1\u0003\\.\u0000\u02c1\u02c2\u0005Z\u0000"+
-		"\u0000\u02c2\u02cf\u0001\u0000\u0000\u0000\u02c3\u02c4\u0003^/\u0000\u02c4"+
-		"\u02c5\u0005Z\u0000\u0000\u02c5\u02cf\u0001\u0000\u0000\u0000\u02c6\u02c7"+
-		"\u0007\u0001\u0000\u0000\u02c7\u02c9\u0005Z\u0000\u0000\u02c8\u02ca\u0003"+
-		"d2\u0000\u02c9\u02c8\u0001\u0000\u0000\u0000\u02c9\u02ca\u0001\u0000\u0000"+
-		"\u0000\u02ca\u02cf\u0001\u0000\u0000\u0000\u02cb\u02cc\u0003b1\u0000\u02cc"+
-		"\u02cd\u0005Z\u0000\u0000\u02cd\u02cf\u0001\u0000\u0000\u0000\u02ce\u02c0"+
-		"\u0001\u0000\u0000\u0000\u02ce\u02c3\u0001\u0000\u0000\u0000\u02ce\u02c6"+
-		"\u0001\u0000\u0000\u0000\u02ce\u02cb\u0001\u0000\u0000\u0000\u02cfq\u0001"+
-		"\u0000\u0000\u0000\u02d0\u02d5\u0003p8\u0000\u02d1\u02d2\u0005>\u0000"+
-		"\u0000\u02d2\u02d4\u0003p8\u0000\u02d3\u02d1\u0001\u0000\u0000\u0000\u02d4"+
-		"\u02d7\u0001\u0000\u0000\u0000\u02d5\u02d3\u0001\u0000\u0000\u0000\u02d5"+
-		"\u02d6\u0001\u0000\u0000\u0000\u02d6\u02d9\u0001\u0000\u0000\u0000\u02d7"+
-		"\u02d5\u0001\u0000\u0000\u0000\u02d8\u02da\u0005>\u0000\u0000\u02d9\u02d8"+
-		"\u0001\u0000\u0000\u0000\u02d9\u02da\u0001\u0000\u0000\u0000\u02das\u0001"+
-		"\u0000\u0000\u0000\u02db\u02e0\u0003h4\u0000\u02dc\u02dd\u0005>\u0000"+
-		"\u0000\u02dd\u02df\u0003h4\u0000\u02de\u02dc\u0001\u0000\u0000\u0000\u02df"+
-		"\u02e2\u0001\u0000\u0000\u0000\u02e0\u02de\u0001\u0000\u0000\u0000\u02e0"+
-		"\u02e1\u0001\u0000\u0000\u0000\u02e1\u02e4\u0001\u0000\u0000\u0000\u02e2"+
-		"\u02e0\u0001\u0000\u0000\u0000\u02e3\u02e5\u0005>\u0000\u0000\u02e4\u02e3"+
-		"\u0001\u0000\u0000\u0000\u02e4\u02e5\u0001\u0000\u0000\u0000\u02e5u\u0001"+
-		"\u0000\u0000\u0000\u02e6\u02eb\u0003j5\u0000\u02e7\u02e8\u0005>\u0000"+
-		"\u0000\u02e8\u02ea\u0003j5\u0000\u02e9\u02e7\u0001\u0000\u0000\u0000\u02ea"+
-		"\u02ed\u0001\u0000\u0000\u0000\u02eb\u02e9\u0001\u0000\u0000\u0000\u02eb"+
-		"\u02ec\u0001\u0000\u0000\u0000\u02ec\u02ef\u0001\u0000\u0000\u0000\u02ed"+
-		"\u02eb\u0001\u0000\u0000\u0000\u02ee\u02f0\u0005>\u0000\u0000\u02ef\u02ee"+
-		"\u0001\u0000\u0000\u0000\u02ef\u02f0\u0001\u0000\u0000\u0000\u02f0w\u0001"+
-		"\u0000\u0000\u0000\u02f1\u02f6\u0003F#\u0000\u02f2\u02f3\u0005>\u0000"+
-		"\u0000\u02f3\u02f5\u0003F#\u0000\u02f4\u02f2\u0001\u0000\u0000\u0000\u02f5"+
-		"\u02f8\u0001\u0000\u0000\u0000\u02f6\u02f4\u0001\u0000\u0000\u0000\u02f6"+
-		"\u02f7\u0001\u0000\u0000\u0000\u02f7\u02fa\u0001\u0000\u0000\u0000\u02f8"+
-		"\u02f6\u0001\u0000\u0000\u0000\u02f9\u02fb\u0005>\u0000\u0000\u02fa\u02f9"+
-		"\u0001\u0000\u0000\u0000\u02fa\u02fb\u0001\u0000\u0000\u0000\u02fby\u0001"+
-		"\u0000\u0000\u0000\u02fc\u0301\u0005Z\u0000\u0000\u02fd\u02fe\u0005>\u0000"+
-		"\u0000\u02fe\u0300\u0005Z\u0000\u0000\u02ff\u02fd\u0001\u0000\u0000\u0000"+
-		"\u0300\u0303\u0001\u0000\u0000\u0000\u0301\u02ff\u0001\u0000\u0000\u0000"+
-		"\u0301\u0302\u0001\u0000\u0000\u0000\u0302\u0305\u0001\u0000\u0000\u0000"+
-		"\u0303\u0301\u0001\u0000\u0000\u0000\u0304\u0306\u0005>\u0000\u0000\u0305"+
-		"\u0304\u0001\u0000\u0000\u0000\u0305\u0306\u0001\u0000\u0000\u0000\u0306"+
-		"{\u0001\u0000\u0000\u0000\u0307\u030c\u0003l6\u0000\u0308\u0309\u0005"+
-		">\u0000\u0000\u0309\u030b\u0003l6\u0000\u030a\u0308\u0001\u0000\u0000"+
-		"\u0000\u030b\u030e\u0001\u0000\u0000\u0000\u030c\u030a\u0001\u0000\u0000"+
-		"\u0000\u030c\u030d\u0001\u0000\u0000\u0000\u030d\u0310\u0001\u0000\u0000"+
-		"\u0000\u030e\u030c\u0001\u0000\u0000\u0000\u030f\u0311\u0005>\u0000\u0000"+
-		"\u0310\u030f\u0001\u0000\u0000\u0000\u0310\u0311\u0001\u0000\u0000\u0000"+
-		"\u0311}\u0001\u0000\u0000\u0000\u0312\u0317\u0003n7\u0000\u0313\u0314"+
-		"\u0005>\u0000\u0000\u0314\u0316\u0003n7\u0000\u0315\u0313\u0001\u0000"+
-		"\u0000\u0000\u0316\u0319\u0001\u0000\u0000\u0000\u0317\u0315\u0001\u0000"+
-		"\u0000\u0000\u0317\u0318\u0001\u0000\u0000\u0000\u0318\u031b\u0001\u0000"+
-		"\u0000\u0000\u0319\u0317\u0001\u0000\u0000\u0000\u031a\u031c\u0005>\u0000"+
-		"\u0000\u031b\u031a\u0001\u0000\u0000\u0000\u031b\u031c\u0001\u0000\u0000"+
-		"\u0000\u031c\u007f\u0001\u0000\u0000\u0000^\u0081\u0086\u0093\u00b2\u00b4"+
-		"\u00b8\u00be\u00c8\u00e5\u00f0\u00f5\u0101\u0107\u010e\u0115\u011b\u011e"+
-		"\u0121\u0129\u012f\u0132\u0135\u0138\u013b\u0140\u0150\u0155\u0163\u016b"+
-		"\u0177\u017b\u0183\u0187\u018f\u0192\u019b\u01a5\u01ad\u01b0\u01b4\u01b8"+
-		"\u01c5\u01d3\u01d7\u01fc\u01fe\u0206\u020c\u0212\u0216\u021a\u0222\u0226"+
-		"\u022d\u0232\u0236\u023a\u0242\u0247\u024b\u024f\u0251\u0259\u026a\u026c"+
-		"\u0272\u0276\u027a\u027e\u0282\u028c\u028e\u0292\u02a4\u02b0\u02b6\u02bc"+
-		"\u02be\u02c9\u02ce\u02d5\u02d9\u02e0\u02e4\u02eb\u02ef\u02f6\u02fa\u0301"+
-		"\u0305\u030c\u0310\u0317\u031b";
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3s\u033a\4\2\t\2\4"+
+		"\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t"+
+		"\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
+		"\4\23\t\23\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30\t\30\4\31\t\31"+
+		"\4\32\t\32\4\33\t\33\4\34\t\34\4\35\t\35\4\36\t\36\4\37\t\37\4 \t \4!"+
+		"\t!\4\"\t\"\4#\t#\4$\t$\4%\t%\4&\t&\4\'\t\'\4(\t(\4)\t)\4*\t*\4+\t+\4"+
+		",\t,\4-\t-\4.\t.\4/\t/\4\60\t\60\4\61\t\61\4\62\t\62\4\63\t\63\4\64\t"+
+		"\64\4\65\t\65\4\66\t\66\4\67\t\67\48\t8\49\t9\4:\t:\4;\t;\4<\t<\4=\t="+
+		"\4>\t>\4?\t?\4@\t@\4A\tA\4B\tB\4C\tC\3\2\5\2\u0088\n\2\3\2\7\2\u008b\n"+
+		"\2\f\2\16\2\u008e\13\2\3\2\3\2\3\3\3\3\3\3\3\3\3\4\3\4\7\4\u0098\n\4\f"+
+		"\4\16\4\u009b\13\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4"+
+		"\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\5\4\u00ba"+
+		"\n\4\5\4\u00bc\n\4\3\5\3\5\5\5\u00c0\n\5\3\6\3\6\7\6\u00c4\n\6\f\6\16"+
+		"\6\u00c7\13\6\3\6\3\6\3\7\3\7\3\7\3\b\3\b\5\b\u00d0\n\b\3\t\3\t\3\t\3"+
+		"\t\3\n\3\n\3\n\3\n\3\13\3\13\3\13\3\f\3\f\3\f\3\r\3\r\3\r\3\16\3\16\3"+
+		"\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\5\16\u00ed\n\16\3\16\3\16\3\17"+
+		"\3\17\3\17\3\17\3\17\3\17\3\17\5\17\u00f8\n\17\3\20\3\20\3\20\5\20\u00fd"+
+		"\n\20\3\20\3\20\3\21\3\21\3\21\3\21\3\21\3\21\3\22\3\22\3\22\3\22\3\22"+
+		"\3\22\7\22\u010d\n\22\f\22\16\22\u0110\13\22\3\22\3\22\3\23\3\23\3\23"+
+		"\3\23\3\23\3\23\5\23\u011a\n\23\3\24\3\24\5\24\u011e\n\24\3\24\3\24\3"+
+		"\25\3\25\5\25\u0124\n\25\3\25\3\25\3\26\3\26\3\26\5\26\u012b\n\26\3\26"+
+		"\3\26\3\27\7\27\u0130\n\27\f\27\16\27\u0133\13\27\3\27\3\27\3\27\5\27"+
+		"\u0138\n\27\3\27\5\27\u013b\n\27\3\27\5\27\u013e\n\27\3\27\3\27\3\27\3"+
+		"\27\7\27\u0144\n\27\f\27\16\27\u0147\13\27\3\27\3\27\3\27\5\27\u014c\n"+
+		"\27\3\27\5\27\u014f\n\27\3\27\5\27\u0152\n\27\3\27\5\27\u0155\n\27\3\27"+
+		"\5\27\u0158\n\27\3\30\3\30\3\30\5\30\u015d\n\30\3\30\3\30\3\31\3\31\3"+
+		"\31\3\31\3\32\3\32\3\32\3\32\3\32\3\32\3\33\3\33\5\33\u016d\n\33\3\33"+
+		"\3\33\3\33\5\33\u0172\n\33\3\33\3\33\3\34\3\34\3\34\3\34\3\34\3\34\3\34"+
+		"\3\35\3\35\3\35\5\35\u0180\n\35\3\35\3\35\3\35\3\36\3\36\3\36\5\36\u0188"+
+		"\n\36\3\36\3\36\3\37\3\37\3\37\3\37\3 \3 \3 \3 \5 \u0194\n \3 \3 \5 \u0198"+
+		"\n \3 \3 \3!\3!\3!\3!\5!\u01a0\n!\3!\3!\5!\u01a4\n!\3!\3!\3\"\3\"\3\""+
+		"\3\"\5\"\u01ac\n\"\3\"\5\"\u01af\n\"\3\"\3\"\3\"\3#\3#\3#\3#\5#\u01b8"+
+		"\n#\3#\3#\3$\3$\3$\3%\3%\3%\5%\u01c2\n%\3%\3%\3&\3&\3&\3&\5&\u01ca\n&"+
+		"\3&\5&\u01cd\n&\3&\3&\5&\u01d1\n&\3&\3&\5&\u01d5\n&\3&\3&\3\'\3\'\3\'"+
+		"\3\'\3\'\3\'\3\'\3\'\3\'\5\'\u01e2\n\'\3\'\3\'\3\'\3\'\3\'\3\'\3\'\3\'"+
+		"\3\'\3\'\3\'\3\'\5\'\u01f0\n\'\3\'\3\'\5\'\u01f4\n\'\3\'\3\'\3\'\3\'\3"+
+		"\'\3\'\3\'\3\'\3\'\3\'\3\'\3\'\3\'\3\'\3\'\3\'\3\'\3\'\3\'\3\'\3\'\3\'"+
+		"\3\'\3\'\3\'\3\'\3\'\3\'\3\'\3\'\3\'\3\'\3\'\3\'\3\'\7\'\u0219\n\'\f\'"+
+		"\16\'\u021c\13\'\3(\3(\3(\7(\u0221\n(\f(\16(\u0224\13(\3)\3)\3)\5)\u0229"+
+		"\n)\3*\3*\3*\3+\5+\u022f\n+\3+\3+\5+\u0233\n+\3+\3+\5+\u0237\n+\3,\3,"+
+		"\3,\3,\7,\u023d\n,\f,\16,\u0240\13,\3,\5,\u0243\n,\3,\3,\3-\3-\3-\5-\u024a"+
+		"\n-\3-\3-\3-\5-\u024f\n-\7-\u0251\n-\f-\16-\u0254\13-\3-\5-\u0257\n-\3"+
+		"-\3-\3.\3.\3.\3.\5.\u025f\n.\3.\3.\3.\5.\u0264\n.\7.\u0266\n.\f.\16.\u0269"+
+		"\13.\3.\5.\u026c\n.\5.\u026e\n.\3.\3.\3/\3/\7/\u0274\n/\f/\16/\u0277\13"+
+		"/\3\60\3\60\3\60\3\61\3\61\3\61\3\61\3\61\3\61\3\61\3\61\3\61\3\61\3\61"+
+		"\5\61\u0287\n\61\5\61\u0289\n\61\3\61\3\61\3\62\3\62\5\62\u028f\n\62\3"+
+		"\62\3\62\5\62\u0293\n\62\3\62\3\62\5\62\u0297\n\62\3\62\3\62\5\62\u029b"+
+		"\n\62\3\62\3\62\5\62\u029f\n\62\3\62\3\62\3\62\3\62\3\62\3\62\3\62\3\62"+
+		"\5\62\u02a9\n\62\5\62\u02ab\n\62\3\63\3\63\5\63\u02af\n\63\3\64\3\64\3"+
+		"\64\3\64\3\64\3\64\3\64\3\65\3\65\3\65\3\65\3\65\3\65\3\65\3\65\3\65\5"+
+		"\65\u02c1\n\65\3\65\3\65\3\66\3\66\3\66\3\66\3\67\3\67\38\38\58\u02cd"+
+		"\n8\39\39\3:\3:\5:\u02d3\n:\3;\3;\3;\3;\5;\u02d9\n;\5;\u02db\n;\3<\3<"+
+		"\3<\3<\3<\3<\3<\3<\3<\5<\u02e6\n<\3<\3<\3<\5<\u02eb\n<\3=\3=\3=\7=\u02f0"+
+		"\n=\f=\16=\u02f3\13=\3=\5=\u02f6\n=\3>\3>\3>\7>\u02fb\n>\f>\16>\u02fe"+
+		"\13>\3>\5>\u0301\n>\3?\3?\3?\7?\u0306\n?\f?\16?\u0309\13?\3?\5?\u030c"+
+		"\n?\3@\3@\3@\7@\u0311\n@\f@\16@\u0314\13@\3@\5@\u0317\n@\3A\3A\3A\7A\u031c"+
+		"\nA\fA\16A\u031f\13A\3A\5A\u0322\nA\3B\3B\3B\7B\u0327\nB\fB\16B\u032a"+
+		"\13B\3B\5B\u032d\nB\3C\3C\3C\7C\u0332\nC\fC\16C\u0335\13C\3C\5C\u0338"+
+		"\nC\3C\2\3LD\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \"$&(*,.\60\62\64"+
+		"\668:<>@BDFHJLNPRTVXZ\\^`bdfhjlnprtvxz|~\u0080\u0082\u0084\2\r\3\2\33"+
+		"\34\4\2  \"\"\4\2DDVV\4\2HHST\4\299Zc\4\2IIKL\4\2FFHH\3\2\61\62\3\2\36"+
+		"\37\4\2\65\67__\3\2_`\2\u038e\2\u0087\3\2\2\2\4\u0091\3\2\2\2\6\u00bb"+
+		"\3\2\2\2\b\u00bd\3\2\2\2\n\u00c1\3\2\2\2\f\u00ca\3\2\2\2\16\u00cf\3\2"+
+		"\2\2\20\u00d1\3\2\2\2\22\u00d5\3\2\2\2\24\u00d9\3\2\2\2\26\u00dc\3\2\2"+
+		"\2\30\u00df\3\2\2\2\32\u00e2\3\2\2\2\34\u00f0\3\2\2\2\36\u00f9\3\2\2\2"+
+		" \u0100\3\2\2\2\"\u0106\3\2\2\2$\u0119\3\2\2\2&\u011b\3\2\2\2(\u0121\3"+
+		"\2\2\2*\u0127\3\2\2\2,\u0157\3\2\2\2.\u0159\3\2\2\2\60\u0160\3\2\2\2\62"+
+		"\u0164\3\2\2\2\64\u016c\3\2\2\2\66\u0175\3\2\2\28\u017c\3\2\2\2:\u0184"+
+		"\3\2\2\2<\u018b\3\2\2\2>\u018f\3\2\2\2@\u019b\3\2\2\2B\u01a7\3\2\2\2D"+
+		"\u01b3\3\2\2\2F\u01bb\3\2\2\2H\u01be\3\2\2\2J\u01c5\3\2\2\2L\u01f3\3\2"+
+		"\2\2N\u021d\3\2\2\2P\u0228\3\2\2\2R\u022a\3\2\2\2T\u022e\3\2\2\2V\u0238"+
+		"\3\2\2\2X\u0246\3\2\2\2Z\u025a\3\2\2\2\\\u0271\3\2\2\2^\u0278\3\2\2\2"+
+		"`\u0288\3\2\2\2b\u02aa\3\2\2\2d\u02ac\3\2\2\2f\u02b0\3\2\2\2h\u02b7\3"+
+		"\2\2\2j\u02c4\3\2\2\2l\u02c8\3\2\2\2n\u02cc\3\2\2\2p\u02ce\3\2\2\2r\u02d2"+
+		"\3\2\2\2t\u02da\3\2\2\2v\u02ea\3\2\2\2x\u02ec\3\2\2\2z\u02f7\3\2\2\2|"+
+		"\u0302\3\2\2\2~\u030d\3\2\2\2\u0080\u0318\3\2\2\2\u0082\u0323\3\2\2\2"+
+		"\u0084\u032e\3\2\2\2\u0086\u0088\5\4\3\2\u0087\u0086\3\2\2\2\u0087\u0088"+
+		"\3\2\2\2\u0088\u008c\3\2\2\2\u0089\u008b\5\16\b\2\u008a\u0089\3\2\2\2"+
+		"\u008b\u008e\3\2\2\2\u008c\u008a\3\2\2\2\u008c\u008d\3\2\2\2\u008d\u008f"+
+		"\3\2\2\2\u008e\u008c\3\2\2\2\u008f\u0090\7\2\2\3\u0090\3\3\2\2\2\u0091"+
+		"\u0092\7\3\2\2\u0092\u0093\7i\2\2\u0093\u0094\7A\2\2\u0094\5\3\2\2\2\u0095"+
+		"\u00bc\5\f\7\2\u0096\u0098\5\b\5\2\u0097\u0096\3\2\2\2\u0098\u009b\3\2"+
+		"\2\2\u0099\u0097\3\2\2\2\u0099\u009a\3\2\2\2\u009a\u00b9\3\2\2\2\u009b"+
+		"\u0099\3\2\2\2\u009c\u00ba\5\62\32\2\u009d\u00ba\5D#\2\u009e\u00ba\5&"+
+		"\24\2\u009f\u00ba\5(\25\2\u00a0\u00ba\5\24\13\2\u00a1\u00ba\5H%\2\u00a2"+
+		"\u00ba\5\20\t\2\u00a3\u00ba\5\64\33\2\u00a4\u00ba\5\66\34\2\u00a5\u00ba"+
+		"\5\26\f\2\u00a6\u00ba\5> \2\u00a7\u00ba\5J&\2\u00a8\u00ba\5*\26\2\u00a9"+
+		"\u00ba\5\30\r\2\u00aa\u00ba\5F$\2\u00ab\u00ba\5@!\2\u00ac\u00ba\5\32\16"+
+		"\2\u00ad\u00ba\5,\27\2\u00ae\u00ba\5B\"\2\u00af\u00ba\5\34\17\2\u00b0"+
+		"\u00ba\5\22\n\2\u00b1\u00ba\58\35\2\u00b2\u00ba\5.\30\2\u00b3\u00ba\5"+
+		":\36\2\u00b4\u00ba\5<\37\2\u00b5\u00ba\5\60\31\2\u00b6\u00ba\5\36\20\2"+
+		"\u00b7\u00ba\5\"\22\2\u00b8\u00ba\5 \21\2\u00b9\u009c\3\2\2\2\u00b9\u009d"+
+		"\3\2\2\2\u00b9\u009e\3\2\2\2\u00b9\u009f\3\2\2\2\u00b9\u00a0\3\2\2\2\u00b9"+
+		"\u00a1\3\2\2\2\u00b9\u00a2\3\2\2\2\u00b9\u00a3\3\2\2\2\u00b9\u00a4\3\2"+
+		"\2\2\u00b9\u00a5\3\2\2\2\u00b9\u00a6\3\2\2\2\u00b9\u00a7\3\2\2\2\u00b9"+
+		"\u00a8\3\2\2\2\u00b9\u00a9\3\2\2\2\u00b9\u00aa\3\2\2\2\u00b9\u00ab\3\2"+
+		"\2\2\u00b9\u00ac\3\2\2\2\u00b9\u00ad\3\2\2\2\u00b9\u00ae\3\2\2\2\u00b9"+
+		"\u00af\3\2\2\2\u00b9\u00b0\3\2\2\2\u00b9\u00b1\3\2\2\2\u00b9\u00b2\3\2"+
+		"\2\2\u00b9\u00b3\3\2\2\2\u00b9\u00b4\3\2\2\2\u00b9\u00b5\3\2\2\2\u00b9"+
+		"\u00b6\3\2\2\2\u00b9\u00b7\3\2\2\2\u00b9\u00b8\3\2\2\2\u00ba\u00bc\3\2"+
+		"\2\2\u00bb\u0095\3\2\2\2\u00bb\u0099\3\2\2\2\u00bc\7\3\2\2\2\u00bd\u00bf"+
+		"\7\32\2\2\u00be\u00c0\7n\2\2\u00bf\u00be\3\2\2\2\u00bf\u00c0\3\2\2\2\u00c0"+
+		"\t\3\2\2\2\u00c1\u00c5\7<\2\2\u00c2\u00c4\5\16\b\2\u00c3\u00c2\3\2\2\2"+
+		"\u00c4\u00c7\3\2\2\2\u00c5\u00c3\3\2\2\2\u00c5\u00c6\3\2\2\2\u00c6\u00c8"+
+		"\3\2\2\2\u00c7\u00c5\3\2\2\2\u00c8\u00c9\7=\2\2\u00c9\13\3\2\2\2\u00ca"+
+		"\u00cb\7\31\2\2\u00cb\u00cc\7n\2\2\u00cc\r\3\2\2\2\u00cd\u00d0\5\6\4\2"+
+		"\u00ce\u00d0\5\n\6\2\u00cf\u00cd\3\2\2\2\u00cf\u00ce\3\2\2\2\u00d0\17"+
+		"\3\2\2\2\u00d1\u00d2\7\5\2\2\u00d2\u00d3\7k\2\2\u00d3\u00d4\7A\2\2\u00d4"+
+		"\21\3\2\2\2\u00d5\u00d6\7\4\2\2\u00d6\u00d7\7k\2\2\u00d7\u00d8\7A\2\2"+
+		"\u00d8\23\3\2\2\2\u00d9\u00da\7\r\2\2\u00da\u00db\7A\2\2\u00db\25\3\2"+
+		"\2\2\u00dc\u00dd\7\16\2\2\u00dd\u00de\7A\2\2\u00de\27\3\2\2\2\u00df\u00e0"+
+		"\7\21\2\2\u00e0\u00e1\7A\2\2\u00e1\31\3\2\2\2\u00e2\u00e3\7\23\2\2\u00e3"+
+		"\u00e4\5b\62\2\u00e4\u00e5\7_\2\2\u00e5\u00ec\7\25\2\2\u00e6\u00ed\5V"+
+		",\2\u00e7\u00e8\7:\2\2\u00e8\u00e9\5T+\2\u00e9\u00ea\7;\2\2\u00ea\u00ed"+
+		"\3\2\2\2\u00eb\u00ed\5L\'\2\u00ec\u00e6\3\2\2\2\u00ec\u00e7\3\2\2\2\u00ec"+
+		"\u00eb\3\2\2\2\u00ed\u00ee\3\2\2\2\u00ee\u00ef\5\16\b\2\u00ef\33\3\2\2"+
+		"\2\u00f0\u00f1\7\17\2\2\u00f1\u00f2\7>\2\2\u00f2\u00f3\5L\'\2\u00f3\u00f4"+
+		"\7?\2\2\u00f4\u00f7\5\16\b\2\u00f5\u00f6\7\20\2\2\u00f6\u00f8\5\16\b\2"+
+		"\u00f7\u00f5\3\2\2\2\u00f7\u00f8\3\2\2\2\u00f8\35\3\2\2\2\u00f9\u00fc"+
+		"\7\22\2\2\u00fa\u00fd\5L\'\2\u00fb\u00fd\5R*\2\u00fc\u00fa\3\2\2\2\u00fc"+
+		"\u00fb\3\2\2\2\u00fc\u00fd\3\2\2\2\u00fd\u00fe\3\2\2\2\u00fe\u00ff\7A"+
+		"\2\2\u00ff\37\3\2\2\2\u0100\u0101\7\24\2\2\u0101\u0102\7>\2\2\u0102\u0103"+
+		"\5L\'\2\u0103\u0104\7?\2\2\u0104\u0105\5\16\b\2\u0105!\3\2\2\2\u0106\u0107"+
+		"\7\26\2\2\u0107\u0108\7>\2\2\u0108\u0109\5L\'\2\u0109\u010a\7?\2\2\u010a"+
+		"\u010e\7<\2\2\u010b\u010d\5$\23\2\u010c\u010b\3\2\2\2\u010d\u0110\3\2"+
+		"\2\2\u010e\u010c\3\2\2\2\u010e\u010f\3\2\2\2\u010f\u0111\3\2\2\2\u0110"+
+		"\u010e\3\2\2\2\u0111\u0112\7=\2\2\u0112#\3\2\2\2\u0113\u0114\7\27\2\2"+
+		"\u0114\u0115\5~@\2\u0115\u0116\5\n\6\2\u0116\u011a\3\2\2\2\u0117\u0118"+
+		"\7\30\2\2\u0118\u011a\5\n\6\2\u0119\u0113\3\2\2\2\u0119\u0117\3\2\2\2"+
+		"\u011a%\3\2\2\2\u011b\u011d\78\2\2\u011c\u011e\5\u0082B\2\u011d\u011c"+
+		"\3\2\2\2\u011d\u011e\3\2\2\2\u011e\u011f\3\2\2\2\u011f\u0120\7A\2\2\u0120"+
+		"\'\3\2\2\2\u0121\u0123\7\13\2\2\u0122\u0124\5j\66\2\u0123\u0122\3\2\2"+
+		"\2\u0123\u0124\3\2\2\2\u0124\u0125\3\2\2\2\u0125\u0126\5\n\6\2\u0126)"+
+		"\3\2\2\2\u0127\u0128\7\65\2\2\u0128\u012a\5j\66\2\u0129\u012b\5\u0082"+
+		"B\2\u012a\u0129\3\2\2\2\u012a\u012b\3\2\2\2\u012b\u012c\3\2\2\2\u012c"+
+		"\u012d\7A\2\2\u012d+\3\2\2\2\u012e\u0130\5`\61\2\u012f\u012e\3\2\2\2\u0130"+
+		"\u0133\3\2\2\2\u0131\u012f\3\2\2\2\u0131\u0132\3\2\2\2\u0132\u0134\3\2"+
+		"\2\2\u0133\u0131\3\2\2\2\u0134\u013a\7_\2\2\u0135\u0137\7>\2\2\u0136\u0138"+
+		"\5~@\2\u0137\u0136\3\2\2\2\u0137\u0138\3\2\2\2\u0138\u0139\3\2\2\2\u0139"+
+		"\u013b\7?\2\2\u013a\u0135\3\2\2\2\u013a\u013b\3\2\2\2\u013b\u013d\3\2"+
+		"\2\2\u013c\u013e\5j\66\2\u013d\u013c\3\2\2\2\u013d\u013e\3\2\2\2\u013e"+
+		"\u013f\3\2\2\2\u013f\u0140\5\u0082B\2\u0140\u0141\7A\2\2\u0141\u0158\3"+
+		"\2\2\2\u0142\u0144\5`\61\2\u0143\u0142\3\2\2\2\u0144\u0147\3\2\2\2\u0145"+
+		"\u0143\3\2\2\2\u0145\u0146\3\2\2\2\u0146\u0148\3\2\2\2\u0147\u0145\3\2"+
+		"\2\2\u0148\u014e\7.\2\2\u0149\u014b\7>\2\2\u014a\u014c\5~@\2\u014b\u014a"+
+		"\3\2\2\2\u014b\u014c\3\2\2\2\u014c\u014d\3\2\2\2\u014d\u014f\7?\2\2\u014e"+
+		"\u0149\3\2\2\2\u014e\u014f\3\2\2\2\u014f\u0151\3\2\2\2\u0150\u0152\5j"+
+		"\66\2\u0151\u0150\3\2\2\2\u0151\u0152\3\2\2\2\u0152\u0154\3\2\2\2\u0153"+
+		"\u0155\5\u0082B\2\u0154\u0153\3\2\2\2\u0154\u0155\3\2\2\2\u0155\u0156"+
+		"\3\2\2\2\u0156\u0158\7A\2\2\u0157\u0131\3\2\2\2\u0157\u0145\3\2\2\2\u0158"+
+		"-\3\2\2\2\u0159\u015c\5R*\2\u015a\u015b\7E\2\2\u015b\u015d\5\\/\2\u015c"+
+		"\u015a\3\2\2\2\u015c\u015d\3\2\2\2\u015d\u015e\3\2\2\2\u015e\u015f\7A"+
+		"\2\2\u015f/\3\2\2\2\u0160\u0161\7\66\2\2\u0161\u0162\5r:\2\u0162\u0163"+
+		"\7A\2\2\u0163\61\3\2\2\2\u0164\u0165\7\f\2\2\u0165\u0166\7_\2\2\u0166"+
+		"\u0167\7D\2\2\u0167\u0168\5N(\2\u0168\u0169\7A\2\2\u0169\63\3\2\2\2\u016a"+
+		"\u016d\5b\62\2\u016b\u016d\5f\64\2\u016c\u016a\3\2\2\2\u016c\u016b\3\2"+
+		"\2\2\u016d\u016e\3\2\2\2\u016e\u0171\7_\2\2\u016f\u0170\7D\2\2\u0170\u0172"+
+		"\5P)\2\u0171\u016f\3\2\2\2\u0171\u0172\3\2\2\2\u0172\u0173\3\2\2\2\u0173"+
+		"\u0174\7A\2\2\u0174\65\3\2\2\2\u0175\u0176\7\35\2\2\u0176\u0177\5b\62"+
+		"\2\u0177\u0178\7_\2\2\u0178\u0179\7D\2\2\u0179\u017a\5P)\2\u017a\u017b"+
+		"\7A\2\2\u017b\67\3\2\2\2\u017c\u017f\t\2\2\2\u017d\u0180\5b\62\2\u017e"+
+		"\u0180\5f\64\2\u017f\u017d\3\2\2\2\u017f\u017e\3\2\2\2\u0180\u0181\3\2"+
+		"\2\2\u0181\u0182\7_\2\2\u0182\u0183\7A\2\2\u01839\3\2\2\2\u0184\u0185"+
+		"\t\3\2\2\u0185\u0187\7_\2\2\u0186\u0188\5j\66\2\u0187\u0186\3\2\2\2\u0187"+
+		"\u0188\3\2\2\2\u0188\u0189\3\2\2\2\u0189\u018a\7A\2\2\u018a;\3\2\2\2\u018b"+
+		"\u018c\5d\63\2\u018c\u018d\7_\2\2\u018d\u018e\7A\2\2\u018e=\3\2\2\2\u018f"+
+		"\u0190\7\6\2\2\u0190\u0191\7_\2\2\u0191\u0193\7>\2\2\u0192\u0194\5x=\2"+
+		"\u0193\u0192\3\2\2\2\u0193\u0194\3\2\2\2\u0194\u0195\3\2\2\2\u0195\u0197"+
+		"\7?\2\2\u0196\u0198\5^\60\2\u0197\u0196\3\2\2\2\u0197\u0198\3\2\2\2\u0198"+
+		"\u0199\3\2\2\2\u0199\u019a\5\n\6\2\u019a?\3\2\2\2\u019b\u019c\7\n\2\2"+
+		"\u019c\u019d\7_\2\2\u019d\u019f\7>\2\2\u019e\u01a0\5\u0084C\2\u019f\u019e"+
+		"\3\2\2\2\u019f\u01a0\3\2\2\2\u01a0\u01a1\3\2\2\2\u01a1\u01a3\7?\2\2\u01a2"+
+		"\u01a4\5^\60\2\u01a3\u01a2\3\2\2\2\u01a3\u01a4\3\2\2\2\u01a4\u01a5\3\2"+
+		"\2\2\u01a5\u01a6\7A\2\2\u01a6A\3\2\2\2\u01a7\u01a8\7\t\2\2\u01a8\u01ae"+
+		"\7_\2\2\u01a9\u01ab\7>\2\2\u01aa\u01ac\5\u0080A\2\u01ab\u01aa\3\2\2\2"+
+		"\u01ab\u01ac\3\2\2\2\u01ac\u01ad\3\2\2\2\u01ad\u01af\7?\2\2\u01ae\u01a9"+
+		"\3\2\2\2\u01ae\u01af\3\2\2\2\u01af\u01b0\3\2\2\2\u01b0\u01b1\5\u0080A"+
+		"\2\u01b1\u01b2\5\n\6\2\u01b2C\3\2\2\2\u01b3\u01b4\5\\/\2\u01b4\u01b7\t"+
+		"\4\2\2\u01b5\u01b8\5L\'\2\u01b6\u01b8\5R*\2\u01b7\u01b5\3\2\2\2\u01b7"+
+		"\u01b6\3\2\2\2\u01b8\u01b9\3\2\2\2\u01b9\u01ba\7A\2\2\u01baE\3\2\2\2\u01bb"+
+		"\u01bc\5L\'\2\u01bc\u01bd\7A\2\2\u01bdG\3\2\2\2\u01be\u01bf\7\7\2\2\u01bf"+
+		"\u01c1\7<\2\2\u01c0\u01c2\7s\2\2\u01c1\u01c0\3\2\2\2\u01c1\u01c2\3\2\2"+
+		"\2\u01c2\u01c3\3\2\2\2\u01c3\u01c4\7=\2\2\u01c4I\3\2\2\2\u01c5\u01c6\7"+
+		"\b\2\2\u01c6\u01cc\5l\67\2\u01c7\u01c9\7>\2\2\u01c8\u01ca\5z>\2\u01c9"+
+		"\u01c8\3\2\2\2\u01c9\u01ca\3\2\2\2\u01ca\u01cb\3\2\2\2\u01cb\u01cd\7?"+
+		"\2\2\u01cc\u01c7\3\2\2\2\u01cc\u01cd\3\2\2\2\u01cd\u01ce\3\2\2\2\u01ce"+
+		"\u01d0\5|?\2\u01cf\u01d1\5^\60\2\u01d0\u01cf\3\2\2\2\u01d0\u01d1\3\2\2"+
+		"\2\u01d1\u01d2\3\2\2\2\u01d2\u01d4\7<\2\2\u01d3\u01d5\7s\2\2\u01d4\u01d3"+
+		"\3\2\2\2\u01d4\u01d5\3\2\2\2\u01d5\u01d6\3\2\2\2\u01d6\u01d7\7=\2\2\u01d7"+
+		"K\3\2\2\2\u01d8\u01d9\b\'\1\2\u01d9\u01da\7>\2\2\u01da\u01db\5L\'\2\u01db"+
+		"\u01dc\7?\2\2\u01dc\u01f4\3\2\2\2\u01dd\u01de\t\5\2\2\u01de\u01f4\5L\'"+
+		"\21\u01df\u01e2\5b\62\2\u01e0\u01e2\5f\64\2\u01e1\u01df\3\2\2\2\u01e1"+
+		"\u01e0\3\2\2\2\u01e2\u01e3\3\2\2\2\u01e3\u01e4\7>\2\2\u01e4\u01e5\5L\'"+
+		"\2\u01e5\u01e6\7?\2\2\u01e6\u01f4\3\2\2\2\u01e7\u01e8\7\64\2\2\u01e8\u01e9"+
+		"\7>\2\2\u01e9\u01ea\5\n\6\2\u01ea\u01eb\7?\2\2\u01eb\u01f4\3\2\2\2\u01ec"+
+		"\u01ed\7_\2\2\u01ed\u01ef\7>\2\2\u01ee\u01f0\5~@\2\u01ef\u01ee\3\2\2\2"+
+		"\u01ef\u01f0\3\2\2\2\u01f0\u01f1\3\2\2\2\u01f1\u01f4\7?\2\2\u01f2\u01f4"+
+		"\t\6\2\2\u01f3\u01d8\3\2\2\2\u01f3\u01dd\3\2\2\2\u01f3\u01e1\3\2\2\2\u01f3"+
+		"\u01e7\3\2\2\2\u01f3\u01ec\3\2\2\2\u01f3\u01f2\3\2\2\2\u01f4\u021a\3\2"+
+		"\2\2\u01f5\u01f6\f\22\2\2\u01f6\u01f7\7J\2\2\u01f7\u0219\5L\'\22\u01f8"+
+		"\u01f9\f\20\2\2\u01f9\u01fa\t\7\2\2\u01fa\u0219\5L\'\21\u01fb\u01fc\f"+
+		"\17\2\2\u01fc\u01fd\t\b\2\2\u01fd\u0219\5L\'\20\u01fe\u01ff\f\16\2\2\u01ff"+
+		"\u0200\7X\2\2\u0200\u0219\5L\'\17\u0201\u0202\f\r\2\2\u0202\u0203\7W\2"+
+		"\2\u0203\u0219\5L\'\16\u0204\u0205\f\f\2\2\u0205\u0206\7U\2\2\u0206\u0219"+
+		"\5L\'\r\u0207\u0208\f\13\2\2\u0208\u0209\7O\2\2\u0209\u0219\5L\'\f\u020a"+
+		"\u020b\f\n\2\2\u020b\u020c\7Q\2\2\u020c\u0219\5L\'\13\u020d\u020e\f\t"+
+		"\2\2\u020e\u020f\7M\2\2\u020f\u0219\5L\'\n\u0210\u0211\f\b\2\2\u0211\u0212"+
+		"\7P\2\2\u0212\u0219\5L\'\t\u0213\u0214\f\7\2\2\u0214\u0215\7N\2\2\u0215"+
+		"\u0219\5L\'\b\u0216\u0217\f\23\2\2\u0217\u0219\5Z.\2\u0218\u01f5\3\2\2"+
+		"\2\u0218\u01f8\3\2\2\2\u0218\u01fb\3\2\2\2\u0218\u01fe\3\2\2\2\u0218\u0201"+
+		"\3\2\2\2\u0218\u0204\3\2\2\2\u0218\u0207\3\2\2\2\u0218\u020a\3\2\2\2\u0218"+
+		"\u020d\3\2\2\2\u0218\u0210\3\2\2\2\u0218\u0213\3\2\2\2\u0218\u0216\3\2"+
+		"\2\2\u0219\u021c\3\2\2\2\u021a\u0218\3\2\2\2\u021a\u021b\3\2\2\2\u021b"+
+		"M\3\2\2\2\u021c\u021a\3\2\2\2\u021d\u0222\5L\'\2\u021e\u021f\7G\2\2\u021f"+
+		"\u0221\5L\'\2\u0220\u021e\3\2\2\2\u0221\u0224\3\2\2\2\u0222\u0220\3\2"+
+		"\2\2\u0222\u0223\3\2\2\2\u0223O\3\2\2\2\u0224\u0222\3\2\2\2\u0225\u0229"+
+		"\5X-\2\u0226\u0229\5L\'\2\u0227\u0229\5R*\2\u0228\u0225\3\2\2\2\u0228"+
+		"\u0226\3\2\2\2\u0228\u0227\3\2\2\2\u0229Q\3\2\2\2\u022a\u022b\7\67\2\2"+
+		"\u022b\u022c\5r:\2\u022cS\3\2\2\2\u022d\u022f\5L\'\2\u022e\u022d\3\2\2"+
+		"\2\u022e\u022f\3\2\2\2\u022f\u0230\3\2\2\2\u0230\u0232\7@\2\2\u0231\u0233"+
+		"\5L\'\2\u0232\u0231\3\2\2\2\u0232\u0233\3\2\2\2\u0233\u0236\3\2\2\2\u0234"+
+		"\u0235\7@\2\2\u0235\u0237\5L\'\2\u0236\u0234\3\2\2\2\u0236\u0237\3\2\2"+
+		"\2\u0237U\3\2\2\2\u0238\u0239\7<\2\2\u0239\u023e\5L\'\2\u023a\u023b\7"+
+		"C\2\2\u023b\u023d\5L\'\2\u023c\u023a\3\2\2\2\u023d\u0240\3\2\2\2\u023e"+
+		"\u023c\3\2\2\2\u023e\u023f\3\2\2\2\u023f\u0242\3\2\2\2\u0240\u023e\3\2"+
+		"\2\2\u0241\u0243\7C\2\2\u0242\u0241\3\2\2\2\u0242\u0243\3\2\2\2\u0243"+
+		"\u0244\3\2\2\2\u0244\u0245\7=\2\2\u0245W\3\2\2\2\u0246\u0249\7<\2\2\u0247"+
+		"\u024a\5L\'\2\u0248\u024a\5X-\2\u0249\u0247\3\2\2\2\u0249\u0248\3\2\2"+
+		"\2\u024a\u0252\3\2\2\2\u024b\u024e\7C\2\2\u024c\u024f\5L\'\2\u024d\u024f"+
+		"\5X-\2\u024e\u024c\3\2\2\2\u024e\u024d\3\2\2\2\u024f\u0251\3\2\2\2\u0250"+
+		"\u024b\3\2\2\2\u0251\u0254\3\2\2\2\u0252\u0250\3\2\2\2\u0252\u0253\3\2"+
+		"\2\2\u0253\u0256\3\2\2\2\u0254\u0252\3\2\2\2\u0255\u0257\7C\2\2\u0256"+
+		"\u0255\3\2\2\2\u0256\u0257\3\2\2\2\u0257\u0258\3\2\2\2\u0258\u0259\7="+
+		"\2\2\u0259Y\3\2\2\2\u025a\u026d\7:\2\2\u025b\u026e\5V,\2\u025c\u025f\5"+
+		"L\'\2\u025d\u025f\5T+\2\u025e\u025c\3\2\2\2\u025e\u025d\3\2\2\2\u025f"+
+		"\u0267\3\2\2\2\u0260\u0263\7C\2\2\u0261\u0264\5L\'\2\u0262\u0264\5T+\2"+
+		"\u0263\u0261\3\2\2\2\u0263\u0262\3\2\2\2\u0264\u0266\3\2\2\2\u0265\u0260"+
+		"\3\2\2\2\u0266\u0269\3\2\2\2\u0267\u0265\3\2\2\2\u0267\u0268\3\2\2\2\u0268"+
+		"\u026b\3\2\2\2\u0269\u0267\3\2\2\2\u026a\u026c\7C\2\2\u026b\u026a\3\2"+
+		"\2\2\u026b\u026c\3\2\2\2\u026c\u026e\3\2\2\2\u026d\u025b\3\2\2\2\u026d"+
+		"\u025e\3\2\2\2\u026e\u026f\3\2\2\2\u026f\u0270\7;\2\2\u0270[\3\2\2\2\u0271"+
+		"\u0275\7_\2\2\u0272\u0274\5Z.\2\u0273\u0272\3\2\2\2\u0274\u0277\3\2\2"+
+		"\2\u0275\u0273\3\2\2\2\u0275\u0276\3\2\2\2\u0276]\3\2\2\2\u0277\u0275"+
+		"\3\2\2\2\u0278\u0279\7E\2\2\u0279\u027a\5b\62\2\u027a_\3\2\2\2\u027b\u0289"+
+		"\7/\2\2\u027c\u027d\7\60\2\2\u027d\u027e\7>\2\2\u027e\u027f\5L\'\2\u027f"+
+		"\u0280\7?\2\2\u0280\u0289\3\2\2\2\u0281\u0286\t\t\2\2\u0282\u0283\7>\2"+
+		"\2\u0283\u0284\5L\'\2\u0284\u0285\7?\2\2\u0285\u0287\3\2\2\2\u0286\u0282"+
+		"\3\2\2\2\u0286\u0287\3\2\2\2\u0287\u0289\3\2\2\2\u0288\u027b\3\2\2\2\u0288"+
+		"\u027c\3\2\2\2\u0288\u0281\3\2\2\2\u0289\u028a\3\2\2\2\u028a\u028b\7R"+
+		"\2\2\u028ba\3\2\2\2\u028c\u028e\7$\2\2\u028d\u028f\5j\66\2\u028e\u028d"+
+		"\3\2\2\2\u028e\u028f\3\2\2\2\u028f\u02ab\3\2\2\2\u0290\u0292\7%\2\2\u0291"+
+		"\u0293\5j\66\2\u0292\u0291\3\2\2\2\u0292\u0293\3\2\2\2\u0293\u02ab\3\2"+
+		"\2\2\u0294\u0296\7&\2\2\u0295\u0297\5j\66\2\u0296\u0295\3\2\2\2\u0296"+
+		"\u0297\3\2\2\2\u0297\u02ab\3\2\2\2\u0298\u029a\7\'\2\2\u0299\u029b\5j"+
+		"\66\2\u029a\u0299\3\2\2\2\u029a\u029b\3\2\2\2\u029b\u02ab\3\2\2\2\u029c"+
+		"\u029e\7(\2\2\u029d\u029f\5j\66\2\u029e\u029d\3\2\2\2\u029e\u029f\3\2"+
+		"\2\2\u029f\u02ab\3\2\2\2\u02a0\u02ab\7#\2\2\u02a1\u02ab\7,\2\2\u02a2\u02ab"+
+		"\7-\2\2\u02a3\u02a8\7)\2\2\u02a4\u02a5\7:\2\2\u02a5\u02a6\5b\62\2\u02a6"+
+		"\u02a7\7;\2\2\u02a7\u02a9\3\2\2\2\u02a8\u02a4\3\2\2\2\u02a8\u02a9\3\2"+
+		"\2\2\u02a9\u02ab\3\2\2\2\u02aa\u028c\3\2\2\2\u02aa\u0290\3\2\2\2\u02aa"+
+		"\u0294\3\2\2\2\u02aa\u0298\3\2\2\2\u02aa\u029c\3\2\2\2\u02aa\u02a0\3\2"+
+		"\2\2\u02aa\u02a1\3\2\2\2\u02aa\u02a2\3\2\2\2\u02aa\u02a3\3\2\2\2\u02ab"+
+		"c\3\2\2\2\u02ac\u02ae\7!\2\2\u02ad\u02af\5j\66\2\u02ae\u02ad\3\2\2\2\u02ae"+
+		"\u02af\3\2\2\2\u02afe\3\2\2\2\u02b0\u02b1\7*\2\2\u02b1\u02b2\7:\2\2\u02b2"+
+		"\u02b3\5b\62\2\u02b3\u02b4\7C\2\2\u02b4\u02b5\5~@\2\u02b5\u02b6\7;\2\2"+
+		"\u02b6g\3\2\2\2\u02b7\u02b8\t\n\2\2\u02b8\u02b9\7*\2\2\u02b9\u02ba\7:"+
+		"\2\2\u02ba\u02bb\5b\62\2\u02bb\u02c0\7C\2\2\u02bc\u02c1\5~@\2\u02bd\u02be"+
+		"\7\63\2\2\u02be\u02bf\7D\2\2\u02bf\u02c1\5L\'\2\u02c0\u02bc\3\2\2\2\u02c0"+
+		"\u02bd\3\2\2\2\u02c1\u02c2\3\2\2\2\u02c2\u02c3\7;\2\2\u02c3i\3\2\2\2\u02c4"+
+		"\u02c5\7:\2\2\u02c5\u02c6\5L\'\2\u02c6\u02c7\7;\2\2\u02c7k\3\2\2\2\u02c8"+
+		"\u02c9\t\13\2\2\u02c9m\3\2\2\2\u02ca\u02cd\5L\'\2\u02cb\u02cd\5v<\2\u02cc"+
+		"\u02ca\3\2\2\2\u02cc\u02cb\3\2\2\2\u02cdo\3\2\2\2\u02ce\u02cf\t\f\2\2"+
+		"\u02cfq\3\2\2\2\u02d0\u02d3\5\\/\2\u02d1\u02d3\7`\2\2\u02d2\u02d0\3\2"+
+		"\2\2\u02d2\u02d1\3\2\2\2\u02d3s\3\2\2\2\u02d4\u02db\5b\62\2\u02d5\u02db"+
+		"\5h\65\2\u02d6\u02d8\7\"\2\2\u02d7\u02d9\5j\66\2\u02d8\u02d7\3\2\2\2\u02d8"+
+		"\u02d9\3\2\2\2\u02d9\u02db\3\2\2\2\u02da\u02d4\3\2\2\2\u02da\u02d5\3\2"+
+		"\2\2\u02da\u02d6\3\2\2\2\u02dbu\3\2\2\2\u02dc\u02dd\5b\62\2\u02dd\u02de"+
+		"\7_\2\2\u02de\u02eb\3\2\2\2\u02df\u02e0\5d\63\2\u02e0\u02e1\7_\2\2\u02e1"+
+		"\u02eb\3\2\2\2\u02e2\u02e3\t\3\2\2\u02e3\u02e5\7_\2\2\u02e4\u02e6\5j\66"+
+		"\2\u02e5\u02e4\3\2\2\2\u02e5\u02e6\3\2\2\2\u02e6\u02eb\3\2\2\2\u02e7\u02e8"+
+		"\5h\65\2\u02e8\u02e9\7_\2\2\u02e9\u02eb\3\2\2\2\u02ea\u02dc\3\2\2\2\u02ea"+
+		"\u02df\3\2\2\2\u02ea\u02e2\3\2\2\2\u02ea\u02e7\3\2\2\2\u02ebw\3\2\2\2"+
+		"\u02ec\u02f1\5v<\2\u02ed\u02ee\7C\2\2\u02ee\u02f0\5v<\2\u02ef\u02ed\3"+
+		"\2\2\2\u02f0\u02f3\3\2\2\2\u02f1\u02ef\3\2\2\2\u02f1\u02f2\3\2\2\2\u02f2"+
+		"\u02f5\3\2\2\2\u02f3\u02f1\3\2\2\2\u02f4\u02f6\7C\2\2\u02f5\u02f4\3\2"+
+		"\2\2\u02f5\u02f6\3\2\2\2\u02f6y\3\2\2\2\u02f7\u02fc\5n8\2\u02f8\u02f9"+
+		"\7C\2\2\u02f9\u02fb\5n8\2\u02fa\u02f8\3\2\2\2\u02fb\u02fe\3\2\2\2\u02fc"+
+		"\u02fa\3\2\2\2\u02fc\u02fd\3\2\2\2\u02fd\u0300\3\2\2\2\u02fe\u02fc\3\2"+
+		"\2\2\u02ff\u0301\7C\2\2\u0300\u02ff\3\2\2\2\u0300\u0301\3\2\2\2\u0301"+
+		"{\3\2\2\2\u0302\u0307\5p9\2\u0303\u0304\7C\2\2\u0304\u0306\5p9\2\u0305"+
+		"\u0303\3\2\2\2\u0306\u0309\3\2\2\2\u0307\u0305\3\2\2\2\u0307\u0308\3\2"+
+		"\2\2\u0308\u030b\3\2\2\2\u0309\u0307\3\2\2\2\u030a\u030c\7C\2\2\u030b"+
+		"\u030a\3\2\2\2\u030b\u030c\3\2\2\2\u030c}\3\2\2\2\u030d\u0312\5L\'\2\u030e"+
+		"\u030f\7C\2\2\u030f\u0311\5L\'\2\u0310\u030e\3\2\2\2\u0311\u0314\3\2\2"+
+		"\2\u0312\u0310\3\2\2\2\u0312\u0313\3\2\2\2\u0313\u0316\3\2\2\2\u0314\u0312"+
+		"\3\2\2\2\u0315\u0317\7C\2\2\u0316\u0315\3\2\2\2\u0316\u0317\3\2\2\2\u0317"+
+		"\177\3\2\2\2\u0318\u031d\7_\2\2\u0319\u031a\7C\2\2\u031a\u031c\7_\2\2"+
+		"\u031b\u0319\3\2\2\2\u031c\u031f\3\2\2\2\u031d\u031b\3\2\2\2\u031d\u031e"+
+		"\3\2\2\2\u031e\u0321\3\2\2\2\u031f\u031d\3\2\2\2\u0320\u0322\7C\2\2\u0321"+
+		"\u0320\3\2\2\2\u0321\u0322\3\2\2\2\u0322\u0081\3\2\2\2\u0323\u0328\5r"+
+		":\2\u0324\u0325\7C\2\2\u0325\u0327\5r:\2\u0326\u0324\3\2\2\2\u0327\u032a"+
+		"\3\2\2\2\u0328\u0326\3\2\2\2\u0328\u0329\3\2\2\2\u0329\u032c\3\2\2\2\u032a"+
+		"\u0328\3\2\2\2\u032b\u032d\7C\2\2\u032c\u032b\3\2\2\2\u032c\u032d\3\2"+
+		"\2\2\u032d\u0083\3\2\2\2\u032e\u0333\5t;\2\u032f\u0330\7C\2\2\u0330\u0332"+
+		"\5t;\2\u0331\u032f\3\2\2\2\u0332\u0335\3\2\2\2\u0333\u0331\3\2\2\2\u0333"+
+		"\u0334\3\2\2\2\u0334\u0337\3\2\2\2\u0335\u0333\3\2\2\2\u0336\u0338\7C"+
+		"\2\2\u0337\u0336\3\2\2\2\u0337\u0338\3\2\2\2\u0338\u0085\3\2\2\2b\u0087"+
+		"\u008c\u0099\u00b9\u00bb\u00bf\u00c5\u00cf\u00ec\u00f7\u00fc\u010e\u0119"+
+		"\u011d\u0123\u012a\u0131\u0137\u013a\u013d\u0145\u014b\u014e\u0151\u0154"+
+		"\u0157\u015c\u016c\u0171\u017f\u0187\u0193\u0197\u019f\u01a3\u01ab\u01ae"+
+		"\u01b7\u01c1\u01c9\u01cc\u01d0\u01d4\u01e1\u01ef\u01f3\u0218\u021a\u0222"+
+		"\u0228\u022e\u0232\u0236\u023e\u0242\u0249\u024e\u0252\u0256\u025e\u0263"+
+		"\u0267\u026b\u026d\u0275\u0286\u0288\u028e\u0292\u0296\u029a\u029e\u02a8"+
+		"\u02aa\u02ae\u02c0\u02cc\u02d2\u02d8\u02da\u02e5\u02ea\u02f1\u02f5\u02fc"+
+		"\u0300\u0307\u030b\u0312\u0316\u031d\u0321\u0328\u032c\u0333\u0337";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
