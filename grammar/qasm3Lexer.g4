@@ -33,6 +33,9 @@ RETURN: 'return';
 FOR: 'for';
 WHILE: 'while';
 IN: 'in';
+SWITCH: 'switch';
+CASE: 'case';
+DEFAULT: 'default';
 
 PRAGMA: '#'? 'pragma' -> pushMode(EAT_TO_LINE_END);
 AnnotationKeyword: '@' Identifier ->  pushMode(EAT_TO_LINE_END);
@@ -123,7 +126,7 @@ ComparisonOperator: '>' | '<' | '>=' | '<=';
 BitshiftOperator: '>>' | '<<';
 
 IMAG: 'im';
-ImaginaryLiteral: (DecimalIntegerLiteral | FloatLiteral) ' '* IMAG;
+ImaginaryLiteral: (DecimalIntegerLiteral | FloatLiteral) [ \t]* IMAG;
 
 BinaryIntegerLiteral: ('0b' | '0B') ([01] '_'?)* [01];
 OctalIntegerLiteral: '0o' ([0-7] '_'?)* [0-7];
@@ -149,7 +152,7 @@ FloatLiteral:
 
 fragment TimeUnit: 'dt' | 'ns' | 'us' | 'µs' | 'ms' | 's';
 // represents explicit time value in SI or backend units
-TimingLiteral: (DecimalIntegerLiteral | FloatLiteral) TimeUnit;
+TimingLiteral: (DecimalIntegerLiteral | FloatLiteral) [ \t]* TimeUnit;
 
 BitstringLiteral: '"' ([01] '_'?)* [01] '"';
 
