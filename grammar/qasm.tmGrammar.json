@@ -7,7 +7,8 @@
 		{ "include": "#strings" },
 		{ "include": "#variables" },
         { "include": "#functions" },
-        { "include": "#types" }
+        { "include": "#types" },
+		{ "include": "#operations" }
 	],
 	"repository": {
 		"comments": {
@@ -34,7 +35,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.qasm",
-					"match": "\\b(OPENQASM|include|defcalgrammar|def|cal|defcal|gate|extern|box|let|break|continue|if|else|end|return|for|while|in)\\b"
+					"match": "\\b(OPENQASM|include|defcalgrammar|def|cal|defcal|gate|extern|box|let|break|continue|if|else|end|return|for|while|in|switch|case|default|pragma)\\b"
 				},
 				{
 					"name": "keyword.operator.qasm",
@@ -80,7 +81,15 @@
                     "match": "\\b(input|output|const|readonly|mutable|qreg|qubit|creg|bool|bit|int|uint|float|angle|complex|array|void|duration|stretch)\\b"
                 }
             ]
-        }
+        },
+		"operations": {
+			"patterns": [
+				{
+					"name": "identifiers.operations.qasm",
+					"match": "\\b(gphase|inv|pow|ctrl|negctrl)\\b"
+				}
+			]
+		}
 	},
 	"scopeName": "source.qasm"
 }
