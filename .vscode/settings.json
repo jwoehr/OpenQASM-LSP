@@ -4,5 +4,11 @@
 	"typescript.preferences.quoteStyle": "single",
 	"editor.codeActionsOnSave": {
 		"source.fixAll.eslint": "explicit"
-	}
+	},
+	"java.project.sourcePaths": [
+		"grammar/.antlr"
+	],
+	"java.project.referencedLibraries": [
+		"/home/jwoehr/lib/antlr-4.13.2-complete.jar"
+	]
 }
